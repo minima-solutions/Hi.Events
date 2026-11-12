@@ -35,7 +35,7 @@ msgstr "(vide)"
 msgid "(none)"
 msgstr "(aucun)"
 
-#: src/components/common/ReportTable/index.tsx:336
+#: src/components/common/ReportTable/index.tsx:332
 msgid "{0}"
 msgstr "{0}"
 
@@ -52,23 +52,27 @@ msgstr "{0} (par défaut)"
 msgid "{0} {1}"
 msgstr "{0} {1}"
 
-#: src/hooks/useCheckInController.tsx:311
+#: src/hooks/useCheckInController.tsx:354
 msgid "{0} {1} is already checked in"
 msgstr "{0} {1} est déjà enregistré"
 
-#: src/hooks/useCheckInController.tsx:310
+#: src/hooks/useCheckInController.tsx:353
 msgid "{0} {1} is already checked in · {seatLabel}"
 msgstr "{0} {1} est déjà enregistré · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:195
+#: src/hooks/useCheckInController.tsx:337
+msgid "{0} {1} is not checked in"
+msgstr "{0} {1} n'est pas enregistré"
+
+#: src/hooks/useCheckInController.tsx:207
 msgid "{0} <0>checked in</0>"
 msgstr "{0} <0>enregistrés</0>"
 
-#: src/hooks/useCheckInController.tsx:194
+#: src/hooks/useCheckInController.tsx:206
 msgid "{0} <0>checked in</0> · {seatLabel}"
 msgstr "{0} <0>enregistré</0> · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:230
+#: src/hooks/useCheckInController.tsx:241
 msgid "{0} <0>checked out</0> successfully"
 msgstr "{0} <0>sorti</0> avec succès"
 
@@ -276,7 +280,7 @@ msgstr "{0} billets"
 msgid "{0} to {1}"
 msgstr "Du {0} au {1}"
 
-#: src/components/routes/oauth/Connect/index.tsx:87
+#: src/components/routes/oauth/Connect/index.tsx:89
 msgid "{0} wants to use your Hi.Events account {1}. It will act as you, with the access you choose below."
 msgstr "{0} souhaite utiliser votre compte Hi.Events {1}. L'application agira en votre nom, avec l'accès que vous choisissez ci-dessous."
 
@@ -370,15 +374,15 @@ msgstr "{days} jours"
 msgid "{days} days, {hours} hours, {minutes} minutes, and {seconds} seconds"
 msgstr "{days} jours, {hours} heures, {minutes} minutes, et {seconds} secondes"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:29
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:32
 msgid "{diffHr}h ago"
 msgstr "il y a {diffHr} h"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:27
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:30
 msgid "{diffMin}m ago"
 msgstr "il y a {diffMin} min"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:25
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:28
 msgid "{diffSec}s ago"
 msgstr "il y a {diffSec} s"
 
@@ -1065,7 +1069,7 @@ msgstr "Accepter les paiements par carte bancaire avec Stripe"
 #: src/components/common/TeamAccessFields/index.tsx:207
 #: src/components/common/TeamAccessPanel/index.tsx:137
 #: src/components/forms/ProductForm/index.tsx:605
-#: src/components/routes/oauth/Connect/index.tsx:115
+#: src/components/routes/oauth/Connect/index.tsx:117
 #: src/components/routes/settings/ApiKeys/CreateApiKeyModal.tsx:237
 #: src/components/routes/settings/Team/index.tsx:218
 #: src/components/routes/settings/Team/MemberRow.tsx:141
@@ -1883,7 +1887,7 @@ msgstr "Toutes les catégories"
 msgid "All changes saved"
 msgstr "Toutes les modifications sont enregistrées"
 
-#: src/components/common/OrganizerReportTable/index.tsx:302
+#: src/components/common/OrganizerReportTable/index.tsx:296
 msgid "All Currencies"
 msgstr "Toutes les devises"
 
@@ -1949,7 +1953,7 @@ msgstr "Toutes les dates correspondantes"
 msgid "All occurrences"
 msgstr "Toutes les dates"
 
-#: src/components/common/ReportTable/index.tsx:287
+#: src/components/common/ReportTable/index.tsx:281
 msgid "All Occurrences"
 msgstr "Toutes les dates"
 
@@ -2065,7 +2069,7 @@ msgstr "Presque terminé ! Nous attendons juste que votre paiement soit traité.
 msgid "Already have an account? <0>{0}</0>"
 msgstr "Vous avez déjà un compte ? <0>{0}</0>"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:141
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:181
 msgid "Already in"
 msgstr "Déjà présent"
 
@@ -2161,7 +2165,7 @@ msgstr "Montant reçu"
 msgid "An account with this email already exists. Sign in instead."
 msgstr "Un compte existe déjà avec cette adresse e-mail. Connectez-vous plutôt."
 
-#: src/components/routes/oauth/Connect/index.tsx:16
+#: src/components/routes/oauth/Connect/index.tsx:18
 msgid "an app on this computer"
 msgstr "une application sur cet ordinateur"
 
@@ -2855,7 +2859,7 @@ msgstr "Nom et e-mail des participants"
 msgid "Attendee names appear on the printout. Handle it accordingly."
 msgstr "Les noms des participants figurent sur l'impression. Traitez-la en conséquence."
 
-#: src/hooks/useCheckInController.tsx:299
+#: src/hooks/useCheckInController.tsx:322
 msgid "Attendee not found"
 msgstr "Participant non trouvé"
 
@@ -3563,7 +3567,7 @@ msgid "Call-to-Action Button"
 msgstr "Bouton d'appel à l'action"
 
 #: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:153
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:90
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:128
 msgid "Camera"
 msgstr "Caméra"
 
@@ -3660,7 +3664,7 @@ msgstr "Vous ne pouvez pas utiliser votre application d'authentification ni vos 
 #: src/components/routes/event/OccurrencesTab/OccurrenceMenu.tsx:67
 #: src/components/routes/event/OccurrencesTab/RecurrenceScheduleDrawer/index.tsx:1173
 #: src/components/routes/event/Settings/Sections/DangerZoneSettings/index.tsx:64
-#: src/components/routes/oauth/Connect/index.tsx:164
+#: src/components/routes/oauth/Connect/index.tsx:166
 #: src/components/routes/organizer/Settings/Sections/DangerZoneSettings/index.tsx:69
 #: src/components/routes/product-widget/OrderSummaryAndProducts/EditAttendeeModal/index.tsx:85
 #: src/components/routes/product-widget/OrderSummaryAndProducts/EditOrderModal/index.tsx:85
@@ -4035,6 +4039,7 @@ msgid "Check back soon for new dates."
 msgstr "Revenez bientôt pour découvrir de nouvelles dates."
 
 #: src/components/layouts/CheckIn/AttendeeDetailSheet.tsx:307
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:60
 #: src/components/layouts/CheckIn/tabs/SearchTab.tsx:82
 msgid "Check in"
 msgstr "Enregistrer"
@@ -4060,6 +4065,7 @@ msgid "Check key"
 msgstr "Vérifier la clé"
 
 #: src/components/layouts/CheckIn/AttendeeDetailSheet.tsx:307
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:71
 #: src/components/layouts/CheckIn/tabs/SearchTab.tsx:81
 msgid "Check out"
 msgstr "Annuler l'enregistrement"
@@ -4073,7 +4079,7 @@ msgstr "Découvrez cet événement : {0}"
 msgid "Check out this event!"
 msgstr "Découvrez cet événement !"
 
-#: src/components/common/ReportTable/index.tsx:251
+#: src/components/common/ReportTable/index.tsx:245
 #: src/components/routes/settings/TaxesAndFees/index.tsx:85
 #: src/ee/box-office/components/layouts/BoxOffice/index.tsx:84
 msgid "Check your connection and try again."
@@ -4114,7 +4120,7 @@ msgstr "Enregistrement créé"
 msgid "Check-in Deleted"
 msgstr "Enregistrement supprimé"
 
-#: src/hooks/useCheckInController.tsx:158
+#: src/hooks/useCheckInController.tsx:170
 msgid "Check-in for {0} was undone"
 msgstr "L'enregistrement de {0} a été annulé"
 
@@ -4172,7 +4178,7 @@ msgstr "Listes d'enregistrement"
 msgid "Check-In Lists"
 msgstr "Listes de pointage"
 
-#: src/components/layouts/CheckIn/index.tsx:260
+#: src/components/layouts/CheckIn/index.tsx:262
 msgid "Check-in navigation"
 msgstr "Navigation d'enregistrement"
 
@@ -4209,6 +4215,10 @@ msgstr "URL de pointage copiée dans le presse-papiers"
 msgid "Check-Ins"
 msgstr "Enregistrements"
 
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:79
+msgid "Check-out mode"
+msgstr "Mode sortie"
+
 #: src/components/forms/QuestionForm/questionTypes.ts:26
 msgid "Checkboxes"
 msgstr "Cases à cocher"
@@ -4234,6 +4244,10 @@ msgstr "Enregistré"
 #: src/ee/box-office/components/layouts/BoxOffice/SaleComplete.tsx:41
 msgid "Checked in ({checkedInCount}/{attendeeCount})"
 msgstr "Enregistrés ({checkedInCount}/{attendeeCount})"
+
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:184
+msgid "Checked out"
+msgstr "Sorti"
 
 #: src/components/routes/event/Lineup/ImportLineupModal.tsx:376
 #: src/components/routes/event/Lineup/ImportLineupModal.tsx:565
@@ -4955,8 +4969,8 @@ msgstr "Félicitations ! Votre événement est maintenant visible par le public.
 msgid "Connect"
 msgstr "Connecter"
 
-#: src/components/routes/oauth/Connect/index.tsx:86
-#: src/components/routes/oauth/Connect/index.tsx:151
+#: src/components/routes/oauth/Connect/index.tsx:88
+#: src/components/routes/oauth/Connect/index.tsx:153
 #: src/components/routes/settings/Security/SignInMethods.tsx:246
 msgid "Connect {0}"
 msgstr "Connecter {0}"
@@ -5480,8 +5494,8 @@ msgstr "Impossible de téléverser {fileName}"
 msgid "Couldn't load the API reference."
 msgstr "Impossible de charger la référence de l'API."
 
-#: src/components/common/OrganizerReportTable/index.tsx:271
-#: src/components/common/ReportTable/index.tsx:249
+#: src/components/common/OrganizerReportTable/index.tsx:265
+#: src/components/common/ReportTable/index.tsx:243
 msgid "Couldn't load this report"
 msgstr "Impossible de charger ce rapport"
 
@@ -5637,7 +5651,7 @@ msgstr "Créez une annonce pour afficher un message à vos utilisateurs."
 msgid "Create and change events, orders, attendees and more."
 msgstr "Créer et modifier des événements, commandes, participants et plus encore."
 
-#: src/components/routes/oauth/Connect/index.tsx:122
+#: src/components/routes/oauth/Connect/index.tsx:124
 msgid "Create and change events, tickets, questions and settings."
 msgstr "Créer et modifier les événements, billets, questions et paramètres."
 
@@ -5872,7 +5886,7 @@ msgstr "CTA"
 msgid "CTA label is required"
 msgstr "Le libellé CTA est requis"
 
-#: src/components/common/OrganizerReportTable/index.tsx:317
+#: src/components/common/OrganizerReportTable/index.tsx:311
 #: src/components/forms/OrganizerForm/index.tsx:51
 #: src/components/modals/CreateEventModal/index.tsx:437
 #: src/components/modals/CreateEventModal/index.tsx:438
@@ -5945,8 +5959,8 @@ msgstr "E-mails de commande et de billet personnalisés pour cet événement"
 msgid "Custom questions"
 msgstr "Questions personnalisées"
 
-#: src/components/common/OrganizerReportTable/index.tsx:61
-#: src/components/common/ReportTable/index.tsx:56
+#: src/components/common/OrganizerReportTable/index.tsx:62
+#: src/components/common/ReportTable/index.tsx:57
 #: src/components/routes/admin/Attribution/index.tsx:82
 msgid "Custom Range"
 msgstr "Plage personnalisée"
@@ -8275,7 +8289,7 @@ msgstr "Exporter"
 msgid "Export answers"
 msgstr "Exporter les réponses"
 
-#: src/components/common/OrganizerReportTable/index.tsx:358
+#: src/components/common/OrganizerReportTable/index.tsx:352
 msgid "Export CSV"
 msgstr "Exporter CSV"
 
@@ -8291,7 +8305,7 @@ msgstr "Exporter les achats"
 msgid "Export started. Preparing file..."
 msgstr "Exportation commencée. Préparation du fichier..."
 
-#: src/components/common/OrganizerReportTable/index.tsx:204
+#: src/components/common/OrganizerReportTable/index.tsx:198
 msgid "Export successful"
 msgstr "Exportation réussie"
 
@@ -8320,7 +8334,7 @@ msgstr "Places supplémentaires par rangée"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:144
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:190
 #: src/components/modals/MessageRecipientsModal/index.tsx:18
 #: src/components/routes/admin/Messages/index.tsx:127
 msgid "Failed"
@@ -8491,7 +8505,7 @@ msgstr "Échec de l'exportation des commandes"
 msgid "Failed to export purchases. Please try again."
 msgstr "Échec de l'exportation des achats. Veuillez réessayer."
 
-#: src/components/common/OrganizerReportTable/index.tsx:206
+#: src/components/common/OrganizerReportTable/index.tsx:200
 msgid "Failed to export report. Please try again."
 msgstr "Échec de l'exportation du rapport. Veuillez réessayer."
 
@@ -9325,7 +9339,7 @@ msgstr "Retour"
 msgid "Go back to profile"
 msgstr "Revenir au profil"
 
-#: src/components/routes/oauth/Connect/index.tsx:25
+#: src/components/routes/oauth/Connect/index.tsx:27
 msgid "Go back to the app you were connecting and start again."
 msgstr "Revenez à l'application que vous connectiez et recommencez."
 
@@ -9550,7 +9564,7 @@ msgstr "Hi.Events Cloud"
 msgid "Hi.Events Fee"
 msgstr "Frais Hi.Events"
 
-#: src/components/routes/oauth/Connect/index.tsx:108
+#: src/components/routes/oauth/Connect/index.tsx:110
 msgid "Hi.Events hasn't verified this app. Only continue if you started connecting it yourself and you trust it."
 msgstr "Hi.Events n'a pas vérifié cette application. Ne continuez que si vous avez lancé la connexion vous-même et que vous lui faites confiance."
 
@@ -10418,7 +10432,7 @@ msgstr "Juin"
 msgid "Just looking for your tickets?"
 msgstr "Vous cherchez vos billets ?"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:24
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:27
 msgid "just now"
 msgstr "à l'instant"
 
@@ -10533,55 +10547,55 @@ msgstr "Langue et taille"
 msgid "Last"
 msgstr "Dernier"
 
-#: src/components/common/OrganizerReportTable/index.tsx:60
-#: src/components/common/ReportTable/index.tsx:55
+#: src/components/common/OrganizerReportTable/index.tsx:61
+#: src/components/common/ReportTable/index.tsx:56
 msgid "Last 12 months"
 msgstr "12 derniers mois"
 
-#: src/components/common/OrganizerReportTable/index.tsx:55
-#: src/components/common/ReportTable/index.tsx:50
+#: src/components/common/OrganizerReportTable/index.tsx:56
+#: src/components/common/ReportTable/index.tsx:51
 msgid "Last 14 days"
 msgstr "14 derniers jours"
 
-#: src/components/common/OrganizerReportTable/index.tsx:52
-#: src/components/common/ReportTable/index.tsx:47
+#: src/components/common/OrganizerReportTable/index.tsx:53
+#: src/components/common/ReportTable/index.tsx:48
 #: src/components/routes/admin/Attribution/index.tsx:77
 #: src/components/routes/admin/Dashboard/index.tsx:31
 #: src/components/routes/admin/EmailDelivery/index.tsx:14
 msgid "Last 24 hours"
 msgstr "Dernières 24 heures"
 
-#: src/components/common/OrganizerReportTable/index.tsx:56
+#: src/components/common/OrganizerReportTable/index.tsx:57
 #: src/components/common/PeriodSelector/index.tsx:34
-#: src/components/common/ReportTable/index.tsx:51
+#: src/components/common/ReportTable/index.tsx:52
 #: src/components/routes/admin/Attribution/index.tsx:79
 #: src/components/routes/admin/Dashboard/index.tsx:33
 #: src/components/routes/admin/EmailDelivery/index.tsx:16
 msgid "Last 30 days"
 msgstr "30 derniers jours"
 
-#: src/components/common/OrganizerReportTable/index.tsx:53
-#: src/components/common/ReportTable/index.tsx:48
+#: src/components/common/OrganizerReportTable/index.tsx:54
+#: src/components/common/ReportTable/index.tsx:49
 msgid "Last 48 hours"
 msgstr "Dernières 48 heures"
 
-#: src/components/common/OrganizerReportTable/index.tsx:58
-#: src/components/common/ReportTable/index.tsx:53
+#: src/components/common/OrganizerReportTable/index.tsx:59
+#: src/components/common/ReportTable/index.tsx:54
 msgid "Last 6 months"
 msgstr "6 derniers mois"
 
-#: src/components/common/OrganizerReportTable/index.tsx:54
+#: src/components/common/OrganizerReportTable/index.tsx:55
 #: src/components/common/PeriodSelector/index.tsx:32
-#: src/components/common/ReportTable/index.tsx:49
+#: src/components/common/ReportTable/index.tsx:50
 #: src/components/routes/admin/Attribution/index.tsx:78
 #: src/components/routes/admin/Dashboard/index.tsx:32
 #: src/components/routes/admin/EmailDelivery/index.tsx:15
 msgid "Last 7 days"
 msgstr "7 derniers jours"
 
-#: src/components/common/OrganizerReportTable/index.tsx:57
+#: src/components/common/OrganizerReportTable/index.tsx:58
 #: src/components/common/PeriodSelector/index.tsx:36
-#: src/components/common/ReportTable/index.tsx:52
+#: src/components/common/ReportTable/index.tsx:53
 #: src/components/routes/admin/Attribution/index.tsx:80
 msgid "Last 90 days"
 msgstr "90 derniers jours"
@@ -10999,8 +11013,8 @@ msgstr "Chargement des journaux webhook..."
 msgid "Loading Webhooks"
 msgstr "Chargement des webhooks"
 
-#: src/components/common/OrganizerReportTable/index.tsx:265
-#: src/components/common/ReportTable/index.tsx:219
+#: src/components/common/OrganizerReportTable/index.tsx:259
+#: src/components/common/ReportTable/index.tsx:213
 #: src/components/routes/event/Settings/Sections/DangerZoneSettings/index.tsx:89
 #: src/components/routes/organizer/Settings/Sections/DangerZoneSettings/index.tsx:94
 msgid "Loading..."
@@ -12080,15 +12094,15 @@ msgstr "Aucune application connectée"
 msgid "No connections available"
 msgstr "Aucune connexion disponible"
 
-#: src/components/common/ReportTable/index.tsx:227
+#: src/components/common/ReportTable/index.tsx:221
 msgid "No data available"
 msgstr "Aucune donnée disponible"
 
-#: src/components/common/OrganizerReportTable/index.tsx:283
+#: src/components/common/OrganizerReportTable/index.tsx:277
 msgid "No data found for the selected filters. Try adjusting the date range or currency."
 msgstr "Aucune donnée trouvée pour les filtres sélectionnés. Essayez d'ajuster la plage de dates ou la devise."
 
-#: src/components/common/ReportTable/index.tsx:223
+#: src/components/common/ReportTable/index.tsx:217
 msgid "No data to show. Please select a date range"
 msgstr "Aucune donnée à afficher. Veuillez sélectionner une plage de dates"
 
@@ -12617,6 +12631,7 @@ msgid "Not available: you have view-only access."
 msgstr "Non disponible : vous avez un accès en lecture seule."
 
 #: src/components/layouts/CheckIn/AttendeeDetailSheet.tsx:122
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:187
 #: src/components/modals/ManageAttendeeModal/index.tsx:156
 msgid "Not checked in"
 msgstr "Non enregistré"
@@ -12774,7 +12789,7 @@ msgstr "Rien à imprimer pour l'instant"
 msgid "Nothing to sell here yet. Add products to this box office."
 msgstr "Rien à vendre pour l'instant. Ajoutez des produits à cette billetterie."
 
-#: src/components/common/ReportTable/index.tsx:263
+#: src/components/common/ReportTable/index.tsx:257
 msgid "Nothing to show yet"
 msgstr "Rien à montrer pour le moment"
 
@@ -12859,7 +12874,7 @@ msgstr "Pairs et impairs à partir du centre"
 msgid "Odd numbers only"
 msgstr "Numéros impairs uniquement"
 
-#: src/components/common/OrganizerReportTable/index.tsx:367
+#: src/components/common/OrganizerReportTable/index.tsx:361
 msgid "of"
 msgstr "de"
 
@@ -13022,7 +13037,7 @@ msgstr "Une fois par commande"
 msgid "Once you create an event, you'll see it here."
 msgstr "Une fois que vous avez créé un événement, vous le verrez ici."
 
-#: src/components/common/ReportTable/index.tsx:268
+#: src/components/common/ReportTable/index.tsx:262
 msgid "Once you start collecting data, you'll see it here."
 msgstr "Une fois que vous commencerez à collecter des données, elles apparaîtront ici."
 
@@ -13135,7 +13150,7 @@ msgstr "Seuls les administrateurs peuvent gérer l'accès de l'équipe."
 msgid "Only available as an add-on"
 msgstr "Disponible uniquement en option"
 
-#: src/components/routes/oauth/Connect/index.tsx:107
+#: src/components/routes/oauth/Connect/index.tsx:109
 msgid "Only continue if you just started connecting from an app on this computer, such as Claude Code or Cursor."
 msgstr "Ne continuez que si vous venez de lancer la connexion depuis une application sur cet ordinateur, comme Claude Code ou Cursor."
 
@@ -13780,7 +13795,7 @@ msgstr "Possède un autre compte Hi.Events : continue donc de se connecter avec 
 msgid "Padding"
 msgstr "Marge intérieure"
 
-#: src/components/common/OrganizerReportTable/index.tsx:367
+#: src/components/common/OrganizerReportTable/index.tsx:361
 msgid "Page"
 msgstr "Page"
 
@@ -14569,7 +14584,7 @@ msgstr "Veuillez retourner sur la page de l'événement pour recommencer."
 msgid "Please select a date and time"
 msgstr "Veuillez sélectionner une date et un horaire"
 
-#: src/components/common/OrganizerReportTable/index.tsx:280
+#: src/components/common/OrganizerReportTable/index.tsx:274
 msgid "Please select a date range"
 msgstr "Veuillez sélectionner une plage de dates"
 
@@ -15201,7 +15216,7 @@ msgstr "Réactiver"
 msgid "Reactivate this date? It will be reopened for future sales."
 msgstr "Réactiver cette date ? Elle sera de nouveau ouverte à la vente."
 
-#: src/components/routes/oauth/Connect/index.tsx:121
+#: src/components/routes/oauth/Connect/index.tsx:123
 #: src/components/routes/settings/ApiKeys/ApiKeyRow.tsx:52
 #: src/components/routes/settings/ApiKeys/ConnectedApps.tsx:73
 #: src/components/routes/settings/ApiKeys/CreateApiKeyModal.tsx:250
@@ -15213,7 +15228,7 @@ msgstr "Lecture et écriture"
 msgid "Read more"
 msgstr "Lire la suite"
 
-#: src/components/routes/oauth/Connect/index.tsx:127
+#: src/components/routes/oauth/Connect/index.tsx:129
 msgid "Read only"
 msgstr "Lecture seule"
 
@@ -15289,10 +15304,6 @@ msgstr "Activité récente"
 msgid "Recent Attendees"
 msgstr "Participants récents"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:106
-msgid "Recent check-ins"
-msgstr "Enregistrements récents"
-
 #: src/components/routes/organizer/OrganizerDashboard/index.tsx:316
 msgid "Recent orders"
 msgstr "Commandes récentes"
@@ -15300,6 +15311,10 @@ msgstr "Commandes récentes"
 #: src/components/common/OccurrenceAttendeesAndOrders/index.tsx:64
 msgid "Recent Orders"
 msgstr "Commandes récentes"
+
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:144
+msgid "Recent scans"
+msgstr "Scans récents"
 
 #: src/components/routes/admin/Dashboard/index.tsx:388
 msgid "Recent signups"
@@ -16018,11 +16033,11 @@ msgstr "Retour à l'événement"
 msgid "Return to Event Page"
 msgstr "Retourner à la page de l'événement"
 
-#: src/components/routes/oauth/Connect/index.tsx:77
+#: src/components/routes/oauth/Connect/index.tsx:79
 msgid "Returning you to {leavingTo}…"
 msgstr "Retour vers {leavingTo}…"
 
-#: src/components/routes/oauth/Connect/index.tsx:92
+#: src/components/routes/oauth/Connect/index.tsx:94
 msgid "Returns you to"
 msgstr "Vous renvoie vers"
 
@@ -16522,19 +16537,27 @@ msgstr "Enregistrer une personnalisation crée une configuration dédiée à cet
 msgid "Scan"
 msgstr "Scanner"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:58
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:97
 msgid "Scan a ticket to check in an attendee"
 msgstr "Scannez un billet pour enregistrer un participant"
+
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:96
+msgid "Scan a ticket to check out an attendee"
+msgstr "Scannez un billet pour enregistrer la sortie d'un participant"
+
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:50
+msgid "Scan action"
+msgstr "Action de scan"
 
 #: src/components/routes/event/CheckInLists/index.tsx:36
 msgid "Scan tickets at the door with a phone, tablet, or USB scanner."
 msgstr "Scannez les billets à l'entrée avec un téléphone, une tablette ou un lecteur USB."
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:109
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:147
 msgid "Scanned tickets will appear here"
 msgstr "Les billets scannés apparaîtront ici"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:71
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:109
 msgid "Scanner mode"
 msgstr "Mode scanner"
 
@@ -17097,8 +17120,8 @@ msgstr "Sélectionnez un billet"
 msgid "Select tickets"
 msgstr "Sélectionner des billets"
 
-#: src/components/common/OrganizerReportTable/index.tsx:328
-#: src/components/common/ReportTable/index.tsx:294
+#: src/components/common/OrganizerReportTable/index.tsx:322
+#: src/components/common/ReportTable/index.tsx:288
 msgid "Select time period"
 msgstr "Sélectionnez la période"
 
@@ -17717,7 +17740,7 @@ msgstr "Afficher cette question"
 msgid "Show tickets"
 msgstr "Afficher les billets"
 
-#: src/components/common/OrganizerReportTable/index.tsx:366
+#: src/components/common/OrganizerReportTable/index.tsx:360
 msgid "Showing {0} of {totalRows} records"
 msgstr "Affichage de {0} sur {totalRows} enregistrements"
 
@@ -18224,8 +18247,8 @@ msgstr "Une erreur s'est produite. Veuillez réessayer plus tard."
 #: src/components/routes/auth/Login/index.tsx:132
 #: src/components/routes/auth/Register/index.tsx:81
 #: src/components/routes/my-tickets/index.tsx:162
-#: src/components/routes/oauth/Connect/index.tsx:63
-#: src/components/routes/oauth/Connect/index.tsx:70
+#: src/components/routes/oauth/Connect/index.tsx:65
+#: src/components/routes/oauth/Connect/index.tsx:72
 #: src/components/routes/product-widget/SelectProducts/index.tsx:383
 #: src/components/routes/settings/Account/DeleteAccountSection.tsx:79
 #: src/components/routes/settings/ApiKeys/ConnectedApps.tsx:30
@@ -19050,7 +19073,7 @@ msgstr "Touchez une place pour l'ajouter, ou définissez d'abord les quantités"
 msgid "Tap dates like a calendar."
 msgstr "Touchez les dates comme sur un calendrier."
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:59
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:94
 msgid "Tap this screen to resume scanning"
 msgstr "Touchez cet écran pour reprendre le scan"
 
@@ -19841,11 +19864,11 @@ msgstr "Cette liste d'enregistrement est rattachée à une séance qui a été a
 msgid "This code will be used to track sales. Only letters, numbers, hyphens, and underscores allowed."
 msgstr "Ce code sera utilisé pour suivre les ventes. Seuls les lettres, chiffres, tirets et traits de soulignement sont autorisés."
 
-#: src/components/routes/oauth/Connect/index.tsx:24
+#: src/components/routes/oauth/Connect/index.tsx:26
 msgid "This connection link doesn't work"
 msgstr "Ce lien de connexion ne fonctionne pas"
 
-#: src/components/routes/oauth/Connect/index.tsx:24
+#: src/components/routes/oauth/Connect/index.tsx:26
 msgid "This connection request has expired"
 msgstr "Cette demande de connexion a expiré"
 
@@ -20192,7 +20215,7 @@ msgstr "Cet espace est réservé aux personnes en fauteuil roulant et aux invit�
 msgid "This ticket is no longer valid"
 msgstr "Ce billet n'est plus valide"
 
-#: src/hooks/useCheckInController.tsx:276
+#: src/hooks/useCheckInController.tsx:298
 msgid "This ticket was just scanned. Please wait before scanning again."
 msgstr "Ce billet vient d'être scanné. Veuillez attendre avant de scanner à nouveau."
 
@@ -20736,8 +20759,8 @@ msgstr "Essayez un autre terme de recherche ou un autre filtre"
 msgid "Try adjusting your filters to see more dates."
 msgstr "Ajustez vos filtres pour voir plus de dates."
 
-#: src/components/common/OrganizerReportTable/index.tsx:273
-#: src/components/common/ReportTable/index.tsx:254
+#: src/components/common/OrganizerReportTable/index.tsx:267
+#: src/components/common/ReportTable/index.tsx:248
 #: src/components/routes/product-widget/SelectProducts/index.tsx:1121
 #: src/components/routes/settings/ApiKeys/ConnectedApps.tsx:54
 #: src/components/routes/settings/ApiKeys/index.tsx:189
@@ -20828,11 +20851,11 @@ msgstr "Activez d'abord la connexion avec {providerName} et vérifiez un domaine
 msgid "Turn on two-factor authentication for your own profile first."
 msgstr "Activez d'abord l'authentification à deux facteurs sur votre propre profil."
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:94
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:132
 msgid "Turn sound off"
 msgstr "Désactiver le son"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:94
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:132
 msgid "Turn sound on"
 msgstr "Activer le son"
 
@@ -20952,12 +20975,12 @@ msgstr "Impossible de changer de lecteur"
 msgid "Unable to check in"
 msgstr "Enregistrement impossible"
 
-#: src/hooks/useCheckInController.tsx:217
+#: src/hooks/useCheckInController.tsx:229
 msgid "Unable to check in attendee"
 msgstr "Impossible d'enregistrer le participant"
 
-#: src/hooks/useCheckInController.tsx:243
-#: src/hooks/useCheckInController.tsx:245
+#: src/hooks/useCheckInController.tsx:260
+#: src/hooks/useCheckInController.tsx:262
 msgid "Unable to check out attendee"
 msgstr "Impossible de sortir le participant"
 
@@ -20982,7 +21005,7 @@ msgstr "Impossible de supprimer le widget"
 msgid "Unable to duplicate product. Please check the your details"
 msgstr "Impossible de dupliquer le produit. Veuillez vérifier vos informations"
 
-#: src/hooks/useCheckInController.tsx:291
+#: src/hooks/useCheckInController.tsx:314
 msgid "Unable to fetch attendee"
 msgstr "Impossible de récupérer le participant"
 
@@ -21036,7 +21059,7 @@ msgstr "Impossible de démarrer la vente. Veuillez réessayer."
 msgid "Unable to switch date"
 msgstr "Impossible de changer de date"
 
-#: src/hooks/useCheckInController.tsx:163
+#: src/hooks/useCheckInController.tsx:175
 msgid "Unable to undo check-in"
 msgstr "Impossible d'annuler l'enregistrement"
 
@@ -21070,7 +21093,7 @@ msgstr "Sous \"Token configuration\", ajoutez les claims facultatifs email et xm
 
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:299
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:300
-#: src/hooks/useCheckInController.tsx:201
+#: src/hooks/useCheckInController.tsx:213
 msgid "Undo"
 msgstr "Annuler"
 
@@ -21395,15 +21418,15 @@ msgstr "Les compteurs d'utilisation repartent de zéro"
 msgid "Usage Limit"
 msgstr "Limite d'utilisation"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:80
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:118
 msgid "USB"
 msgstr "USB"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:53
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:89
 msgid "USB scanner listening"
 msgstr "Scanner USB à l'écoute"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:53
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:89
 msgid "USB scanner paused"
 msgstr "Scanner USB en pause"
 
@@ -21688,7 +21711,7 @@ msgstr "E-mail de vérification envoyé. Consultez votre boîte de réception."
 #: src/components/routes/admin/Accounts/AccountDetail/index.tsx:216
 #: src/components/routes/admin/Attribution/index.tsx:198
 #: src/components/routes/admin/Dashboard/index.tsx:396
-#: src/components/routes/oauth/Connect/index.tsx:97
+#: src/components/routes/oauth/Connect/index.tsx:99
 #: src/ee/sso/components/SingleSignOn/DomainList.tsx:17
 msgid "Verified"
 msgstr "Vérifié"
@@ -21848,7 +21871,7 @@ msgstr "Voir la page de l'événement"
 msgid "View Event Page"
 msgstr "Voir la page de l'événement"
 
-#: src/components/routes/oauth/Connect/index.tsx:128
+#: src/components/routes/oauth/Connect/index.tsx:130
 msgid "View events, tickets and sales, without changing anything."
 msgstr "Consulter les événements, billets et ventes, sans rien modifier."
 
@@ -21990,7 +22013,7 @@ msgstr "En attente"
 msgid "Waiting for payment"
 msgstr "En attente de paiement"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:64
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:102
 msgid "Waiting for scan…"
 msgstr "En attente d'un scan…"
 
@@ -22673,9 +22696,9 @@ msgstr "X (Twitter)"
 msgid "year"
 msgstr "an"
 
-#: src/components/common/OrganizerReportTable/index.tsx:59
+#: src/components/common/OrganizerReportTable/index.tsx:60
 #: src/components/common/PeriodSelector/index.tsx:38
-#: src/components/common/ReportTable/index.tsx:54
+#: src/components/common/ReportTable/index.tsx:55
 msgid "Year to date"
 msgstr "Année à ce jour"
 
@@ -22746,8 +22769,8 @@ msgstr "Vous usurpez l'identité de <0>{0}</0> ({1})"
 msgid "You are issuing a partial refund. The customer will be refunded {0} {1}."
 msgstr "Vous émettez un remboursement partiel. Le client sera remboursé de {0} {1}."
 
-#: src/hooks/useCheckInController.tsx:212
-#: src/hooks/useCheckInController.tsx:238
+#: src/hooks/useCheckInController.tsx:224
+#: src/hooks/useCheckInController.tsx:255
 msgid "You are offline"
 msgstr "Vous êtes hors ligne"
 
@@ -22791,7 +22814,7 @@ msgstr "Vous pouvez configurer des frais de service supplémentaires et des taxe
 msgid "You can create a promo code which targets this product on the"
 msgstr "Vous pouvez créer un code promo qui cible ce produit sur le"
 
-#: src/components/routes/oauth/Connect/index.tsx:167
+#: src/components/routes/oauth/Connect/index.tsx:169
 msgid "You can disconnect it at any time from Settings → API keys."
 msgstr "Vous pouvez la déconnecter à tout moment depuis Paramètres → Clés API."
 
@@ -22823,8 +22846,8 @@ msgstr "Vous ne pouvez pas archiver le dernier organisateur actif de votre compt
 msgid "You cannot change the product type as there are attendees associated with this product."
 msgstr "Vous ne pouvez pas changer le type de produit car des invités y sont associés."
 
-#: src/hooks/useCheckInController.tsx:261
-#: src/hooks/useCheckInController.tsx:330
+#: src/hooks/useCheckInController.tsx:283
+#: src/hooks/useCheckInController.tsx:373
 msgid "You cannot check in attendees with unpaid orders. This setting can be changed in the event settings."
 msgstr "Vous ne pouvez pas enregistrer des participants avec des commandes impayées. Ce paramètre peut être modifié dans les paramètres de l'événement."
 
@@ -23371,7 +23394,7 @@ msgstr "Vos codes de récupération et vos appareils de confiance seront supprim
 msgid "Your refund is processing."
 msgstr "Votre remboursement est en cours de traitement."
 
-#: src/hooks/useCheckInController.tsx:78
+#: src/hooks/useCheckInController.tsx:83
 msgid "Your saved date filter is no longer available — showing all dates."
 msgstr "Votre filtre de dates enregistré n'est plus disponible — toutes les dates sont affichées."
 

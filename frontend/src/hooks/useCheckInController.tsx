@@ -2,7 +2,7 @@ import {useCallback, useEffect, useRef, useState} from "react";
 import {useDebouncedValue, useDisclosure, useNetwork} from "@mantine/hooks";
 import {AxiosError} from "axios";
 import {t, Trans} from "@lingui/macro";
-import {Attendee, CheckInList, EventType, QueryFilterOperator, QueryFilters} from "../types.ts";
+import {Attendee, CheckInList, EventType, IdParam, QueryFilterOperator, QueryFilters} from "../types.ts";
 import {showError, showInfo, showSuccess, showSuccessWithUndo} from "../utilites/notifications.tsx";
 import {isSsr} from "../utilites/helpers.ts";
 import {useHaptics} from "./useHaptics.ts";
@@ -11,7 +11,7 @@ import {useGetCheckInListAttendees} from "../queries/useGetCheckInListAttendeesP
 import {useCreateCheckInPublic} from "../mutations/useCreateCheckInPublic.ts";
 import {useDeleteCheckInPublic} from "../mutations/useDeleteCheckInPublic.ts";
 import {publicCheckInClient} from "../api/check-in.client.ts";
-import {ScanMode} from "../components/layouts/CheckIn/tabs/ScanTab.tsx";
+import {ScanAction, ScanMode} from "../components/layouts/CheckIn/tabs/ScanTab.tsx";
 import {RecentScan, RecentScanStatus} from "../components/layouts/CheckIn/types.ts";
 
 const MAX_RECENT_SCANS = 20;
@@ -37,6 +37,11 @@ export const useCheckInController = ({
         if (isSsr()) return "usb";
         const stored = localStorage.getItem("checkInScanMode");
         return stored === "camera" ? "camera" : "usb";
+    });
+    const [scanAction, setScanAction] = useState<ScanAction>(() => {
+        if (isSsr()) return "check-in";
+        const stored = localStorage.getItem("checkInScanAction");
+        return stored === "check-out" ? "check-out" : "check-in";
     });
     const [recentScans, setRecentScans] = useState<RecentScan[]>([]);
     const [searchQuery, setSearchQuery] = useState("");
@@ -118,6 +123,13 @@ export const useCheckInController = ({
             localStorage.setItem("checkInScanMode", scanMode);
         }
     }, [scanMode]);
+
+    useEffect(() => {
+        if (!isSsr()) {
+            localStorage.setItem("checkInScanAction", scanAction);
+        }
+        processedBarcodesRef.current.clear();
+    }, [scanAction]);
 
     const playSuccessSound = useCallback(() => {
         if (isSoundOn && scanSuccessAudioRef.current) {
@@ -220,32 +232,42 @@ export const useCheckInController = ({
         });
     };
 
+    const handleCheckOutAction = (attendee: Attendee, checkInShortId: IdParam, fromScan: boolean) => {
+        deleteCheckInMutation.mutate({
+            checkInListShortId: checkInListShortId,
+            checkInShortId: checkInShortId,
+        }, {
+            onSuccess: () => {
+                showSuccess(<Trans>{attendee.first_name} <b>checked out</b> successfully</Trans>);
+                playSuccessSound();
+                haptic(fromScan ? "success" : "tap");
+                if (fromScan) {
+                    recordScan(attendee, attendee.public_id, "checked_out");
+                }
+            },
+            onError: (error) => {
+                playErrorSound();
+                haptic("error");
+                if (fromScan) {
+                    recordScan(attendee, attendee.public_id, "error");
+                }
+                if (!networkStatus.online) {
+                    showError(t`You are offline`);
+                    return;
+                }
+
+                if (error instanceof AxiosError) {
+                    showError(error?.response?.data?.message || t`Unable to check out attendee`);
+                } else {
+                    showError(t`Unable to check out attendee`);
+                }
+            },
+        });
+    };
+
     const handleCheckInToggle = (attendee: Attendee) => {
         if (attendee.check_in) {
-            deleteCheckInMutation.mutate({
-                checkInListShortId: checkInListShortId,
-                checkInShortId: attendee.check_in.short_id,
-            }, {
-                onSuccess: () => {
-                    showSuccess(<Trans>{attendee.first_name} <b>checked out</b> successfully</Trans>);
-                    playSuccessSound();
-                    haptic("tap");
-                },
-                onError: (error) => {
-                    playErrorSound();
-                    haptic("error");
-                    if (!networkStatus.online) {
-                        showError(t`You are offline`);
-                        return;
-                    }
-
-                    if (error instanceof AxiosError) {
-                        showError(error?.response?.data?.message || t`Unable to check out attendee`);
-                    } else {
-                        showError(t`Unable to check out attendee`);
-                    }
-                },
-            });
+            handleCheckOutAction(attendee, attendee.check_in.short_id, false);
             return;
         }
 
@@ -282,8 +304,9 @@ export const useCheckInController = ({
         lastScanTimeRef.current = now;
 
         let attendee = attendees?.find(a => a.public_id === attendeePublicId);
+        const isCheckOut = scanAction === "check-out";
 
-        if (!attendee) {
+        if (!attendee || (isCheckOut && !attendee.check_in)) {
             try {
                 const {data} = await publicCheckInClient.getCheckInListAttendee(checkInListShortId, attendeePublicId);
                 attendee = data;
@@ -302,6 +325,26 @@ export const useCheckInController = ({
                 isProcessingRef.current = false;
                 return;
             }
+        }
+
+        if (isCheckOut) {
+            processedBarcodesRef.current.add(attendeePublicId);
+            setTimeout(() => {
+                processedBarcodesRef.current.delete(attendeePublicId);
+            }, 10000);
+
+            if (!attendee.check_in) {
+                showError(<Trans>{attendee.first_name} {attendee.last_name} is not checked in</Trans>);
+                playErrorSound();
+                haptic("warning");
+                recordScan(attendee, attendeePublicId, "not_checked_in");
+                isProcessingRef.current = false;
+                return;
+            }
+
+            handleCheckOutAction(attendee, attendee.check_in.short_id, true);
+            isProcessingRef.current = false;
+            return;
         }
 
         if (attendee.check_in) {
@@ -341,7 +384,7 @@ export const useCheckInController = ({
 
         await handleCheckInAction(attendee, "check-in");
         isProcessingRef.current = false;
-    }, [attendees, checkInListShortId, allowOrdersAwaitingOfflinePaymentToCheckIn, checkInModalHandlers, handleCheckInAction, playErrorSound, recordScan]);
+    }, [attendees, scanAction, checkInListShortId, allowOrdersAwaitingOfflinePaymentToCheckIn, checkInModalHandlers, handleCheckInAction, handleCheckOutAction, playErrorSound, recordScan, haptic]);
 
     const processBarcode = useCallback((barcode: string) => {
         if (barcode.startsWith("A-") && barcode.length > 3) {
@@ -417,6 +460,8 @@ export const useCheckInController = ({
     return {
         scanMode,
         setScanMode,
+        scanAction,
+        setScanAction,
         isSoundOn,
         toggleSound: () => setIsSoundOn(!isSoundOn),
         pageHasFocus,

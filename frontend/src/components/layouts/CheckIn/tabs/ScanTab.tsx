@@ -1,15 +1,18 @@
 import {t, Trans} from "@lingui/macro";
-import {IconCamera, IconCheck, IconScan, IconVolume, IconVolumeOff, IconX} from "@tabler/icons-react";
+import {IconCamera, IconCheck, IconLogin, IconLogout, IconScan, IconVolume, IconVolumeOff, IconX} from "@tabler/icons-react";
 import {ActionIcon} from "@mantine/core";
 import {InlineCameraScanner} from "./InlineCameraScanner.tsx";
 import classes from "./ScanTab.module.scss";
 import {RecentScan} from "../types.ts";
 
 export type ScanMode = "usb" | "camera";
+export type ScanAction = "check-in" | "check-out";
 
 interface ScanTabProps {
     mode: ScanMode;
     onModeChange: (mode: ScanMode) => void;
+    action: ScanAction;
+    onActionChange: (action: ScanAction) => void;
     hidPageHasFocus: boolean;
     hidBuffer: string;
     isSoundOn: boolean;
@@ -32,6 +35,8 @@ const relativeTime = (timestamp: number) => {
 export const ScanTab = ({
                             mode,
                             onModeChange,
+                            action,
+                            onActionChange,
                             hidPageHasFocus,
                             hidBuffer,
                             isSoundOn,
@@ -42,7 +47,38 @@ export const ScanTab = ({
                         }: ScanTabProps) => {
     return (
         <div className={classes.wrap}>
-            <div className={classes.scanArea}>
+            <div className={classes.actionToggle} role="radiogroup" aria-label={t`Scan action`}>
+                <button
+                    type="button"
+                    role="radio"
+                    aria-checked={action === "check-in"}
+                    className={`${classes.actionBtn} ${action === "check-in" ? classes.actionCheckInActive : ""}`}
+                    onClick={() => onActionChange("check-in")}
+                    data-testid="check-in-scan-action-check-in"
+                >
+                    <IconLogin size={18}/>
+                    <span>{t`Check in`}</span>
+                </button>
+                <button
+                    type="button"
+                    role="radio"
+                    aria-checked={action === "check-out"}
+                    className={`${classes.actionBtn} ${action === "check-out" ? classes.actionCheckOutActive : ""}`}
+                    onClick={() => onActionChange("check-out")}
+                    data-testid="check-in-scan-action-check-out"
+                >
+                    <IconLogout size={18}/>
+                    <span>{t`Check out`}</span>
+                </button>
+            </div>
+
+            <div className={`${classes.scanArea} ${action === "check-out" ? classes.scanAreaCheckOut : ""}`}>
+                {action === "check-out" && (
+                    <div className={classes.checkOutBanner}>
+                        <IconLogout size={14}/>
+                        <span>{t`Check-out mode`}</span>
+                    </div>
+                )}
                 {mode === "camera" ? (
                     <InlineCameraScanner onAttendeeScanned={onAttendeeScanned}/>
                 ) : (
@@ -54,9 +90,11 @@ export const ScanTab = ({
                             </span>
                         </div>
                         <div className={classes.usbInstruction}>
-                            {hidPageHasFocus
-                                ? t`Scan a ticket to check in an attendee`
-                                : t`Tap this screen to resume scanning`}
+                            {!hidPageHasFocus
+                                ? t`Tap this screen to resume scanning`
+                                : action === "check-out"
+                                    ? t`Scan a ticket to check out an attendee`
+                                    : t`Scan a ticket to check in an attendee`}
                         </div>
                         <div className={classes.buffer}>
                             {hidBuffer
@@ -103,7 +141,7 @@ export const ScanTab = ({
             </div>
 
             <div className={classes.recentSection}>
-                <div className={classes.sectionHeader}>{t`Recent check-ins`}</div>
+                <div className={classes.sectionHeader}>{t`Recent scans`}</div>
                 {recentScans.length === 0 ? (
                     <div className={classes.empty}>
                         <Trans>Scanned tickets will appear here</Trans>
@@ -114,13 +152,15 @@ export const ScanTab = ({
                             <button
                                 type="button"
                                 key={scan.id}
-                                className={`${classes.recentItem} ${scan.status === "error" ? classes.recentError : ""} ${scan.status === "duplicate" ? classes.recentDuplicate : ""}`}
+                                className={`${classes.recentItem} ${scan.status === "error" ? classes.recentError : ""} ${scan.status === "duplicate" || scan.status === "not_checked_in" ? classes.recentDuplicate : ""}`}
                                 onClick={() => onOpenRecentScan?.(scan.code)}
                                 disabled={!onOpenRecentScan || !scan.code.startsWith("A-")}
                             >
                                 <div className={`${classes.indicator} ${classes[`indicator_${scan.status}`]}`}>
                                     {scan.status === "success" && <IconCheck size={14} stroke={3}/>}
                                     {scan.status === "duplicate" && <IconCheck size={14} stroke={3}/>}
+                                    {scan.status === "checked_out" && <IconLogout size={14} stroke={2.5}/>}
+                                    {scan.status === "not_checked_in" && <IconX size={14} stroke={3}/>}
                                     {scan.status === "error" && <IconX size={14} stroke={3}/>}
                                 </div>
                                 <div className={classes.recentMain}>
@@ -139,6 +179,12 @@ export const ScanTab = ({
                                 </div>
                                 {scan.status === "duplicate" && (
                                     <span className={classes.tagWarn}>{t`Already in`}</span>
+                                )}
+                                {scan.status === "checked_out" && (
+                                    <span className={classes.tagOut}>{t`Checked out`}</span>
+                                )}
+                                {scan.status === "not_checked_in" && (
+                                    <span className={classes.tagWarn}>{t`Not checked in`}</span>
                                 )}
                                 {scan.status === "error" && (
                                     <span className={classes.tagError}>{t`Failed`}</span>

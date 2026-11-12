@@ -46,6 +46,8 @@ export const ScanTab = ({boxOffice, session}: ScanTabProps) => {
                 <CheckInScanTab
                     mode={controller.scanMode}
                     onModeChange={controller.setScanMode}
+                    action={controller.scanAction}
+                    onActionChange={controller.setScanAction}
                     hidPageHasFocus={controller.pageHasFocus}
                     hidBuffer={controller.hidBuffer}
                     isSoundOn={controller.isSoundOn}

@@ -14,6 +14,23 @@ export class CheckInPage {
       .getByRole('button', { name: label });
   }
 
+  async openScanTab(): Promise<void> {
+    await this.navButton('Scan').click();
+  }
+
+  async switchToCheckOut(): Promise<void> {
+    await this.page.getByTestId('check-in-scan-action-check-out').click();
+  }
+
+  async scanWithUsbScanner(code: string): Promise<void> {
+    await this.page.keyboard.type(code);
+    await this.page.keyboard.press('Enter');
+  }
+
+  recentScan(publicId: string): Locator {
+    return this.page.getByRole('button').filter({ hasText: publicId });
+  }
+
   async openSearchTab(): Promise<void> {
     await this.navButton('Search').click();
   }
