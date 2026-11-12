@@ -1,10 +1,11 @@
 import {useEffect, useRef, useState} from "react";
 import QrScanner from "qr-scanner";
-import {useDebouncedValue} from "@mantine/hooks";
 import {t, Trans} from "@lingui/macro";
 import {Anchor, Button, Menu} from "@mantine/core";
 import {IconBulb, IconBulbOff, IconCameraRotate} from "@tabler/icons-react";
 import classes from "./InlineCameraScanner.module.scss";
+
+const RESCAN_AFTER_ABSENT_MS = 1500;
 
 interface Props {
     onAttendeeScanned: (attendeePublicId: string) => void;
@@ -17,24 +18,36 @@ export const InlineCameraScanner = ({onAttendeeScanned}: Props) => {
     const [isFlashAvailable, setIsFlashAvailable] = useState(false);
     const [isFlashOn, setIsFlashOn] = useState(false);
     const [cameraList, setCameraList] = useState<QrScanner.Camera[]>();
-    const [processed, setProcessed] = useState<string[]>([]);
-    const latestProcessedRef = useRef<string[]>([]);
-
-    const [currentId, setCurrentId] = useState<string | null>(null);
-    const [debouncedId] = useDebouncedValue(currentId, 1000);
+    const onAttendeeScannedRef = useRef(onAttendeeScanned);
+    const lastSeenAtRef = useRef<Map<string, number>>(new Map());
 
     useEffect(() => {
-        latestProcessedRef.current = processed;
-    }, [processed]);
+        onAttendeeScannedRef.current = onAttendeeScanned;
+    }, [onAttendeeScanned]);
+
+    const handleDecode = (code: string) => {
+        const now = Date.now();
+        const lastSeenAt = lastSeenAtRef.current.get(code);
+        lastSeenAtRef.current.set(code, now);
+        if (lastSeenAt !== undefined && now - lastSeenAt < RESCAN_AFTER_ABSENT_MS) {
+            return;
+        }
+        onAttendeeScannedRef.current(code);
+    };
 
     const startScanner = async () => {
         try {
-            await navigator.mediaDevices.getUserMedia({video: true});
+            const permissionStream = await navigator.mediaDevices.getUserMedia({video: true});
+            permissionStream.getTracks().forEach(track => track.stop());
             if (videoRef.current) {
                 qrScannerRef.current = new QrScanner(videoRef.current, (result) => {
-                    setCurrentId(result.data);
+                    const code = result.data.trim();
+                    if (code) {
+                        handleDecode(code);
+                    }
                 }, {
-                    maxScansPerSecond: 1,
+                    maxScansPerSecond: 15,
+                    preferredCamera: "environment",
                     highlightScanRegion: false,
                     highlightCodeOutline: false,
                 });
@@ -68,15 +81,6 @@ export const InlineCameraScanner = ({onAttendeeScanned}: Props) => {
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-
-    useEffect(() => {
-        if (!debouncedId) return;
-        if (latestProcessedRef.current.includes(debouncedId)) return;
-        onAttendeeScanned(debouncedId);
-        setProcessed(prev => [...prev, debouncedId]);
-        setCurrentId(null);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [debouncedId]);
 
     const handleFlashToggle = () => {
         if (!qrScannerRef.current || !isFlashAvailable) return;

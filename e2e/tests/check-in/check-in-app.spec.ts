@@ -88,6 +88,42 @@ test.describe('public check-in app', () => {
     await expect(checkIn.progressChip()).toHaveText('0/2');
   });
 
+  test('a staff member scans tickets back to back and every scan is checked in', async ({ page, api, publicApi, account }) => {
+    const { order, list } = await seedCheckInList(api, publicApi, account.organizerId);
+    const [first, second] = order.attendees;
+
+    const checkIn = new CheckInPage(page);
+    await checkIn.goto(list.short_id);
+    await checkIn.openScanTab();
+
+    await checkIn.scanWithUsbScanner(first.publicId);
+    await checkIn.scanWithUsbScanner(second.publicId);
+
+    await expect(checkIn.recentScan(first.publicId)).toBeVisible();
+    await expect(checkIn.recentScan(second.publicId)).toBeVisible();
+    await expect(checkIn.recentScan(first.publicId)).not.toContainText('Failed');
+    await expect(checkIn.recentScan(second.publicId)).not.toContainText('Failed');
+    await expect(checkIn.progressChip()).toHaveText('2/2');
+  });
+
+  test('a staff member scans a ticket in, then scans the same ticket out', async ({ page, api, publicApi, account }) => {
+    const { order, list } = await seedCheckInList(api, publicApi, account.organizerId);
+    const attendee = order.attendees[0];
+
+    const checkIn = new CheckInPage(page);
+    await checkIn.goto(list.short_id);
+    await checkIn.openScanTab();
+
+    await checkIn.scanWithUsbScanner(attendee.publicId);
+    await expect(checkIn.progressChip()).toHaveText('1/2');
+
+    await checkIn.switchToCheckOut();
+    await checkIn.scanWithUsbScanner(attendee.publicId);
+
+    await expect(checkIn.recentScan(attendee.publicId).first()).toContainText('Checked out');
+    await expect(checkIn.progressChip()).toHaveText('0/2');
+  });
+
   test('the stats tab reflects attendance totals and check-ins', async ({ page, api, publicApi, account }) => {
     const { order, list } = await seedCheckInList(api, publicApi, account.organizerId);
     const attendee = order.attendees[0];

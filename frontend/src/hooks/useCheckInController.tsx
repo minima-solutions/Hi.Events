@@ -15,6 +15,8 @@ import {ScanAction, ScanMode} from "../components/layouts/CheckIn/tabs/ScanTab.t
 import {RecentScan, RecentScanStatus} from "../components/layouts/CheckIn/types.ts";
 
 const MAX_RECENT_SCANS = 20;
+const DUPLICATE_SCAN_WINDOW_MS = 3000;
+const USB_BARCODE_IDLE_MS = 100;
 
 interface UseCheckInControllerOptions {
     checkInListShortId: string | undefined;
@@ -50,9 +52,9 @@ export const useCheckInController = ({
     const [pageHasFocus, setPageHasFocus] = useState(true);
 
     const barcodeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-    const isProcessingRef = useRef(false);
-    const processedBarcodesRef = useRef<Set<string>>(new Set());
-    const lastScanTimeRef = useRef<number>(0);
+    const barcodeBufferRef = useRef("");
+    const recentScanAtRef = useRef<Map<string, number>>(new Map());
+    const scanQueueRef = useRef<Promise<void>>(Promise.resolve());
     const scanSuccessAudioRef = useRef<HTMLAudioElement | null>(null);
     const scanErrorAudioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -128,7 +130,7 @@ export const useCheckInController = ({
         if (!isSsr()) {
             localStorage.setItem("checkInScanAction", scanAction);
         }
-        processedBarcodesRef.current.clear();
+        recentScanAtRef.current.clear();
     }, [scanAction]);
 
     const playSuccessSound = useCallback(() => {
@@ -161,108 +163,104 @@ export const useCheckInController = ({
         pushRecentScan({name, code, status, seatLabel: attendee?.seat_label ?? null});
     }, [pushRecentScan]);
 
-    const undoCheckIn = useCallback((attendee: Attendee, checkInShortId: string) => {
-        deleteCheckInMutation.mutate({
-            checkInListShortId: checkInListShortId,
-            checkInShortId: checkInShortId,
-        }, {
-            onSuccess: () => {
-                showSuccess(<Trans>Check-in for {attendee.first_name} was undone</Trans>);
-                playSuccessSound();
-                haptic("tap");
-            },
-            onError: () => {
-                showError(t`Unable to undo check-in`);
-                playErrorSound();
-                haptic("error");
-            },
-        });
+    const undoCheckIn = useCallback(async (attendee: Attendee, checkInShortId: string) => {
+        try {
+            await deleteCheckInMutation.mutateAsync({
+                checkInListShortId: checkInListShortId,
+                checkInShortId: checkInShortId,
+            });
+            showSuccess(<Trans>Check-in for {attendee.first_name} was undone</Trans>);
+            playSuccessSound();
+            haptic("tap");
+        } catch {
+            showError(t`Unable to undo check-in`);
+            playErrorSound();
+            haptic("error");
+        }
     }, [deleteCheckInMutation, checkInListShortId, playSuccessSound, playErrorSound, haptic]);
 
-    const handleCheckInAction = (attendee: Attendee, action: "check-in" | "check-in-and-mark-order-as-paid") => {
-        checkInMutation.mutate({
-            checkInListShortId: checkInListShortId,
-            attendeePublicId: attendee.public_id,
-            action: action,
-        }, {
-            onSuccess: (response) => {
-                const {errors, data} = response;
-                if (errors && errors[attendee.public_id]) {
-                    showError(errors[attendee.public_id]);
-                    playErrorSound();
-                    haptic("error");
-                    recordScan(attendee, attendee.public_id, "error");
-                    return;
-                }
-                playSuccessSound();
-                haptic("success");
-                recordScan(attendee, attendee.public_id, "success");
-                checkInModalHandlers.close();
-                setSelectedAttendee(null);
+    const handleCheckInAction = async (attendee: Attendee, action: "check-in" | "check-in-and-mark-order-as-paid") => {
+        try {
+            const {errors, data} = await checkInMutation.mutateAsync({
+                checkInListShortId: checkInListShortId,
+                attendeePublicId: attendee.public_id,
+                action: action,
+            });
 
-                const createdCheckIn = data?.find((c: any) => c.attendee_id === attendee.id);
-                const seatLabel = attendee.seat_label;
-                const message = seatLabel
-                    ? <Trans>{attendee.first_name} <b>checked in</b> · {seatLabel}</Trans>
-                    : <Trans>{attendee.first_name} <b>checked in</b></Trans>;
-
-                if (createdCheckIn) {
-                    showSuccessWithUndo(
-                        message,
-                        () => undoCheckIn(attendee, String(createdCheckIn.short_id)),
-                        {undoLabel: t`Undo`},
-                    );
-                } else {
-                    showSuccess(message);
-                }
-            },
-            onError: (error) => {
+            if (errors && errors[attendee.public_id]) {
+                showError(errors[attendee.public_id]);
                 playErrorSound();
                 haptic("error");
                 recordScan(attendee, attendee.public_id, "error");
-                if (!networkStatus.online) {
-                    showError(t`You are offline`);
-                    return;
-                }
+                return;
+            }
+            playSuccessSound();
+            haptic("success");
+            recordScan(attendee, attendee.public_id, "success");
+            checkInModalHandlers.close();
+            setSelectedAttendee(null);
 
-                if (error instanceof AxiosError) {
-                    showError(error?.response?.data?.message || t`Unable to check in attendee`);
-                }
-            },
-        });
+            const createdCheckIn = data?.find((c: any) => c.attendee_id === attendee.id);
+            const seatLabel = attendee.seat_label;
+            const message = seatLabel
+                ? <Trans>{attendee.first_name} <b>checked in</b> · {seatLabel}</Trans>
+                : <Trans>{attendee.first_name} <b>checked in</b></Trans>;
+
+            if (createdCheckIn) {
+                showSuccessWithUndo(
+                    message,
+                    () => undoCheckIn(attendee, String(createdCheckIn.short_id)),
+                    {undoLabel: t`Undo`},
+                );
+            } else {
+                showSuccess(message);
+            }
+        } catch (error) {
+            playErrorSound();
+            haptic("error");
+            recordScan(attendee, attendee.public_id, "error");
+            if (!networkStatus.online) {
+                showError(t`You are offline`);
+                return;
+            }
+
+            if (error instanceof AxiosError) {
+                showError(error?.response?.data?.message || t`Unable to check in attendee`);
+            } else {
+                showError(t`Unable to check in attendee`);
+            }
+        }
     };
 
-    const handleCheckOutAction = (attendee: Attendee, checkInShortId: IdParam, fromScan: boolean) => {
-        deleteCheckInMutation.mutate({
-            checkInListShortId: checkInListShortId,
-            checkInShortId: checkInShortId,
-        }, {
-            onSuccess: () => {
-                showSuccess(<Trans>{attendee.first_name} <b>checked out</b> successfully</Trans>);
-                playSuccessSound();
-                haptic(fromScan ? "success" : "tap");
-                if (fromScan) {
-                    recordScan(attendee, attendee.public_id, "checked_out");
-                }
-            },
-            onError: (error) => {
-                playErrorSound();
-                haptic("error");
-                if (fromScan) {
-                    recordScan(attendee, attendee.public_id, "error");
-                }
-                if (!networkStatus.online) {
-                    showError(t`You are offline`);
-                    return;
-                }
+    const handleCheckOutAction = async (attendee: Attendee, checkInShortId: IdParam, fromScan: boolean) => {
+        try {
+            await deleteCheckInMutation.mutateAsync({
+                checkInListShortId: checkInListShortId,
+                checkInShortId: checkInShortId,
+            });
+            showSuccess(<Trans>{attendee.first_name} <b>checked out</b> successfully</Trans>);
+            playSuccessSound();
+            haptic(fromScan ? "success" : "tap");
+            if (fromScan) {
+                recordScan(attendee, attendee.public_id, "checked_out");
+            }
+        } catch (error) {
+            playErrorSound();
+            haptic("error");
+            if (fromScan) {
+                recordScan(attendee, attendee.public_id, "error");
+            }
+            if (!networkStatus.online) {
+                showError(t`You are offline`);
+                return;
+            }
 
-                if (error instanceof AxiosError) {
-                    showError(error?.response?.data?.message || t`Unable to check out attendee`);
-                } else {
-                    showError(t`Unable to check out attendee`);
-                }
-            },
-        });
+            if (error instanceof AxiosError) {
+                showError(error?.response?.data?.message || t`Unable to check out attendee`);
+            } else {
+                showError(t`Unable to check out attendee`);
+            }
+        }
     };
 
     const handleCheckInToggle = (attendee: Attendee) => {
@@ -287,63 +285,50 @@ export const useCheckInController = ({
         handleCheckInAction(attendee, "check-in");
     };
 
-    const handleQrCheckIn = useCallback(async (attendeePublicId: string) => {
-        if (isProcessingRef.current) {
-            return;
-        }
-
+    const processScan = async (attendeePublicId: string) => {
         const now = Date.now();
-        if (processedBarcodesRef.current.has(attendeePublicId) &&
-            now - lastScanTimeRef.current < 3000) {
+        const lastScannedAt = recentScanAtRef.current.get(attendeePublicId);
+        if (lastScannedAt !== undefined && now - lastScannedAt < DUPLICATE_SCAN_WINDOW_MS) {
             showError(t`This ticket was just scanned. Please wait before scanning again.`);
             playErrorSound();
             return;
         }
+        recentScanAtRef.current.set(attendeePublicId, now);
 
-        isProcessingRef.current = true;
-        lastScanTimeRef.current = now;
-
-        let attendee = attendees?.find(a => a.public_id === attendeePublicId);
         const isCheckOut = scanAction === "check-out";
+        let attendee = attendees?.find(a => a.public_id === attendeePublicId);
 
         if (!attendee || (isCheckOut && !attendee.check_in)) {
             try {
                 const {data} = await publicCheckInClient.getCheckInListAttendee(checkInListShortId, attendeePublicId);
                 attendee = data;
             } catch (error) {
+                recentScanAtRef.current.delete(attendeePublicId);
                 showError(t`Unable to fetch attendee`);
                 playErrorSound();
                 recordScan(null, attendeePublicId, "error");
-                isProcessingRef.current = false;
                 return;
             }
 
             if (!attendee) {
+                recentScanAtRef.current.delete(attendeePublicId);
                 showError(t`Attendee not found`);
                 playErrorSound();
                 recordScan(null, attendeePublicId, "error");
-                isProcessingRef.current = false;
                 return;
             }
         }
 
         if (isCheckOut) {
-            processedBarcodesRef.current.add(attendeePublicId);
-            setTimeout(() => {
-                processedBarcodesRef.current.delete(attendeePublicId);
-            }, 10000);
-
             if (!attendee.check_in) {
                 showError(<Trans>{attendee.first_name} {attendee.last_name} is not checked in</Trans>);
                 playErrorSound();
                 haptic("warning");
                 recordScan(attendee, attendeePublicId, "not_checked_in");
-                isProcessingRef.current = false;
                 return;
             }
 
-            handleCheckOutAction(attendee, attendee.check_in.short_id, true);
-            isProcessingRef.current = false;
+            await handleCheckOutAction(attendee, attendee.check_in.short_id, true);
             return;
         }
 
@@ -355,17 +340,15 @@ export const useCheckInController = ({
             playErrorSound();
             haptic("warning");
             recordScan(attendee, attendeePublicId, "duplicate");
-            processedBarcodesRef.current.add(attendeePublicId);
-            isProcessingRef.current = false;
             return;
         }
 
         const isAttendeeAwaitingPayment = attendee.status === "AWAITING_PAYMENT";
 
         if (allowOrdersAwaitingOfflinePaymentToCheckIn && isAttendeeAwaitingPayment) {
+            recentScanAtRef.current.delete(attendeePublicId);
             setSelectedAttendee(attendee);
             checkInModalHandlers.open();
-            isProcessingRef.current = false;
             return;
         }
 
@@ -373,18 +356,20 @@ export const useCheckInController = ({
             showError(t`You cannot check in attendees with unpaid orders. This setting can be changed in the event settings.`);
             playErrorSound();
             recordScan(attendee, attendeePublicId, "error");
-            isProcessingRef.current = false;
             return;
         }
 
-        processedBarcodesRef.current.add(attendeePublicId);
-        setTimeout(() => {
-            processedBarcodesRef.current.delete(attendeePublicId);
-        }, 10000);
-
         await handleCheckInAction(attendee, "check-in");
-        isProcessingRef.current = false;
-    }, [attendees, scanAction, checkInListShortId, allowOrdersAwaitingOfflinePaymentToCheckIn, checkInModalHandlers, handleCheckInAction, handleCheckOutAction, playErrorSound, recordScan, haptic]);
+    };
+
+    const processScanRef = useRef(processScan);
+    processScanRef.current = processScan;
+
+    const handleQrCheckIn = useCallback((attendeePublicId: string) => {
+        scanQueueRef.current = scanQueueRef.current
+            .then(() => processScanRef.current(attendeePublicId))
+            .catch(() => undefined);
+    }, []);
 
     const processBarcode = useCallback((barcode: string) => {
         if (barcode.startsWith("A-") && barcode.length > 3) {
@@ -407,10 +392,28 @@ export const useCheckInController = ({
 
     useEffect(() => {
         const usbListeningActive = hidListeningEnabled && scanMode === "usb";
+        barcodeBufferRef.current = "";
+        setCurrentBarcode("");
         if (!usbListeningActive) {
-            setCurrentBarcode("");
             return;
         }
+
+        const clearBarcodeTimeout = () => {
+            if (barcodeTimeoutRef.current) {
+                clearTimeout(barcodeTimeoutRef.current);
+                barcodeTimeoutRef.current = null;
+            }
+        };
+
+        const flushBarcode = () => {
+            clearBarcodeTimeout();
+            const barcode = barcodeBufferRef.current.trim();
+            barcodeBufferRef.current = "";
+            setCurrentBarcode("");
+            if (barcode) {
+                processBarcode(barcode);
+            }
+        };
 
         const handleKeyPress = (e: KeyboardEvent) => {
             if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
@@ -418,39 +421,27 @@ export const useCheckInController = ({
             }
 
             if (e.key === "Enter") {
-                if (currentBarcode.length > 0) {
-                    processBarcode(currentBarcode);
-                    setCurrentBarcode("");
-                }
-            } else if (e.key.length === 1) {
-                setCurrentBarcode(prev => {
-                    const newBarcode = prev + e.key;
-
-                    if (barcodeTimeoutRef.current) {
-                        clearTimeout(barcodeTimeoutRef.current);
-                    }
-
-                    barcodeTimeoutRef.current = setTimeout(() => {
-                        if (newBarcode.startsWith("A-") && newBarcode.length > 3) {
-                            processBarcode(newBarcode);
-                        }
-                        setCurrentBarcode("");
-                    }, 100);
-
-                    return newBarcode;
-                });
+                flushBarcode();
+                return;
             }
+
+            if (e.key.length !== 1) {
+                return;
+            }
+
+            barcodeBufferRef.current += e.key;
+            setCurrentBarcode(barcodeBufferRef.current);
+            clearBarcodeTimeout();
+            barcodeTimeoutRef.current = setTimeout(flushBarcode, USB_BARCODE_IDLE_MS);
         };
 
         window.addEventListener("keypress", handleKeyPress);
 
         return () => {
             window.removeEventListener("keypress", handleKeyPress);
-            if (barcodeTimeoutRef.current) {
-                clearTimeout(barcodeTimeoutRef.current);
-            }
+            clearBarcodeTimeout();
         };
-    }, [hidListeningEnabled, scanMode, currentBarcode, processBarcode]);
+    }, [hidListeningEnabled, scanMode, processBarcode]);
 
     const closeCheckInModal = () => {
         checkInModalHandlers.close();
