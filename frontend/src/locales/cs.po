@@ -52,27 +52,31 @@ msgstr "{0} (výchozí)"
 msgid "{0} {1}"
 msgstr "{0} {1}"
 
-#: src/hooks/useCheckInController.tsx:354
+#: src/hooks/useCheckInController.tsx:347
 msgid "{0} {1} is already checked in"
 msgstr "{0} {1} je již odbaven/a"
 
-#: src/hooks/useCheckInController.tsx:353
+#: src/hooks/useCheckInController.tsx:346
 msgid "{0} {1} is already checked in · {seatLabel}"
 msgstr "{0} {1} je již odbaven/a · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:337
+#: src/hooks/useCheckInController.tsx:331
+msgid "{0} {1} is already checked out"
+msgstr "{0} {1} je již odhlášen"
+
+#: src/hooks/useCheckInController.tsx:332
 msgid "{0} {1} is not checked in"
 msgstr "{0} {1} není odbaven"
 
-#: src/hooks/useCheckInController.tsx:207
+#: src/hooks/useCheckInController.tsx:220
 msgid "{0} <0>checked in</0>"
 msgstr "{0} <0>odbaven/a</0>"
 
-#: src/hooks/useCheckInController.tsx:206
+#: src/hooks/useCheckInController.tsx:219
 msgid "{0} <0>checked in</0> · {seatLabel}"
 msgstr "{0} <0>odbaven/a</0> · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:241
+#: src/hooks/useCheckInController.tsx:255
 msgid "{0} <0>checked out</0> successfully"
 msgstr "{0} byl/a úspěšně <0>odhlášen/a</0>"
 
@@ -2859,7 +2863,7 @@ msgstr "Jméno a e-mail účastníka"
 msgid "Attendee names appear on the printout. Handle it accordingly."
 msgstr "Na výtisku jsou uvedena jména účastníků. Zacházejte s ním podle toho."
 
-#: src/hooks/useCheckInController.tsx:322
+#: src/hooks/useCheckInController.tsx:321
 msgid "Attendee not found"
 msgstr "Účastník nenalezen"
 
@@ -3566,12 +3570,12 @@ msgstr "Kalendář"
 msgid "Call-to-Action Button"
 msgstr "Tlačítko výzvy k akci"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:153
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:157
 #: src/components/layouts/CheckIn/tabs/ScanTab.tsx:128
 msgid "Camera"
 msgstr "Kamera"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:110
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:114
 msgid "Camera permission was denied. <0>Request permission</0> again, or grant this page camera access in your browser settings."
 msgstr "Přístup ke kameře byl zamítnut. <0>Požádejte o oprávnění</0> znovu, nebo povolte této stránce přístup ke kameře v nastavení prohlížeče."
 
@@ -4120,7 +4124,7 @@ msgstr "Odbavení vytvořeno"
 msgid "Check-in Deleted"
 msgstr "Odbavení smazáno"
 
-#: src/hooks/useCheckInController.tsx:170
+#: src/hooks/useCheckInController.tsx:184
 msgid "Check-in for {0} was undone"
 msgstr "Odbavení účastníka {0} bylo vráceno zpět"
 
@@ -9003,11 +9007,11 @@ msgstr "Označené události"
 msgid "Flagged Events"
 msgstr "Označené události"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:140
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:144
 msgid "Flash off"
 msgstr "Blesk vypnutý"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:140
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:144
 msgid "Flash on"
 msgstr "Blesk zapnutý"
 
@@ -17050,7 +17054,7 @@ msgstr "Vyberte alespoň jednoho uživatele"
 msgid "Select attendee group"
 msgstr "Vyberte skupinu účastníků"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:157
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:161
 msgid "Select camera"
 msgstr "Vybrat kameru"
 
@@ -20215,10 +20219,6 @@ msgstr "Toto místo je vyhrazeno pro osoby na invalidním vozíku a hosty se zvl
 msgid "This ticket is no longer valid"
 msgstr "Tato vstupenka již není platná"
 
-#: src/hooks/useCheckInController.tsx:298
-msgid "This ticket was just scanned. Please wait before scanning again."
-msgstr "Tato vstupenka byla právě naskenována. Před dalším skenováním prosím počkejte."
-
 #: src/components/routes/event/OccurrencesTab/PriceOverrideForm/index.tsx:328
 msgid "This tier's quantity is shared across all dates"
 msgstr "Množství této úrovně je sdílené napříč všemi termíny"
@@ -20975,12 +20975,13 @@ msgstr "Čtečku se nepodařilo změnit"
 msgid "Unable to check in"
 msgstr "Odbavení se nezdařilo"
 
-#: src/hooks/useCheckInController.tsx:229
+#: src/hooks/useCheckInController.tsx:241
+#: src/hooks/useCheckInController.tsx:243
 msgid "Unable to check in attendee"
 msgstr "Účastníka se nepodařilo odbavit"
 
-#: src/hooks/useCheckInController.tsx:260
-#: src/hooks/useCheckInController.tsx:262
+#: src/hooks/useCheckInController.tsx:273
+#: src/hooks/useCheckInController.tsx:275
 msgid "Unable to check out attendee"
 msgstr "Účastníka se nepodařilo odhlásit"
 
@@ -21059,7 +21060,7 @@ msgstr "Prodej se nepodařilo zahájit. Zkuste to prosím znovu."
 msgid "Unable to switch date"
 msgstr "Termín se nepodařilo přepnout"
 
-#: src/hooks/useCheckInController.tsx:175
+#: src/hooks/useCheckInController.tsx:188
 msgid "Unable to undo check-in"
 msgstr "Odbavení nelze vrátit zpět"
 
@@ -21093,7 +21094,7 @@ msgstr "V části „Token configuration“ přidejte do ID tokenu volitelné cl
 
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:299
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:300
-#: src/hooks/useCheckInController.tsx:213
+#: src/hooks/useCheckInController.tsx:226
 msgid "Undo"
 msgstr "Zpět"
 
@@ -22769,8 +22770,8 @@ msgstr "Vystupujete jako <0>{0}</0> ({1})"
 msgid "You are issuing a partial refund. The customer will be refunded {0} {1}."
 msgstr "Provádíte částečné vrácení peněz. Zákazníkovi bude vráceno {0} {1}."
 
-#: src/hooks/useCheckInController.tsx:224
-#: src/hooks/useCheckInController.tsx:255
+#: src/hooks/useCheckInController.tsx:236
+#: src/hooks/useCheckInController.tsx:268
 msgid "You are offline"
 msgstr "Jste offline"
 
@@ -22846,8 +22847,8 @@ msgstr "Posledního aktivního organizátora na svém účtu nelze archivovat."
 msgid "You cannot change the product type as there are attendees associated with this product."
 msgstr "Typ produktu nelze změnit, protože s tímto produktem jsou spojeni účastníci."
 
-#: src/hooks/useCheckInController.tsx:283
-#: src/hooks/useCheckInController.tsx:373
+#: src/hooks/useCheckInController.tsx:295
+#: src/hooks/useCheckInController.tsx:363
 msgid "You cannot check in attendees with unpaid orders. This setting can be changed in the event settings."
 msgstr "Účastníky s nezaplacenými objednávkami nelze odbavit. Toto nastavení lze změnit v nastavení události."
 
@@ -23394,7 +23395,7 @@ msgstr "Vaše záložní kódy a důvěryhodná zařízení budou odebrána."
 msgid "Your refund is processing."
 msgstr "Vaše vrácení peněz se zpracovává."
 
-#: src/hooks/useCheckInController.tsx:83
+#: src/hooks/useCheckInController.tsx:97
 msgid "Your saved date filter is no longer available — showing all dates."
 msgstr "Váš uložený filtr termínů již není k dispozici — zobrazujeme všechny termíny."
 

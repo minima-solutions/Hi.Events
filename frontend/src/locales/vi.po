@@ -52,27 +52,31 @@ msgstr "{0} (mặc định)"
 msgid "{0} {1}"
 msgstr "{0} {1}"
 
-#: src/hooks/useCheckInController.tsx:354
+#: src/hooks/useCheckInController.tsx:347
 msgid "{0} {1} is already checked in"
 msgstr "{0} {1} đã check-in"
 
-#: src/hooks/useCheckInController.tsx:353
+#: src/hooks/useCheckInController.tsx:346
 msgid "{0} {1} is already checked in · {seatLabel}"
 msgstr "{0} {1} đã check-in · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:337
+#: src/hooks/useCheckInController.tsx:331
+msgid "{0} {1} is already checked out"
+msgstr "{0} {1} đã check-out rồi"
+
+#: src/hooks/useCheckInController.tsx:332
 msgid "{0} {1} is not checked in"
 msgstr "{0} {1} chưa check-in"
 
-#: src/hooks/useCheckInController.tsx:207
+#: src/hooks/useCheckInController.tsx:220
 msgid "{0} <0>checked in</0>"
 msgstr "{0} <0>đã check-in</0>"
 
-#: src/hooks/useCheckInController.tsx:206
+#: src/hooks/useCheckInController.tsx:219
 msgid "{0} <0>checked in</0> · {seatLabel}"
 msgstr "{0} <0>đã check-in</0> · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:241
+#: src/hooks/useCheckInController.tsx:255
 msgid "{0} <0>checked out</0> successfully"
 msgstr "{0} <0>checked out</0> thành công"
 
@@ -2859,7 +2863,7 @@ msgstr "Tên và email người tham dự"
 msgid "Attendee names appear on the printout. Handle it accordingly."
 msgstr "Tên người tham dự xuất hiện trên bản in. Hãy xử lý cẩn thận."
 
-#: src/hooks/useCheckInController.tsx:322
+#: src/hooks/useCheckInController.tsx:321
 msgid "Attendee not found"
 msgstr "Không tìm thấy người tham dự"
 
@@ -3566,12 +3570,12 @@ msgstr "Lịch"
 msgid "Call-to-Action Button"
 msgstr "Nút hành động"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:153
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:157
 #: src/components/layouts/CheckIn/tabs/ScanTab.tsx:128
 msgid "Camera"
 msgstr "Máy ảnh"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:110
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:114
 msgid "Camera permission was denied. <0>Request permission</0> again, or grant this page camera access in your browser settings."
 msgstr "Quyền truy cập máy ảnh đã bị từ chối. <0>Yêu cầu quyền</0> lại, hoặc cấp quyền máy ảnh cho trang này trong cài đặt trình duyệt."
 
@@ -4120,7 +4124,7 @@ msgstr "Check-in đã được tạo"
 msgid "Check-in Deleted"
 msgstr "Check-in đã bị xóa"
 
-#: src/hooks/useCheckInController.tsx:170
+#: src/hooks/useCheckInController.tsx:184
 msgid "Check-in for {0} was undone"
 msgstr "Đã hoàn tác check-in cho {0}"
 
@@ -9003,11 +9007,11 @@ msgstr "Sự kiện bị gắn cờ"
 msgid "Flagged Events"
 msgstr "Sự kiện bị gắn cờ"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:140
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:144
 msgid "Flash off"
 msgstr "Tắt đèn flash"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:140
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:144
 msgid "Flash on"
 msgstr "Bật đèn flash"
 
@@ -17050,7 +17054,7 @@ msgstr "Chọn ít nhất một người dùng"
 msgid "Select attendee group"
 msgstr "Chọn nhóm người tham dự"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:157
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:161
 msgid "Select camera"
 msgstr "Chọn máy ảnh"
 
@@ -20215,10 +20219,6 @@ msgstr "Vị trí này được dành riêng cho người dùng xe lăn và khá
 msgid "This ticket is no longer valid"
 msgstr "Vé này không còn hiệu lực"
 
-#: src/hooks/useCheckInController.tsx:298
-msgid "This ticket was just scanned. Please wait before scanning again."
-msgstr "Vé này vừa được quét. Vui lòng chờ trước khi quét lại."
-
 #: src/components/routes/event/OccurrencesTab/PriceOverrideForm/index.tsx:328
 msgid "This tier's quantity is shared across all dates"
 msgstr "Số lượng của bậc này được chia sẻ cho tất cả các ngày"
@@ -20975,12 +20975,13 @@ msgstr "Không thể đổi máy đọc"
 msgid "Unable to check in"
 msgstr "Không thể check-in"
 
-#: src/hooks/useCheckInController.tsx:229
+#: src/hooks/useCheckInController.tsx:241
+#: src/hooks/useCheckInController.tsx:243
 msgid "Unable to check in attendee"
 msgstr "Không thể kiểm tra người tham dự"
 
-#: src/hooks/useCheckInController.tsx:260
-#: src/hooks/useCheckInController.tsx:262
+#: src/hooks/useCheckInController.tsx:273
+#: src/hooks/useCheckInController.tsx:275
 msgid "Unable to check out attendee"
 msgstr "Không thể kiểm tra người tham dự"
 
@@ -21059,7 +21060,7 @@ msgstr "Không thể bắt đầu giao dịch. Vui lòng thử lại."
 msgid "Unable to switch date"
 msgstr "Không thể chuyển ngày"
 
-#: src/hooks/useCheckInController.tsx:175
+#: src/hooks/useCheckInController.tsx:188
 msgid "Unable to undo check-in"
 msgstr "Không thể hoàn tác check-in"
 
@@ -21093,7 +21094,7 @@ msgstr "Trong \"Token configuration\", hãy thêm các claim tùy chọn email v
 
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:299
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:300
-#: src/hooks/useCheckInController.tsx:213
+#: src/hooks/useCheckInController.tsx:226
 msgid "Undo"
 msgstr "Hoàn tác"
 
@@ -22769,8 +22770,8 @@ msgstr "Bạn đang mạo danh <0>{0}</0> ({1})"
 msgid "You are issuing a partial refund. The customer will be refunded {0} {1}."
 msgstr "Bạn đang thực hiện hoàn tiền một phần. Khách hàng sẽ được hoàn lại {0} {1}."
 
-#: src/hooks/useCheckInController.tsx:224
-#: src/hooks/useCheckInController.tsx:255
+#: src/hooks/useCheckInController.tsx:236
+#: src/hooks/useCheckInController.tsx:268
 msgid "You are offline"
 msgstr "Bạn đang ngoại tuyến"
 
@@ -22846,8 +22847,8 @@ msgstr "Bạn không thể lưu trữ ban tổ chức đang hoạt động cuố
 msgid "You cannot change the product type as there are attendees associated with this product."
 msgstr "Bạn không thể thay đổi loại sản phẩm vì có những người tham dự liên quan đến sản phẩm này."
 
-#: src/hooks/useCheckInController.tsx:283
-#: src/hooks/useCheckInController.tsx:373
+#: src/hooks/useCheckInController.tsx:295
+#: src/hooks/useCheckInController.tsx:363
 msgid "You cannot check in attendees with unpaid orders. This setting can be changed in the event settings."
 msgstr "Bạn không thể xác nhận người tham dự với các đơn hàng không được thanh toán. Cài đặt này có thể được thay đổi ở phần cài đặt sự kiện."
 
@@ -23394,7 +23395,7 @@ msgstr "Mã khôi phục và thiết bị tin cậy của bạn sẽ bị xóa."
 msgid "Your refund is processing."
 msgstr "Hoàn lại tiền của bạn đang xử lý."
 
-#: src/hooks/useCheckInController.tsx:83
+#: src/hooks/useCheckInController.tsx:97
 msgid "Your saved date filter is no longer available — showing all dates."
 msgstr "Bộ lọc ngày đã lưu của bạn không còn khả dụng — đang hiển thị tất cả các ngày."
 

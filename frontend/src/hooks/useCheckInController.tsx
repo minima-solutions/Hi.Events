@@ -1,13 +1,25 @@
 import {useCallback, useEffect, useRef, useState} from "react";
 import {useDebouncedValue, useDisclosure, useNetwork} from "@mantine/hooks";
+import {useQueryClient} from "@tanstack/react-query";
 import {AxiosError} from "axios";
 import {t, Trans} from "@lingui/macro";
-import {Attendee, CheckInList, EventType, IdParam, QueryFilterOperator, QueryFilters} from "../types.ts";
+import {
+    Attendee,
+    CheckInList,
+    EventType,
+    GenericPaginatedResponse,
+    IdParam,
+    QueryFilterOperator,
+    QueryFilters,
+} from "../types.ts";
 import {showError, showInfo, showSuccess, showSuccessWithUndo} from "../utilites/notifications.tsx";
 import {isSsr} from "../utilites/helpers.ts";
 import {useHaptics} from "./useHaptics.ts";
 import {useCheckInOccurrenceFilter} from "./useCheckInOccurrenceFilter.ts";
-import {useGetCheckInListAttendees} from "../queries/useGetCheckInListAttendeesPublic.ts";
+import {
+    GET_CHECK_IN_LIST_ATTENDEES_PUBLIC_QUERY_KEY,
+    useGetCheckInListAttendees,
+} from "../queries/useGetCheckInListAttendeesPublic.ts";
 import {useCreateCheckInPublic} from "../mutations/useCreateCheckInPublic.ts";
 import {useDeleteCheckInPublic} from "../mutations/useDeleteCheckInPublic.ts";
 import {publicCheckInClient} from "../api/check-in.client.ts";
@@ -15,7 +27,6 @@ import {ScanAction, ScanMode} from "../components/layouts/CheckIn/tabs/ScanTab.t
 import {RecentScan, RecentScanStatus} from "../components/layouts/CheckIn/types.ts";
 
 const MAX_RECENT_SCANS = 20;
-const DUPLICATE_SCAN_WINDOW_MS = 3000;
 const USB_BARCODE_IDLE_MS = 100;
 
 interface UseCheckInControllerOptions {
@@ -32,6 +43,7 @@ export const useCheckInController = ({
                                          occurrenceOverride,
                                      }: UseCheckInControllerOptions) => {
     const networkStatus = useNetwork();
+    const queryClient = useQueryClient();
     const event = checkInList?.event;
     const eventSettings = event?.settings;
 
@@ -53,7 +65,7 @@ export const useCheckInController = ({
 
     const barcodeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
     const barcodeBufferRef = useRef("");
-    const recentScanAtRef = useRef<Map<string, number>>(new Map());
+    const checkedOutPublicIdsRef = useRef<Set<string>>(new Set());
     const scanQueueRef = useRef<Promise<void>>(Promise.resolve());
     const scanSuccessAudioRef = useRef<HTMLAudioElement | null>(null);
     const scanErrorAudioRef = useRef<HTMLAudioElement | null>(null);
@@ -130,7 +142,6 @@ export const useCheckInController = ({
         if (!isSsr()) {
             localStorage.setItem("checkInScanAction", scanAction);
         }
-        recentScanAtRef.current.clear();
     }, [scanAction]);
 
     const playSuccessSound = useCallback(() => {
@@ -169,6 +180,7 @@ export const useCheckInController = ({
                 checkInListShortId: checkInListShortId,
                 checkInShortId: checkInShortId,
             });
+            checkedOutPublicIdsRef.current.add(attendee.public_id);
             showSuccess(<Trans>Check-in for {attendee.first_name} was undone</Trans>);
             playSuccessSound();
             haptic("tap");
@@ -194,6 +206,7 @@ export const useCheckInController = ({
                 recordScan(attendee, attendee.public_id, "error");
                 return;
             }
+            checkedOutPublicIdsRef.current.delete(attendee.public_id);
             playSuccessSound();
             haptic("success");
             recordScan(attendee, attendee.public_id, "success");
@@ -238,6 +251,7 @@ export const useCheckInController = ({
                 checkInListShortId: checkInListShortId,
                 checkInShortId: checkInShortId,
             });
+            checkedOutPublicIdsRef.current.add(attendee.public_id);
             showSuccess(<Trans>{attendee.first_name} <b>checked out</b> successfully</Trans>);
             playSuccessSound();
             haptic(fromScan ? "success" : "tap");
@@ -286,24 +300,17 @@ export const useCheckInController = ({
     };
 
     const processScan = async (attendeePublicId: string) => {
-        const now = Date.now();
-        const lastScannedAt = recentScanAtRef.current.get(attendeePublicId);
-        if (lastScannedAt !== undefined && now - lastScannedAt < DUPLICATE_SCAN_WINDOW_MS) {
-            showError(t`This ticket was just scanned. Please wait before scanning again.`);
-            playErrorSound();
-            return;
-        }
-        recentScanAtRef.current.set(attendeePublicId, now);
-
         const isCheckOut = scanAction === "check-out";
-        let attendee = attendees?.find(a => a.public_id === attendeePublicId);
+        const latestAttendees = queryClient.getQueryData<GenericPaginatedResponse<Attendee>>(
+            [GET_CHECK_IN_LIST_ATTENDEES_PUBLIC_QUERY_KEY, checkInListShortId, queryFilters],
+        )?.data ?? attendees;
+        let attendee = latestAttendees?.find(a => a.public_id === attendeePublicId);
 
         if (!attendee || (isCheckOut && !attendee.check_in)) {
             try {
                 const {data} = await publicCheckInClient.getCheckInListAttendee(checkInListShortId, attendeePublicId);
                 attendee = data;
             } catch (error) {
-                recentScanAtRef.current.delete(attendeePublicId);
                 showError(t`Unable to fetch attendee`);
                 playErrorSound();
                 recordScan(null, attendeePublicId, "error");
@@ -311,7 +318,6 @@ export const useCheckInController = ({
             }
 
             if (!attendee) {
-                recentScanAtRef.current.delete(attendeePublicId);
                 showError(t`Attendee not found`);
                 playErrorSound();
                 recordScan(null, attendeePublicId, "error");
@@ -321,7 +327,9 @@ export const useCheckInController = ({
 
         if (isCheckOut) {
             if (!attendee.check_in) {
-                showError(<Trans>{attendee.first_name} {attendee.last_name} is not checked in</Trans>);
+                showError(checkedOutPublicIdsRef.current.has(attendeePublicId)
+                    ? <Trans>{attendee.first_name} {attendee.last_name} is already checked out</Trans>
+                    : <Trans>{attendee.first_name} {attendee.last_name} is not checked in</Trans>);
                 playErrorSound();
                 haptic("warning");
                 recordScan(attendee, attendeePublicId, "not_checked_in");
@@ -346,7 +354,6 @@ export const useCheckInController = ({
         const isAttendeeAwaitingPayment = attendee.status === "AWAITING_PAYMENT";
 
         if (allowOrdersAwaitingOfflinePaymentToCheckIn && isAttendeeAwaitingPayment) {
-            recentScanAtRef.current.delete(attendeePublicId);
             setSelectedAttendee(attendee);
             checkInModalHandlers.open();
             return;

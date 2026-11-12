@@ -52,27 +52,31 @@ msgstr "{0} (alapértelmezett)"
 msgid "{0} {1}"
 msgstr "{0} {1}"
 
-#: src/hooks/useCheckInController.tsx:354
+#: src/hooks/useCheckInController.tsx:347
 msgid "{0} {1} is already checked in"
 msgstr "{0} {1} már bejelentkezett"
 
-#: src/hooks/useCheckInController.tsx:353
+#: src/hooks/useCheckInController.tsx:346
 msgid "{0} {1} is already checked in · {seatLabel}"
 msgstr "{0} {1} már bejelentkezett · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:337
+#: src/hooks/useCheckInController.tsx:331
+msgid "{0} {1} is already checked out"
+msgstr "{0} {1} már ki van jelentkeztetve"
+
+#: src/hooks/useCheckInController.tsx:332
 msgid "{0} {1} is not checked in"
 msgstr "{0} {1} nincs bejelentkezve"
 
-#: src/hooks/useCheckInController.tsx:207
+#: src/hooks/useCheckInController.tsx:220
 msgid "{0} <0>checked in</0>"
 msgstr "{0} <0>beléptetve</0>"
 
-#: src/hooks/useCheckInController.tsx:206
+#: src/hooks/useCheckInController.tsx:219
 msgid "{0} <0>checked in</0> · {seatLabel}"
 msgstr "{0} <0>beléptetve</0> · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:241
+#: src/hooks/useCheckInController.tsx:255
 msgid "{0} <0>checked out</0> successfully"
 msgstr "{0} <0>sikeresen kijelentkezett</0>"
 
@@ -2859,7 +2863,7 @@ msgstr "Résztvevők neve és e-mail-címe"
 msgid "Attendee names appear on the printout. Handle it accordingly."
 msgstr "A nyomaton megjelennek a résztvevők nevei. Kezelje ennek megfelelően."
 
-#: src/hooks/useCheckInController.tsx:322
+#: src/hooks/useCheckInController.tsx:321
 msgid "Attendee not found"
 msgstr "Résztvevő nem található"
 
@@ -3566,12 +3570,12 @@ msgstr "Naptár"
 msgid "Call-to-Action Button"
 msgstr "Cselekvésre ösztönző gomb"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:153
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:157
 #: src/components/layouts/CheckIn/tabs/ScanTab.tsx:128
 msgid "Camera"
 msgstr "Kamera"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:110
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:114
 msgid "Camera permission was denied. <0>Request permission</0> again, or grant this page camera access in your browser settings."
 msgstr "A kamerához való hozzáférést elutasította. <0>Kérje újra az engedélyt</0>, vagy engedélyezze az oldal kamerahozzáférését a böngésző beállításaiban."
 
@@ -4120,7 +4124,7 @@ msgstr "Bejelentkezés létrehozva"
 msgid "Check-in Deleted"
 msgstr "Bejelentkezés törölve"
 
-#: src/hooks/useCheckInController.tsx:170
+#: src/hooks/useCheckInController.tsx:184
 msgid "Check-in for {0} was undone"
 msgstr "{0} beléptetése visszavonva"
 
@@ -9003,11 +9007,11 @@ msgstr "Megjelölt események"
 msgid "Flagged Events"
 msgstr "Megjelölt események"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:140
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:144
 msgid "Flash off"
 msgstr "Vaku ki"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:140
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:144
 msgid "Flash on"
 msgstr "Vaku be"
 
@@ -17050,7 +17054,7 @@ msgstr "Válasszon ki legalább egy felhasználót"
 msgid "Select attendee group"
 msgstr "Résztvevő csoport kiválasztása"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:157
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:161
 msgid "Select camera"
 msgstr "Kamera kiválasztása"
 
@@ -20215,10 +20219,6 @@ msgstr "Ez a hely kerekesszékes vendégek és egyéb akadálymentesítést igé
 msgid "This ticket is no longer valid"
 msgstr "Ez a jegy már nem érvényes"
 
-#: src/hooks/useCheckInController.tsx:298
-msgid "This ticket was just scanned. Please wait before scanning again."
-msgstr "Ez a jegy most lett beolvasva. Kérjük, várjon mielőtt újra beolvassa."
-
 #: src/components/routes/event/OccurrencesTab/PriceOverrideForm/index.tsx:328
 msgid "This tier's quantity is shared across all dates"
 msgstr "Ennek a szintnek a mennyisége az összes dátum között oszlik meg"
@@ -20975,12 +20975,13 @@ msgstr "Nem sikerült olvasót váltani"
 msgid "Unable to check in"
 msgstr "Nem sikerült bejelentkeztetni"
 
-#: src/hooks/useCheckInController.tsx:229
+#: src/hooks/useCheckInController.tsx:241
+#: src/hooks/useCheckInController.tsx:243
 msgid "Unable to check in attendee"
 msgstr "Nem sikerült bejelentkezni a résztvevőnek."
 
-#: src/hooks/useCheckInController.tsx:260
-#: src/hooks/useCheckInController.tsx:262
+#: src/hooks/useCheckInController.tsx:273
+#: src/hooks/useCheckInController.tsx:275
 msgid "Unable to check out attendee"
 msgstr "Nem sikerült kijelentkezni a résztvevőnek."
 
@@ -21059,7 +21060,7 @@ msgstr "Az eladást nem sikerült elindítani. Kérjük, próbálja újra."
 msgid "Unable to switch date"
 msgstr "Nem sikerült dátumot váltani"
 
-#: src/hooks/useCheckInController.tsx:175
+#: src/hooks/useCheckInController.tsx:188
 msgid "Unable to undo check-in"
 msgstr "A beléptetés nem vonható vissza"
 
@@ -21093,7 +21094,7 @@ msgstr "A \"Token configuration\" alatt adja hozzá az opcionális email és xms
 
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:299
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:300
-#: src/hooks/useCheckInController.tsx:213
+#: src/hooks/useCheckInController.tsx:226
 msgid "Undo"
 msgstr "Visszavonás"
 
@@ -22769,8 +22770,8 @@ msgstr "<0>{0}</0> megszemélyesítése ({1})"
 msgid "You are issuing a partial refund. The customer will be refunded {0} {1}."
 msgstr "Részleges visszatérítést bocsát ki. A vásárló {0} {1} összeget kap vissza."
 
-#: src/hooks/useCheckInController.tsx:224
-#: src/hooks/useCheckInController.tsx:255
+#: src/hooks/useCheckInController.tsx:236
+#: src/hooks/useCheckInController.tsx:268
 msgid "You are offline"
 msgstr "Offline állapotban van."
 
@@ -22846,8 +22847,8 @@ msgstr "Nem archiválhatja a fiókján lévő utolsó aktív szervezőt."
 msgid "You cannot change the product type as there are attendees associated with this product."
 msgstr "Nem módosíthatja a terméktípust, mivel ehhez a termékhez résztvevők vannak társítva."
 
-#: src/hooks/useCheckInController.tsx:283
-#: src/hooks/useCheckInController.tsx:373
+#: src/hooks/useCheckInController.tsx:295
+#: src/hooks/useCheckInController.tsx:363
 msgid "You cannot check in attendees with unpaid orders. This setting can be changed in the event settings."
 msgstr "Nem jelentkezhet be kifizetetlen megrendeléssel rendelkező résztvevőket. Ez a beállítás az eseménybeállításokban módosítható."
 
@@ -23394,7 +23395,7 @@ msgstr "A helyreállítási kódjai és a megbízható eszközei törlődnek."
 msgid "Your refund is processing."
 msgstr "Visszatérítése feldolgozás alatt áll."
 
-#: src/hooks/useCheckInController.tsx:83
+#: src/hooks/useCheckInController.tsx:97
 msgid "Your saved date filter is no longer available — showing all dates."
 msgstr "A mentett időpontszűrő már nem érhető el – minden időpont látható."
 
