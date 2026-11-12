@@ -35,7 +35,7 @@ msgstr "(prázdné)"
 msgid "(none)"
 msgstr "(žádná)"
 
-#: src/components/common/ReportTable/index.tsx:336
+#: src/components/common/ReportTable/index.tsx:332
 msgid "{0}"
 msgstr "{0}"
 
@@ -52,23 +52,27 @@ msgstr "{0} (výchozí)"
 msgid "{0} {1}"
 msgstr "{0} {1}"
 
-#: src/hooks/useCheckInController.tsx:311
+#: src/hooks/useCheckInController.tsx:354
 msgid "{0} {1} is already checked in"
 msgstr "{0} {1} je již odbaven/a"
 
-#: src/hooks/useCheckInController.tsx:310
+#: src/hooks/useCheckInController.tsx:353
 msgid "{0} {1} is already checked in · {seatLabel}"
 msgstr "{0} {1} je již odbaven/a · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:195
+#: src/hooks/useCheckInController.tsx:337
+msgid "{0} {1} is not checked in"
+msgstr "{0} {1} není odbaven"
+
+#: src/hooks/useCheckInController.tsx:207
 msgid "{0} <0>checked in</0>"
 msgstr "{0} <0>odbaven/a</0>"
 
-#: src/hooks/useCheckInController.tsx:194
+#: src/hooks/useCheckInController.tsx:206
 msgid "{0} <0>checked in</0> · {seatLabel}"
 msgstr "{0} <0>odbaven/a</0> · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:230
+#: src/hooks/useCheckInController.tsx:241
 msgid "{0} <0>checked out</0> successfully"
 msgstr "{0} byl/a úspěšně <0>odhlášen/a</0>"
 
@@ -276,7 +280,7 @@ msgstr "{0} vstupenek"
 msgid "{0} to {1}"
 msgstr "{0} – {1}"
 
-#: src/components/routes/oauth/Connect/index.tsx:87
+#: src/components/routes/oauth/Connect/index.tsx:89
 msgid "{0} wants to use your Hi.Events account {1}. It will act as you, with the access you choose below."
 msgstr "{0} chce používat váš účet Hi.Events {1}. Bude jednat vaším jménem s přístupem, který níže zvolíte."
 
@@ -370,15 +374,15 @@ msgstr "{days} dní"
 msgid "{days} days, {hours} hours, {minutes} minutes, and {seconds} seconds"
 msgstr "{days} dní, {hours} hodin, {minutes} minut a {seconds} sekund"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:29
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:32
 msgid "{diffHr}h ago"
 msgstr "před {diffHr} h"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:27
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:30
 msgid "{diffMin}m ago"
 msgstr "před {diffMin} min"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:25
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:28
 msgid "{diffSec}s ago"
 msgstr "před {diffSec} s"
 
@@ -1065,7 +1069,7 @@ msgstr "Přijímejte platby kartou přes Stripe"
 #: src/components/common/TeamAccessFields/index.tsx:207
 #: src/components/common/TeamAccessPanel/index.tsx:137
 #: src/components/forms/ProductForm/index.tsx:605
-#: src/components/routes/oauth/Connect/index.tsx:115
+#: src/components/routes/oauth/Connect/index.tsx:117
 #: src/components/routes/settings/ApiKeys/CreateApiKeyModal.tsx:237
 #: src/components/routes/settings/Team/index.tsx:218
 #: src/components/routes/settings/Team/MemberRow.tsx:141
@@ -1883,7 +1887,7 @@ msgstr "Všechny kategorie"
 msgid "All changes saved"
 msgstr "Všechny změny uloženy"
 
-#: src/components/common/OrganizerReportTable/index.tsx:302
+#: src/components/common/OrganizerReportTable/index.tsx:296
 msgid "All Currencies"
 msgstr "Všechny měny"
 
@@ -1949,7 +1953,7 @@ msgstr "Všechny odpovídající termíny"
 msgid "All occurrences"
 msgstr "Všechny termíny"
 
-#: src/components/common/ReportTable/index.tsx:287
+#: src/components/common/ReportTable/index.tsx:281
 msgid "All Occurrences"
 msgstr "Všechny termíny"
 
@@ -2065,7 +2069,7 @@ msgstr "Už to skoro je! Jen čekáme na zpracování vaší platby. To by mělo
 msgid "Already have an account? <0>{0}</0>"
 msgstr "Máte již účet? <0>{0}</0>"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:141
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:181
 msgid "Already in"
 msgstr "Již uvnitř"
 
@@ -2161,7 +2165,7 @@ msgstr "Přijatá částka"
 msgid "An account with this email already exists. Sign in instead."
 msgstr "Účet s tímto e-mailem již existuje. Přihlaste se."
 
-#: src/components/routes/oauth/Connect/index.tsx:16
+#: src/components/routes/oauth/Connect/index.tsx:18
 msgid "an app on this computer"
 msgstr "aplikace v tomto počítači"
 
@@ -2855,7 +2859,7 @@ msgstr "Jméno a e-mail účastníka"
 msgid "Attendee names appear on the printout. Handle it accordingly."
 msgstr "Na výtisku jsou uvedena jména účastníků. Zacházejte s ním podle toho."
 
-#: src/hooks/useCheckInController.tsx:299
+#: src/hooks/useCheckInController.tsx:322
 msgid "Attendee not found"
 msgstr "Účastník nenalezen"
 
@@ -3563,7 +3567,7 @@ msgid "Call-to-Action Button"
 msgstr "Tlačítko výzvy k akci"
 
 #: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:153
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:90
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:128
 msgid "Camera"
 msgstr "Kamera"
 
@@ -3660,7 +3664,7 @@ msgstr "Nemůžete použít ověřovací aplikaci ani záložní kódy?"
 #: src/components/routes/event/OccurrencesTab/OccurrenceMenu.tsx:67
 #: src/components/routes/event/OccurrencesTab/RecurrenceScheduleDrawer/index.tsx:1173
 #: src/components/routes/event/Settings/Sections/DangerZoneSettings/index.tsx:64
-#: src/components/routes/oauth/Connect/index.tsx:164
+#: src/components/routes/oauth/Connect/index.tsx:166
 #: src/components/routes/organizer/Settings/Sections/DangerZoneSettings/index.tsx:69
 #: src/components/routes/product-widget/OrderSummaryAndProducts/EditAttendeeModal/index.tsx:85
 #: src/components/routes/product-widget/OrderSummaryAndProducts/EditOrderModal/index.tsx:85
@@ -4035,6 +4039,7 @@ msgid "Check back soon for new dates."
 msgstr "Brzy sem přidáme nové termíny."
 
 #: src/components/layouts/CheckIn/AttendeeDetailSheet.tsx:307
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:60
 #: src/components/layouts/CheckIn/tabs/SearchTab.tsx:82
 msgid "Check in"
 msgstr "Odbavit"
@@ -4060,6 +4065,7 @@ msgid "Check key"
 msgstr "Zkontrolujte klíč"
 
 #: src/components/layouts/CheckIn/AttendeeDetailSheet.tsx:307
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:71
 #: src/components/layouts/CheckIn/tabs/SearchTab.tsx:81
 msgid "Check out"
 msgstr "Zrušit odbavení"
@@ -4073,7 +4079,7 @@ msgstr "Podívejte se na tuto událost: {0}"
 msgid "Check out this event!"
 msgstr "Podívejte se na tuto událost!"
 
-#: src/components/common/ReportTable/index.tsx:251
+#: src/components/common/ReportTable/index.tsx:245
 #: src/components/routes/settings/TaxesAndFees/index.tsx:85
 #: src/ee/box-office/components/layouts/BoxOffice/index.tsx:84
 msgid "Check your connection and try again."
@@ -4114,7 +4120,7 @@ msgstr "Odbavení vytvořeno"
 msgid "Check-in Deleted"
 msgstr "Odbavení smazáno"
 
-#: src/hooks/useCheckInController.tsx:158
+#: src/hooks/useCheckInController.tsx:170
 msgid "Check-in for {0} was undone"
 msgstr "Odbavení účastníka {0} bylo vráceno zpět"
 
@@ -4172,7 +4178,7 @@ msgstr "Seznamy odbavení"
 msgid "Check-In Lists"
 msgstr "Seznamy odbavení"
 
-#: src/components/layouts/CheckIn/index.tsx:260
+#: src/components/layouts/CheckIn/index.tsx:262
 msgid "Check-in navigation"
 msgstr "Navigace odbavení"
 
@@ -4209,6 +4215,10 @@ msgstr "URL odbavení zkopírována do schránky"
 msgid "Check-Ins"
 msgstr "Odbavení"
 
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:79
+msgid "Check-out mode"
+msgstr "Režim odchodu"
+
 #: src/components/forms/QuestionForm/questionTypes.ts:26
 msgid "Checkboxes"
 msgstr "Zaškrtávací políčka"
@@ -4234,6 +4244,10 @@ msgstr "Odbaveno"
 #: src/ee/box-office/components/layouts/BoxOffice/SaleComplete.tsx:41
 msgid "Checked in ({checkedInCount}/{attendeeCount})"
 msgstr "Odbaveno ({checkedInCount}/{attendeeCount})"
+
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:184
+msgid "Checked out"
+msgstr "Odhlášen"
 
 #: src/components/routes/event/Lineup/ImportLineupModal.tsx:376
 #: src/components/routes/event/Lineup/ImportLineupModal.tsx:565
@@ -4955,8 +4969,8 @@ msgstr "Gratulujeme! Vaše událost je nyní viditelná pro veřejnost."
 msgid "Connect"
 msgstr "Připojit"
 
-#: src/components/routes/oauth/Connect/index.tsx:86
-#: src/components/routes/oauth/Connect/index.tsx:151
+#: src/components/routes/oauth/Connect/index.tsx:88
+#: src/components/routes/oauth/Connect/index.tsx:153
 #: src/components/routes/settings/Security/SignInMethods.tsx:246
 msgid "Connect {0}"
 msgstr "Připojit {0}"
@@ -5480,8 +5494,8 @@ msgstr "Soubor {fileName} se nepodařilo nahrát"
 msgid "Couldn't load the API reference."
 msgstr "Referenci API se nepodařilo načíst."
 
-#: src/components/common/OrganizerReportTable/index.tsx:271
-#: src/components/common/ReportTable/index.tsx:249
+#: src/components/common/OrganizerReportTable/index.tsx:265
+#: src/components/common/ReportTable/index.tsx:243
 msgid "Couldn't load this report"
 msgstr "Tento report se nepodařilo načíst"
 
@@ -5637,7 +5651,7 @@ msgstr "Vytvořte oznámení a zobrazte svým uživatelům zprávu."
 msgid "Create and change events, orders, attendees and more."
 msgstr "Vytvářet a měnit události, objednávky, účastníky a další."
 
-#: src/components/routes/oauth/Connect/index.tsx:122
+#: src/components/routes/oauth/Connect/index.tsx:124
 msgid "Create and change events, tickets, questions and settings."
 msgstr "Vytvářet a měnit akce, vstupenky, otázky a nastavení."
 
@@ -5872,7 +5886,7 @@ msgstr "CTA"
 msgid "CTA label is required"
 msgstr "Popisek výzvy k akci je povinný"
 
-#: src/components/common/OrganizerReportTable/index.tsx:317
+#: src/components/common/OrganizerReportTable/index.tsx:311
 #: src/components/forms/OrganizerForm/index.tsx:51
 #: src/components/modals/CreateEventModal/index.tsx:437
 #: src/components/modals/CreateEventModal/index.tsx:438
@@ -5945,8 +5959,8 @@ msgstr "Vlastní e-maily k objednávkám a vstupenkám pro tuto událost"
 msgid "Custom questions"
 msgstr "Vlastní otázky"
 
-#: src/components/common/OrganizerReportTable/index.tsx:61
-#: src/components/common/ReportTable/index.tsx:56
+#: src/components/common/OrganizerReportTable/index.tsx:62
+#: src/components/common/ReportTable/index.tsx:57
 #: src/components/routes/admin/Attribution/index.tsx:82
 msgid "Custom Range"
 msgstr "Vlastní rozsah"
@@ -8275,7 +8289,7 @@ msgstr "Exportovat"
 msgid "Export answers"
 msgstr "Exportovat odpovědi"
 
-#: src/components/common/OrganizerReportTable/index.tsx:358
+#: src/components/common/OrganizerReportTable/index.tsx:352
 msgid "Export CSV"
 msgstr "Exportovat CSV"
 
@@ -8291,7 +8305,7 @@ msgstr "Exportovat nákupy"
 msgid "Export started. Preparing file..."
 msgstr "Export byl zahájen. Připravuje se soubor..."
 
-#: src/components/common/OrganizerReportTable/index.tsx:204
+#: src/components/common/OrganizerReportTable/index.tsx:198
 msgid "Export successful"
 msgstr "Export proběhl úspěšně"
 
@@ -8320,7 +8334,7 @@ msgstr "Přírůstek míst v každé řadě"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:144
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:190
 #: src/components/modals/MessageRecipientsModal/index.tsx:18
 #: src/components/routes/admin/Messages/index.tsx:127
 msgid "Failed"
@@ -8491,7 +8505,7 @@ msgstr "Objednávky se nepodařilo exportovat"
 msgid "Failed to export purchases. Please try again."
 msgstr "Nákupy se nepodařilo exportovat. Zkuste to prosím znovu."
 
-#: src/components/common/OrganizerReportTable/index.tsx:206
+#: src/components/common/OrganizerReportTable/index.tsx:200
 msgid "Failed to export report. Please try again."
 msgstr "Sestavu se nepodařilo exportovat. Zkuste to prosím znovu."
 
@@ -9325,7 +9339,7 @@ msgstr "Zpět"
 msgid "Go back to profile"
 msgstr "Zpět na profil"
 
-#: src/components/routes/oauth/Connect/index.tsx:25
+#: src/components/routes/oauth/Connect/index.tsx:27
 msgid "Go back to the app you were connecting and start again."
 msgstr "Vraťte se do aplikace, kterou jste připojovali, a začněte znovu."
 
@@ -9550,7 +9564,7 @@ msgstr "Hi.Events Cloud"
 msgid "Hi.Events Fee"
 msgstr "Poplatek Hi.Events"
 
-#: src/components/routes/oauth/Connect/index.tsx:108
+#: src/components/routes/oauth/Connect/index.tsx:110
 msgid "Hi.Events hasn't verified this app. Only continue if you started connecting it yourself and you trust it."
 msgstr "Hi.Events tuto aplikaci neověřil. Pokračujte jen tehdy, pokud jste připojení zahájili sami a aplikaci důvěřujete."
 
@@ -10418,7 +10432,7 @@ msgstr "Červen"
 msgid "Just looking for your tickets?"
 msgstr "Hledáte jen své vstupenky?"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:24
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:27
 msgid "just now"
 msgstr "právě teď"
 
@@ -10533,55 +10547,55 @@ msgstr "Jazyk a velikost"
 msgid "Last"
 msgstr "Poslední"
 
-#: src/components/common/OrganizerReportTable/index.tsx:60
-#: src/components/common/ReportTable/index.tsx:55
+#: src/components/common/OrganizerReportTable/index.tsx:61
+#: src/components/common/ReportTable/index.tsx:56
 msgid "Last 12 months"
 msgstr "Posledních 12 měsíců"
 
-#: src/components/common/OrganizerReportTable/index.tsx:55
-#: src/components/common/ReportTable/index.tsx:50
+#: src/components/common/OrganizerReportTable/index.tsx:56
+#: src/components/common/ReportTable/index.tsx:51
 msgid "Last 14 days"
 msgstr "Posledních 14 dní"
 
-#: src/components/common/OrganizerReportTable/index.tsx:52
-#: src/components/common/ReportTable/index.tsx:47
+#: src/components/common/OrganizerReportTable/index.tsx:53
+#: src/components/common/ReportTable/index.tsx:48
 #: src/components/routes/admin/Attribution/index.tsx:77
 #: src/components/routes/admin/Dashboard/index.tsx:31
 #: src/components/routes/admin/EmailDelivery/index.tsx:14
 msgid "Last 24 hours"
 msgstr "Posledních 24 hodin"
 
-#: src/components/common/OrganizerReportTable/index.tsx:56
+#: src/components/common/OrganizerReportTable/index.tsx:57
 #: src/components/common/PeriodSelector/index.tsx:34
-#: src/components/common/ReportTable/index.tsx:51
+#: src/components/common/ReportTable/index.tsx:52
 #: src/components/routes/admin/Attribution/index.tsx:79
 #: src/components/routes/admin/Dashboard/index.tsx:33
 #: src/components/routes/admin/EmailDelivery/index.tsx:16
 msgid "Last 30 days"
 msgstr "Posledních 30 dní"
 
-#: src/components/common/OrganizerReportTable/index.tsx:53
-#: src/components/common/ReportTable/index.tsx:48
+#: src/components/common/OrganizerReportTable/index.tsx:54
+#: src/components/common/ReportTable/index.tsx:49
 msgid "Last 48 hours"
 msgstr "Posledních 48 hodin"
 
-#: src/components/common/OrganizerReportTable/index.tsx:58
-#: src/components/common/ReportTable/index.tsx:53
+#: src/components/common/OrganizerReportTable/index.tsx:59
+#: src/components/common/ReportTable/index.tsx:54
 msgid "Last 6 months"
 msgstr "Posledních 6 měsíců"
 
-#: src/components/common/OrganizerReportTable/index.tsx:54
+#: src/components/common/OrganizerReportTable/index.tsx:55
 #: src/components/common/PeriodSelector/index.tsx:32
-#: src/components/common/ReportTable/index.tsx:49
+#: src/components/common/ReportTable/index.tsx:50
 #: src/components/routes/admin/Attribution/index.tsx:78
 #: src/components/routes/admin/Dashboard/index.tsx:32
 #: src/components/routes/admin/EmailDelivery/index.tsx:15
 msgid "Last 7 days"
 msgstr "Posledních 7 dní"
 
-#: src/components/common/OrganizerReportTable/index.tsx:57
+#: src/components/common/OrganizerReportTable/index.tsx:58
 #: src/components/common/PeriodSelector/index.tsx:36
-#: src/components/common/ReportTable/index.tsx:52
+#: src/components/common/ReportTable/index.tsx:53
 #: src/components/routes/admin/Attribution/index.tsx:80
 msgid "Last 90 days"
 msgstr "Posledních 90 dní"
@@ -10999,8 +11013,8 @@ msgstr "Načítání protokolů Webhooků..."
 msgid "Loading Webhooks"
 msgstr "Načítání Webhooků"
 
-#: src/components/common/OrganizerReportTable/index.tsx:265
-#: src/components/common/ReportTable/index.tsx:219
+#: src/components/common/OrganizerReportTable/index.tsx:259
+#: src/components/common/ReportTable/index.tsx:213
 #: src/components/routes/event/Settings/Sections/DangerZoneSettings/index.tsx:89
 #: src/components/routes/organizer/Settings/Sections/DangerZoneSettings/index.tsx:94
 msgid "Loading..."
@@ -12080,15 +12094,15 @@ msgstr "Žádné připojené aplikace"
 msgid "No connections available"
 msgstr "Nejsou k dispozici žádná propojení"
 
-#: src/components/common/ReportTable/index.tsx:227
+#: src/components/common/ReportTable/index.tsx:221
 msgid "No data available"
 msgstr "Nejsou k dispozici žádná data"
 
-#: src/components/common/OrganizerReportTable/index.tsx:283
+#: src/components/common/OrganizerReportTable/index.tsx:277
 msgid "No data found for the selected filters. Try adjusting the date range or currency."
 msgstr "Pro zvolené filtry nebyla nalezena žádná data. Zkuste upravit rozsah dat nebo měnu."
 
-#: src/components/common/ReportTable/index.tsx:223
+#: src/components/common/ReportTable/index.tsx:217
 msgid "No data to show. Please select a date range"
 msgstr "Žádná data k zobrazení. Vyberte prosím rozsah dat"
 
@@ -12617,6 +12631,7 @@ msgid "Not available: you have view-only access."
 msgstr "Není k dispozici: máte přístup pouze pro zobrazení."
 
 #: src/components/layouts/CheckIn/AttendeeDetailSheet.tsx:122
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:187
 #: src/components/modals/ManageAttendeeModal/index.tsx:156
 msgid "Not checked in"
 msgstr "Neodbaveno"
@@ -12774,7 +12789,7 @@ msgstr "Zatím není co tisknout"
 msgid "Nothing to sell here yet. Add products to this box office."
 msgstr "Zatím tu není co prodávat. Přidejte do této pokladny na místě produkty."
 
-#: src/components/common/ReportTable/index.tsx:263
+#: src/components/common/ReportTable/index.tsx:257
 msgid "Nothing to show yet"
 msgstr "Zatím není co zobrazit"
 
@@ -12859,7 +12874,7 @@ msgstr "Lichá a sudá od středu"
 msgid "Odd numbers only"
 msgstr "Pouze lichá čísla"
 
-#: src/components/common/OrganizerReportTable/index.tsx:367
+#: src/components/common/OrganizerReportTable/index.tsx:361
 msgid "of"
 msgstr "z"
 
@@ -13022,7 +13037,7 @@ msgstr "Jednou za objednávku"
 msgid "Once you create an event, you'll see it here."
 msgstr "Jakmile vytvoříte akci, uvidíte ji zde."
 
-#: src/components/common/ReportTable/index.tsx:268
+#: src/components/common/ReportTable/index.tsx:262
 msgid "Once you start collecting data, you'll see it here."
 msgstr "Jakmile začnete shromažďovat data, uvidíte je zde."
 
@@ -13135,7 +13150,7 @@ msgstr "Přístup týmu mohou spravovat pouze administrátoři."
 msgid "Only available as an add-on"
 msgstr "Dostupné pouze jako doplněk"
 
-#: src/components/routes/oauth/Connect/index.tsx:107
+#: src/components/routes/oauth/Connect/index.tsx:109
 msgid "Only continue if you just started connecting from an app on this computer, such as Claude Code or Cursor."
 msgstr "Pokračujte, jen pokud jste právě zahájili připojení z aplikace v tomto počítači, například Claude Code nebo Cursor."
 
@@ -13780,7 +13795,7 @@ msgstr "Vlastní jiný účet Hi.Events, a proto se nadále přihlašuje heslem,
 msgid "Padding"
 msgstr "Odsazení"
 
-#: src/components/common/OrganizerReportTable/index.tsx:367
+#: src/components/common/OrganizerReportTable/index.tsx:361
 msgid "Page"
 msgstr "Stránka"
 
@@ -14569,7 +14584,7 @@ msgstr "Vraťte se prosím na stránku události a začněte znovu."
 msgid "Please select a date and time"
 msgstr "Vyberte prosím datum a čas"
 
-#: src/components/common/OrganizerReportTable/index.tsx:280
+#: src/components/common/OrganizerReportTable/index.tsx:274
 msgid "Please select a date range"
 msgstr "Vyberte prosím rozsah dat"
 
@@ -15201,7 +15216,7 @@ msgstr "Znovu aktivovat"
 msgid "Reactivate this date? It will be reopened for future sales."
 msgstr "Znovu aktivovat tento termín? Bude znovu otevřen pro budoucí prodej."
 
-#: src/components/routes/oauth/Connect/index.tsx:121
+#: src/components/routes/oauth/Connect/index.tsx:123
 #: src/components/routes/settings/ApiKeys/ApiKeyRow.tsx:52
 #: src/components/routes/settings/ApiKeys/ConnectedApps.tsx:73
 #: src/components/routes/settings/ApiKeys/CreateApiKeyModal.tsx:250
@@ -15213,7 +15228,7 @@ msgstr "Čtení a zápis"
 msgid "Read more"
 msgstr "Číst dál"
 
-#: src/components/routes/oauth/Connect/index.tsx:127
+#: src/components/routes/oauth/Connect/index.tsx:129
 msgid "Read only"
 msgstr "Pouze čtení"
 
@@ -15289,10 +15304,6 @@ msgstr "Nedávná aktivita"
 msgid "Recent Attendees"
 msgstr "Nedávní účastníci"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:106
-msgid "Recent check-ins"
-msgstr "Nedávná odbavení"
-
 #: src/components/routes/organizer/OrganizerDashboard/index.tsx:316
 msgid "Recent orders"
 msgstr "Nedávné objednávky"
@@ -15300,6 +15311,10 @@ msgstr "Nedávné objednávky"
 #: src/components/common/OccurrenceAttendeesAndOrders/index.tsx:64
 msgid "Recent Orders"
 msgstr "Nedávné objednávky"
+
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:144
+msgid "Recent scans"
+msgstr "Nedávná skenování"
 
 #: src/components/routes/admin/Dashboard/index.tsx:388
 msgid "Recent signups"
@@ -16018,11 +16033,11 @@ msgstr "Zpět na událost"
 msgid "Return to Event Page"
 msgstr "Zpět na stránku události"
 
-#: src/components/routes/oauth/Connect/index.tsx:77
+#: src/components/routes/oauth/Connect/index.tsx:79
 msgid "Returning you to {leavingTo}…"
 msgstr "Vracíme vás na {leavingTo}…"
 
-#: src/components/routes/oauth/Connect/index.tsx:92
+#: src/components/routes/oauth/Connect/index.tsx:94
 msgid "Returns you to"
 msgstr "Vrátí vás na"
 
@@ -16522,19 +16537,27 @@ msgstr "Pokud organizátor aktuálně používá výchozí systémovou konfigura
 msgid "Scan"
 msgstr "Skenovat"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:58
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:97
 msgid "Scan a ticket to check in an attendee"
 msgstr "Naskenujte vstupenku pro odbavení účastníka"
+
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:96
+msgid "Scan a ticket to check out an attendee"
+msgstr "Naskenujte vstupenku pro odhlášení účastníka"
+
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:50
+msgid "Scan action"
+msgstr "Akce skenování"
 
 #: src/components/routes/event/CheckInLists/index.tsx:36
 msgid "Scan tickets at the door with a phone, tablet, or USB scanner."
 msgstr "Skenujte vstupenky u vstupu telefonem, tabletem nebo USB skenerem."
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:109
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:147
 msgid "Scanned tickets will appear here"
 msgstr "Naskenované vstupenky se zobrazí zde"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:71
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:109
 msgid "Scanner mode"
 msgstr "Režim skeneru"
 
@@ -17097,8 +17120,8 @@ msgstr "Vybrat vstupenku"
 msgid "Select tickets"
 msgstr "Vyberte vstupenky"
 
-#: src/components/common/OrganizerReportTable/index.tsx:328
-#: src/components/common/ReportTable/index.tsx:294
+#: src/components/common/OrganizerReportTable/index.tsx:322
+#: src/components/common/ReportTable/index.tsx:288
 msgid "Select time period"
 msgstr "Vyberte časové období"
 
@@ -17717,7 +17740,7 @@ msgstr "Zobrazit tuto otázku"
 msgid "Show tickets"
 msgstr "Zobrazit vstupenky"
 
-#: src/components/common/OrganizerReportTable/index.tsx:366
+#: src/components/common/OrganizerReportTable/index.tsx:360
 msgid "Showing {0} of {totalRows} records"
 msgstr "Zobrazeno {0} z {totalRows} záznamů"
 
@@ -18224,8 +18247,8 @@ msgstr "Něco se pokazilo. Zkuste to prosím znovu později."
 #: src/components/routes/auth/Login/index.tsx:132
 #: src/components/routes/auth/Register/index.tsx:81
 #: src/components/routes/my-tickets/index.tsx:162
-#: src/components/routes/oauth/Connect/index.tsx:63
-#: src/components/routes/oauth/Connect/index.tsx:70
+#: src/components/routes/oauth/Connect/index.tsx:65
+#: src/components/routes/oauth/Connect/index.tsx:72
 #: src/components/routes/product-widget/SelectProducts/index.tsx:383
 #: src/components/routes/settings/Account/DeleteAccountSection.tsx:79
 #: src/components/routes/settings/ApiKeys/ConnectedApps.tsx:30
@@ -19050,7 +19073,7 @@ msgstr "Klepnutím na místo jej přidáte, nebo nejprve nastavte počty"
 msgid "Tap dates like a calendar."
 msgstr "Vybírejte dny jako v kalendáři."
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:59
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:94
 msgid "Tap this screen to resume scanning"
 msgstr "Klepnutím na obrazovku obnovíte skenování"
 
@@ -19841,11 +19864,11 @@ msgstr "Tento seznam odbavení patří k termínu, který byl zrušen, takže ho
 msgid "This code will be used to track sales. Only letters, numbers, hyphens, and underscores allowed."
 msgstr "Tento kód bude použit ke sledování prodejů. Povolena jsou pouze písmena, číslice, pomlčky a podtržítka."
 
-#: src/components/routes/oauth/Connect/index.tsx:24
+#: src/components/routes/oauth/Connect/index.tsx:26
 msgid "This connection link doesn't work"
 msgstr "Tento odkaz pro připojení nefunguje"
 
-#: src/components/routes/oauth/Connect/index.tsx:24
+#: src/components/routes/oauth/Connect/index.tsx:26
 msgid "This connection request has expired"
 msgstr "Tento požadavek na připojení vypršel"
 
@@ -20192,7 +20215,7 @@ msgstr "Toto místo je vyhrazeno pro osoby na invalidním vozíku a hosty se zvl
 msgid "This ticket is no longer valid"
 msgstr "Tato vstupenka již není platná"
 
-#: src/hooks/useCheckInController.tsx:276
+#: src/hooks/useCheckInController.tsx:298
 msgid "This ticket was just scanned. Please wait before scanning again."
 msgstr "Tato vstupenka byla právě naskenována. Před dalším skenováním prosím počkejte."
 
@@ -20736,8 +20759,8 @@ msgstr "Zkuste jiný hledaný výraz nebo filtr"
 msgid "Try adjusting your filters to see more dates."
 msgstr "Zkuste upravit filtry, abyste viděli více termínů."
 
-#: src/components/common/OrganizerReportTable/index.tsx:273
-#: src/components/common/ReportTable/index.tsx:254
+#: src/components/common/OrganizerReportTable/index.tsx:267
+#: src/components/common/ReportTable/index.tsx:248
 #: src/components/routes/product-widget/SelectProducts/index.tsx:1121
 #: src/components/routes/settings/ApiKeys/ConnectedApps.tsx:54
 #: src/components/routes/settings/ApiKeys/index.tsx:189
@@ -20828,11 +20851,11 @@ msgstr "Nejprve zapněte přihlášení přes {providerName} a ověřte doménu.
 msgid "Turn on two-factor authentication for your own profile first."
 msgstr "Nejprve zapněte dvoufázové ověření ve svém vlastním profilu."
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:94
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:132
 msgid "Turn sound off"
 msgstr "Vypnout zvuk"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:94
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:132
 msgid "Turn sound on"
 msgstr "Zapnout zvuk"
 
@@ -20952,12 +20975,12 @@ msgstr "Čtečku se nepodařilo změnit"
 msgid "Unable to check in"
 msgstr "Odbavení se nezdařilo"
 
-#: src/hooks/useCheckInController.tsx:217
+#: src/hooks/useCheckInController.tsx:229
 msgid "Unable to check in attendee"
 msgstr "Účastníka se nepodařilo odbavit"
 
-#: src/hooks/useCheckInController.tsx:243
-#: src/hooks/useCheckInController.tsx:245
+#: src/hooks/useCheckInController.tsx:260
+#: src/hooks/useCheckInController.tsx:262
 msgid "Unable to check out attendee"
 msgstr "Účastníka se nepodařilo odhlásit"
 
@@ -20982,7 +21005,7 @@ msgstr "Widget se nepodařilo smazat"
 msgid "Unable to duplicate product. Please check the your details"
 msgstr "Produkt se nepodařilo duplikovat. Zkontrolujte prosím své údaje"
 
-#: src/hooks/useCheckInController.tsx:291
+#: src/hooks/useCheckInController.tsx:314
 msgid "Unable to fetch attendee"
 msgstr "Účastníka se nepodařilo načíst"
 
@@ -21036,7 +21059,7 @@ msgstr "Prodej se nepodařilo zahájit. Zkuste to prosím znovu."
 msgid "Unable to switch date"
 msgstr "Termín se nepodařilo přepnout"
 
-#: src/hooks/useCheckInController.tsx:163
+#: src/hooks/useCheckInController.tsx:175
 msgid "Unable to undo check-in"
 msgstr "Odbavení nelze vrátit zpět"
 
@@ -21070,7 +21093,7 @@ msgstr "V části „Token configuration“ přidejte do ID tokenu volitelné cl
 
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:299
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:300
-#: src/hooks/useCheckInController.tsx:201
+#: src/hooks/useCheckInController.tsx:213
 msgid "Undo"
 msgstr "Zpět"
 
@@ -21395,15 +21418,15 @@ msgstr "Počty použití začínají od nuly"
 msgid "Usage Limit"
 msgstr "Limit použití"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:80
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:118
 msgid "USB"
 msgstr "USB"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:53
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:89
 msgid "USB scanner listening"
 msgstr "USB skener naslouchá"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:53
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:89
 msgid "USB scanner paused"
 msgstr "USB skener pozastaven"
 
@@ -21688,7 +21711,7 @@ msgstr "Ověřovací e-mail byl odeslán. Zkontrolujte svou doručenou poštu."
 #: src/components/routes/admin/Accounts/AccountDetail/index.tsx:216
 #: src/components/routes/admin/Attribution/index.tsx:198
 #: src/components/routes/admin/Dashboard/index.tsx:396
-#: src/components/routes/oauth/Connect/index.tsx:97
+#: src/components/routes/oauth/Connect/index.tsx:99
 #: src/ee/sso/components/SingleSignOn/DomainList.tsx:17
 msgid "Verified"
 msgstr "Ověřeno"
@@ -21848,7 +21871,7 @@ msgstr "Zobrazit stránku události"
 msgid "View Event Page"
 msgstr "Zobrazit stránku události"
 
-#: src/components/routes/oauth/Connect/index.tsx:128
+#: src/components/routes/oauth/Connect/index.tsx:130
 msgid "View events, tickets and sales, without changing anything."
 msgstr "Zobrazovat akce, vstupenky a prodeje, bez jakýchkoli změn."
 
@@ -21990,7 +22013,7 @@ msgstr "Čeká se"
 msgid "Waiting for payment"
 msgstr "Čeká se na platbu"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:64
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:102
 msgid "Waiting for scan…"
 msgstr "Čeká se na naskenování…"
 
@@ -22673,9 +22696,9 @@ msgstr "X (Twitter)"
 msgid "year"
 msgstr "rok"
 
-#: src/components/common/OrganizerReportTable/index.tsx:59
+#: src/components/common/OrganizerReportTable/index.tsx:60
 #: src/components/common/PeriodSelector/index.tsx:38
-#: src/components/common/ReportTable/index.tsx:54
+#: src/components/common/ReportTable/index.tsx:55
 msgid "Year to date"
 msgstr "Od začátku roku"
 
@@ -22746,8 +22769,8 @@ msgstr "Vystupujete jako <0>{0}</0> ({1})"
 msgid "You are issuing a partial refund. The customer will be refunded {0} {1}."
 msgstr "Provádíte částečné vrácení peněz. Zákazníkovi bude vráceno {0} {1}."
 
-#: src/hooks/useCheckInController.tsx:212
-#: src/hooks/useCheckInController.tsx:238
+#: src/hooks/useCheckInController.tsx:224
+#: src/hooks/useCheckInController.tsx:255
 msgid "You are offline"
 msgstr "Jste offline"
 
@@ -22791,7 +22814,7 @@ msgstr "Další servisní poplatky a daně můžete nastavit v nastavení svého
 msgid "You can create a promo code which targets this product on the"
 msgstr "Promo kód zaměřený na tento produkt můžete vytvořit na"
 
-#: src/components/routes/oauth/Connect/index.tsx:167
+#: src/components/routes/oauth/Connect/index.tsx:169
 msgid "You can disconnect it at any time from Settings → API keys."
 msgstr "Kdykoli ji můžete odpojit v Nastavení → API klíče."
 
@@ -22823,8 +22846,8 @@ msgstr "Posledního aktivního organizátora na svém účtu nelze archivovat."
 msgid "You cannot change the product type as there are attendees associated with this product."
 msgstr "Typ produktu nelze změnit, protože s tímto produktem jsou spojeni účastníci."
 
-#: src/hooks/useCheckInController.tsx:261
-#: src/hooks/useCheckInController.tsx:330
+#: src/hooks/useCheckInController.tsx:283
+#: src/hooks/useCheckInController.tsx:373
 msgid "You cannot check in attendees with unpaid orders. This setting can be changed in the event settings."
 msgstr "Účastníky s nezaplacenými objednávkami nelze odbavit. Toto nastavení lze změnit v nastavení události."
 
@@ -23371,7 +23394,7 @@ msgstr "Vaše záložní kódy a důvěryhodná zařízení budou odebrána."
 msgid "Your refund is processing."
 msgstr "Vaše vrácení peněz se zpracovává."
 
-#: src/hooks/useCheckInController.tsx:78
+#: src/hooks/useCheckInController.tsx:83
 msgid "Your saved date filter is no longer available — showing all dates."
 msgstr "Váš uložený filtr termínů již není k dispozici — zobrazujeme všechny termíny."
 

@@ -35,7 +35,7 @@ msgstr "(boş)"
 msgid "(none)"
 msgstr "(yok)"
 
-#: src/components/common/ReportTable/index.tsx:336
+#: src/components/common/ReportTable/index.tsx:332
 msgid "{0}"
 msgstr "{0}"
 
@@ -52,23 +52,27 @@ msgstr "{0} (varsayılan)"
 msgid "{0} {1}"
 msgstr "{0} {1}"
 
-#: src/hooks/useCheckInController.tsx:311
+#: src/hooks/useCheckInController.tsx:354
 msgid "{0} {1} is already checked in"
 msgstr "{0} {1} zaten giriş yaptı"
 
-#: src/hooks/useCheckInController.tsx:310
+#: src/hooks/useCheckInController.tsx:353
 msgid "{0} {1} is already checked in · {seatLabel}"
 msgstr "{0} {1} zaten giriş yaptı · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:195
+#: src/hooks/useCheckInController.tsx:337
+msgid "{0} {1} is not checked in"
+msgstr "{0} {1} giriş yapmamış"
+
+#: src/hooks/useCheckInController.tsx:207
 msgid "{0} <0>checked in</0>"
 msgstr "{0} <0>check-in yaptı</0>"
 
-#: src/hooks/useCheckInController.tsx:194
+#: src/hooks/useCheckInController.tsx:206
 msgid "{0} <0>checked in</0> · {seatLabel}"
 msgstr "{0} <0>check-in yaptı</0> · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:230
+#: src/hooks/useCheckInController.tsx:241
 msgid "{0} <0>checked out</0> successfully"
 msgstr "{0} <0>başarıyla check-out yaptı</0>"
 
@@ -276,7 +280,7 @@ msgstr "{0} bilet"
 msgid "{0} to {1}"
 msgstr "{0} - {1}"
 
-#: src/components/routes/oauth/Connect/index.tsx:87
+#: src/components/routes/oauth/Connect/index.tsx:89
 msgid "{0} wants to use your Hi.Events account {1}. It will act as you, with the access you choose below."
 msgstr "{0}, Hi.Events hesabınız {1} hesabını kullanmak istiyor. Aşağıda seçtiğiniz erişimle sizin adınıza işlem yapacak."
 
@@ -370,15 +374,15 @@ msgstr "{days} gün"
 msgid "{days} days, {hours} hours, {minutes} minutes, and {seconds} seconds"
 msgstr "{days} gün, {hours} saat, {minutes} dakika ve {seconds} saniye"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:29
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:32
 msgid "{diffHr}h ago"
 msgstr "{diffHr} sa önce"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:27
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:30
 msgid "{diffMin}m ago"
 msgstr "{diffMin} dk önce"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:25
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:28
 msgid "{diffSec}s ago"
 msgstr "{diffSec} sn önce"
 
@@ -1065,7 +1069,7 @@ msgstr "Stripe ile kredi kartı ödemelerini kabul et"
 #: src/components/common/TeamAccessFields/index.tsx:207
 #: src/components/common/TeamAccessPanel/index.tsx:137
 #: src/components/forms/ProductForm/index.tsx:605
-#: src/components/routes/oauth/Connect/index.tsx:115
+#: src/components/routes/oauth/Connect/index.tsx:117
 #: src/components/routes/settings/ApiKeys/CreateApiKeyModal.tsx:237
 #: src/components/routes/settings/Team/index.tsx:218
 #: src/components/routes/settings/Team/MemberRow.tsx:141
@@ -1883,7 +1887,7 @@ msgstr "Tüm kategoriler"
 msgid "All changes saved"
 msgstr "Tüm değişiklikler kaydedildi"
 
-#: src/components/common/OrganizerReportTable/index.tsx:302
+#: src/components/common/OrganizerReportTable/index.tsx:296
 msgid "All Currencies"
 msgstr "Tüm Para Birimleri"
 
@@ -1949,7 +1953,7 @@ msgstr "Eşleşen tüm tarihler"
 msgid "All occurrences"
 msgstr "Tüm tarihler"
 
-#: src/components/common/ReportTable/index.tsx:287
+#: src/components/common/ReportTable/index.tsx:281
 msgid "All Occurrences"
 msgstr "Tüm tarihler"
 
@@ -2065,7 +2069,7 @@ msgstr "Neredeyse bitti! Ödemenizin işlenmesini bekliyoruz. Bu sadece birkaç 
 msgid "Already have an account? <0>{0}</0>"
 msgstr "Zaten hesabınız var mı? <0>{0}</0>"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:141
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:181
 msgid "Already in"
 msgstr "Zaten ekli"
 
@@ -2161,7 +2165,7 @@ msgstr "Alınan tutar"
 msgid "An account with this email already exists. Sign in instead."
 msgstr "Bu e-posta adresiyle bir hesap zaten var. Bunun yerine giriş yapın."
 
-#: src/components/routes/oauth/Connect/index.tsx:16
+#: src/components/routes/oauth/Connect/index.tsx:18
 msgid "an app on this computer"
 msgstr "bu bilgisayardaki bir uygulama"
 
@@ -2855,7 +2859,7 @@ msgstr "Katılımcı adı ve e-postası"
 msgid "Attendee names appear on the printout. Handle it accordingly."
 msgstr "Katılımcı adları çıktıda görünür. Çıktıyı buna göre saklayın."
 
-#: src/hooks/useCheckInController.tsx:299
+#: src/hooks/useCheckInController.tsx:322
 msgid "Attendee not found"
 msgstr "Katılımcı bulunamadı"
 
@@ -3563,7 +3567,7 @@ msgid "Call-to-Action Button"
 msgstr "Harekete Geçirici Düğme"
 
 #: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:153
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:90
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:128
 msgid "Camera"
 msgstr "Kamera"
 
@@ -3660,7 +3664,7 @@ msgstr "Kimlik doğrulama uygulamanızı veya kurtarma kodlarınızı kullanamı
 #: src/components/routes/event/OccurrencesTab/OccurrenceMenu.tsx:67
 #: src/components/routes/event/OccurrencesTab/RecurrenceScheduleDrawer/index.tsx:1173
 #: src/components/routes/event/Settings/Sections/DangerZoneSettings/index.tsx:64
-#: src/components/routes/oauth/Connect/index.tsx:164
+#: src/components/routes/oauth/Connect/index.tsx:166
 #: src/components/routes/organizer/Settings/Sections/DangerZoneSettings/index.tsx:69
 #: src/components/routes/product-widget/OrderSummaryAndProducts/EditAttendeeModal/index.tsx:85
 #: src/components/routes/product-widget/OrderSummaryAndProducts/EditOrderModal/index.tsx:85
@@ -4035,6 +4039,7 @@ msgid "Check back soon for new dates."
 msgstr "Yeni tarihler için yakında tekrar bakın."
 
 #: src/components/layouts/CheckIn/AttendeeDetailSheet.tsx:307
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:60
 #: src/components/layouts/CheckIn/tabs/SearchTab.tsx:82
 msgid "Check in"
 msgstr "Check-in yap"
@@ -4060,6 +4065,7 @@ msgid "Check key"
 msgstr "Anahtarı kontrol et"
 
 #: src/components/layouts/CheckIn/AttendeeDetailSheet.tsx:307
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:71
 #: src/components/layouts/CheckIn/tabs/SearchTab.tsx:81
 msgid "Check out"
 msgstr "Check-in'i geri al"
@@ -4073,7 +4079,7 @@ msgstr "Bu etkinliğe göz atın: {0}"
 msgid "Check out this event!"
 msgstr "Bu etkinliğe göz atın!"
 
-#: src/components/common/ReportTable/index.tsx:251
+#: src/components/common/ReportTable/index.tsx:245
 #: src/components/routes/settings/TaxesAndFees/index.tsx:85
 #: src/ee/box-office/components/layouts/BoxOffice/index.tsx:84
 msgid "Check your connection and try again."
@@ -4114,7 +4120,7 @@ msgstr "Giriş Oluşturuldu"
 msgid "Check-in Deleted"
 msgstr "Giriş Silindi"
 
-#: src/hooks/useCheckInController.tsx:158
+#: src/hooks/useCheckInController.tsx:170
 msgid "Check-in for {0} was undone"
 msgstr "{0} için check-in geri alındı"
 
@@ -4172,7 +4178,7 @@ msgstr "Giriş Listeleri"
 msgid "Check-In Lists"
 msgstr "Check-In Listeleri"
 
-#: src/components/layouts/CheckIn/index.tsx:260
+#: src/components/layouts/CheckIn/index.tsx:262
 msgid "Check-in navigation"
 msgstr "Check-in gezinmesi"
 
@@ -4209,6 +4215,10 @@ msgstr "Check-In URL'si panoya kopyalandı"
 msgid "Check-Ins"
 msgstr "Girişler"
 
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:79
+msgid "Check-out mode"
+msgstr "Çıkış modu"
+
 #: src/components/forms/QuestionForm/questionTypes.ts:26
 msgid "Checkboxes"
 msgstr "Onay Kutuları"
@@ -4234,6 +4244,10 @@ msgstr "Giriş Yapıldı"
 #: src/ee/box-office/components/layouts/BoxOffice/SaleComplete.tsx:41
 msgid "Checked in ({checkedInCount}/{attendeeCount})"
 msgstr "Giriş yapıldı ({checkedInCount}/{attendeeCount})"
+
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:184
+msgid "Checked out"
+msgstr "Çıkış yapıldı"
 
 #: src/components/routes/event/Lineup/ImportLineupModal.tsx:376
 #: src/components/routes/event/Lineup/ImportLineupModal.tsx:565
@@ -4955,8 +4969,8 @@ msgstr "Tebrikler! Etkinliğiniz artık herkese açık."
 msgid "Connect"
 msgstr "Bağla"
 
-#: src/components/routes/oauth/Connect/index.tsx:86
-#: src/components/routes/oauth/Connect/index.tsx:151
+#: src/components/routes/oauth/Connect/index.tsx:88
+#: src/components/routes/oauth/Connect/index.tsx:153
 #: src/components/routes/settings/Security/SignInMethods.tsx:246
 msgid "Connect {0}"
 msgstr "{0} hesabını bağla"
@@ -5480,8 +5494,8 @@ msgstr "{fileName} yüklenemedi"
 msgid "Couldn't load the API reference."
 msgstr "API referansı yüklenemedi."
 
-#: src/components/common/OrganizerReportTable/index.tsx:271
-#: src/components/common/ReportTable/index.tsx:249
+#: src/components/common/OrganizerReportTable/index.tsx:265
+#: src/components/common/ReportTable/index.tsx:243
 msgid "Couldn't load this report"
 msgstr "Bu rapor yüklenemedi"
 
@@ -5637,7 +5651,7 @@ msgstr "Kullanıcılarınıza bir mesaj göstermek için duyuru oluşturun."
 msgid "Create and change events, orders, attendees and more."
 msgstr "Etkinlikleri, siparişleri, katılımcıları ve daha fazlasını oluşturun ve değiştirin."
 
-#: src/components/routes/oauth/Connect/index.tsx:122
+#: src/components/routes/oauth/Connect/index.tsx:124
 msgid "Create and change events, tickets, questions and settings."
 msgstr "Etkinlik, bilet, soru ve ayar oluşturma ve değiştirme."
 
@@ -5872,7 +5886,7 @@ msgstr "CTA"
 msgid "CTA label is required"
 msgstr "Harekete geçirici düğme etiketi gerekli"
 
-#: src/components/common/OrganizerReportTable/index.tsx:317
+#: src/components/common/OrganizerReportTable/index.tsx:311
 #: src/components/forms/OrganizerForm/index.tsx:51
 #: src/components/modals/CreateEventModal/index.tsx:437
 #: src/components/modals/CreateEventModal/index.tsx:438
@@ -5945,8 +5959,8 @@ msgstr "Bu etkinlik için özel sipariş ve bilet e-postaları"
 msgid "Custom questions"
 msgstr "Özel sorular"
 
-#: src/components/common/OrganizerReportTable/index.tsx:61
-#: src/components/common/ReportTable/index.tsx:56
+#: src/components/common/OrganizerReportTable/index.tsx:62
+#: src/components/common/ReportTable/index.tsx:57
 #: src/components/routes/admin/Attribution/index.tsx:82
 msgid "Custom Range"
 msgstr "Özel Aralık"
@@ -8275,7 +8289,7 @@ msgstr "Dışa Aktar"
 msgid "Export answers"
 msgstr "Yanıtları dışa aktar"
 
-#: src/components/common/OrganizerReportTable/index.tsx:358
+#: src/components/common/OrganizerReportTable/index.tsx:352
 msgid "Export CSV"
 msgstr "CSV Dışa Aktar"
 
@@ -8291,7 +8305,7 @@ msgstr "Satın alımları dışa aktar"
 msgid "Export started. Preparing file..."
 msgstr "Dışa aktarma başladı. Dosya hazırlanıyor..."
 
-#: src/components/common/OrganizerReportTable/index.tsx:204
+#: src/components/common/OrganizerReportTable/index.tsx:198
 msgid "Export successful"
 msgstr "Dışa aktarma başarılı"
 
@@ -8320,7 +8334,7 @@ msgstr "Sıra başına ekstra koltuk"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:144
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:190
 #: src/components/modals/MessageRecipientsModal/index.tsx:18
 #: src/components/routes/admin/Messages/index.tsx:127
 msgid "Failed"
@@ -8491,7 +8505,7 @@ msgstr "Siparişler dışa aktarılamadı"
 msgid "Failed to export purchases. Please try again."
 msgstr "Satın alımlar dışa aktarılamadı. Lütfen tekrar deneyin."
 
-#: src/components/common/OrganizerReportTable/index.tsx:206
+#: src/components/common/OrganizerReportTable/index.tsx:200
 msgid "Failed to export report. Please try again."
 msgstr "Rapor dışa aktarılamadı. Lütfen tekrar deneyin."
 
@@ -9325,7 +9339,7 @@ msgstr "Geri dön"
 msgid "Go back to profile"
 msgstr "Profile geri dön"
 
-#: src/components/routes/oauth/Connect/index.tsx:25
+#: src/components/routes/oauth/Connect/index.tsx:27
 msgid "Go back to the app you were connecting and start again."
 msgstr "Bağladığınız uygulamaya dönün ve yeniden başlayın."
 
@@ -9550,7 +9564,7 @@ msgstr "Hi.Events Cloud"
 msgid "Hi.Events Fee"
 msgstr "Hi.Events Ücreti"
 
-#: src/components/routes/oauth/Connect/index.tsx:108
+#: src/components/routes/oauth/Connect/index.tsx:110
 msgid "Hi.Events hasn't verified this app. Only continue if you started connecting it yourself and you trust it."
 msgstr "Hi.Events bu uygulamayı doğrulamadı. Yalnızca bağlantıyı kendiniz başlattıysanız ve uygulamaya güveniyorsanız devam edin."
 
@@ -10418,7 +10432,7 @@ msgstr "Haziran"
 msgid "Just looking for your tickets?"
 msgstr "Sadece biletlerinizi mi arıyorsunuz?"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:24
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:27
 msgid "just now"
 msgstr "az önce"
 
@@ -10533,55 +10547,55 @@ msgstr "Dil ve boyut"
 msgid "Last"
 msgstr "Son"
 
-#: src/components/common/OrganizerReportTable/index.tsx:60
-#: src/components/common/ReportTable/index.tsx:55
+#: src/components/common/OrganizerReportTable/index.tsx:61
+#: src/components/common/ReportTable/index.tsx:56
 msgid "Last 12 months"
 msgstr "Son 12 ay"
 
-#: src/components/common/OrganizerReportTable/index.tsx:55
-#: src/components/common/ReportTable/index.tsx:50
+#: src/components/common/OrganizerReportTable/index.tsx:56
+#: src/components/common/ReportTable/index.tsx:51
 msgid "Last 14 days"
 msgstr "Son 14 gün"
 
-#: src/components/common/OrganizerReportTable/index.tsx:52
-#: src/components/common/ReportTable/index.tsx:47
+#: src/components/common/OrganizerReportTable/index.tsx:53
+#: src/components/common/ReportTable/index.tsx:48
 #: src/components/routes/admin/Attribution/index.tsx:77
 #: src/components/routes/admin/Dashboard/index.tsx:31
 #: src/components/routes/admin/EmailDelivery/index.tsx:14
 msgid "Last 24 hours"
 msgstr "Son 24 saat"
 
-#: src/components/common/OrganizerReportTable/index.tsx:56
+#: src/components/common/OrganizerReportTable/index.tsx:57
 #: src/components/common/PeriodSelector/index.tsx:34
-#: src/components/common/ReportTable/index.tsx:51
+#: src/components/common/ReportTable/index.tsx:52
 #: src/components/routes/admin/Attribution/index.tsx:79
 #: src/components/routes/admin/Dashboard/index.tsx:33
 #: src/components/routes/admin/EmailDelivery/index.tsx:16
 msgid "Last 30 days"
 msgstr "Son 30 gün"
 
-#: src/components/common/OrganizerReportTable/index.tsx:53
-#: src/components/common/ReportTable/index.tsx:48
+#: src/components/common/OrganizerReportTable/index.tsx:54
+#: src/components/common/ReportTable/index.tsx:49
 msgid "Last 48 hours"
 msgstr "Son 48 saat"
 
-#: src/components/common/OrganizerReportTable/index.tsx:58
-#: src/components/common/ReportTable/index.tsx:53
+#: src/components/common/OrganizerReportTable/index.tsx:59
+#: src/components/common/ReportTable/index.tsx:54
 msgid "Last 6 months"
 msgstr "Son 6 ay"
 
-#: src/components/common/OrganizerReportTable/index.tsx:54
+#: src/components/common/OrganizerReportTable/index.tsx:55
 #: src/components/common/PeriodSelector/index.tsx:32
-#: src/components/common/ReportTable/index.tsx:49
+#: src/components/common/ReportTable/index.tsx:50
 #: src/components/routes/admin/Attribution/index.tsx:78
 #: src/components/routes/admin/Dashboard/index.tsx:32
 #: src/components/routes/admin/EmailDelivery/index.tsx:15
 msgid "Last 7 days"
 msgstr "Son 7 gün"
 
-#: src/components/common/OrganizerReportTable/index.tsx:57
+#: src/components/common/OrganizerReportTable/index.tsx:58
 #: src/components/common/PeriodSelector/index.tsx:36
-#: src/components/common/ReportTable/index.tsx:52
+#: src/components/common/ReportTable/index.tsx:53
 #: src/components/routes/admin/Attribution/index.tsx:80
 msgid "Last 90 days"
 msgstr "Son 90 gün"
@@ -10999,8 +11013,8 @@ msgstr "Webhook günlükleri yükleniyor..."
 msgid "Loading Webhooks"
 msgstr "Webhook'lar Yükleniyor"
 
-#: src/components/common/OrganizerReportTable/index.tsx:265
-#: src/components/common/ReportTable/index.tsx:219
+#: src/components/common/OrganizerReportTable/index.tsx:259
+#: src/components/common/ReportTable/index.tsx:213
 #: src/components/routes/event/Settings/Sections/DangerZoneSettings/index.tsx:89
 #: src/components/routes/organizer/Settings/Sections/DangerZoneSettings/index.tsx:94
 msgid "Loading..."
@@ -12080,15 +12094,15 @@ msgstr "Bağlı uygulama yok"
 msgid "No connections available"
 msgstr "Kullanılabilir bağlantı yok"
 
-#: src/components/common/ReportTable/index.tsx:227
+#: src/components/common/ReportTable/index.tsx:221
 msgid "No data available"
 msgstr "Veri mevcut değil"
 
-#: src/components/common/OrganizerReportTable/index.tsx:283
+#: src/components/common/OrganizerReportTable/index.tsx:277
 msgid "No data found for the selected filters. Try adjusting the date range or currency."
 msgstr "Seçilen filtreler için veri bulunamadı. Tarih aralığını veya para birimini ayarlamayı deneyin."
 
-#: src/components/common/ReportTable/index.tsx:223
+#: src/components/common/ReportTable/index.tsx:217
 msgid "No data to show. Please select a date range"
 msgstr "Gösterilecek veri yok. Lütfen bir tarih aralığı seçin"
 
@@ -12617,6 +12631,7 @@ msgid "Not available: you have view-only access."
 msgstr "Kullanılamaz: yalnızca görüntüleme erişiminiz var."
 
 #: src/components/layouts/CheckIn/AttendeeDetailSheet.tsx:122
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:187
 #: src/components/modals/ManageAttendeeModal/index.tsx:156
 msgid "Not checked in"
 msgstr "Check-in yapılmadı"
@@ -12774,7 +12789,7 @@ msgstr "Henüz yazdırılacak bir şey yok"
 msgid "Nothing to sell here yet. Add products to this box office."
 msgstr "Henüz satılacak bir şey yok. Bu gişeye ürün ekleyin."
 
-#: src/components/common/ReportTable/index.tsx:263
+#: src/components/common/ReportTable/index.tsx:257
 msgid "Nothing to show yet"
 msgstr "Henüz gösterilecek bir şey yok"
 
@@ -12859,7 +12874,7 @@ msgstr "Ortadan tek ve çift"
 msgid "Odd numbers only"
 msgstr "Yalnızca tek numaralar"
 
-#: src/components/common/OrganizerReportTable/index.tsx:367
+#: src/components/common/OrganizerReportTable/index.tsx:361
 msgid "of"
 msgstr "/"
 
@@ -13022,7 +13037,7 @@ msgstr "Sipariş başına bir kez"
 msgid "Once you create an event, you'll see it here."
 msgstr "Bir etkinlik oluşturduğunuzda, burada göreceksiniz."
 
-#: src/components/common/ReportTable/index.tsx:268
+#: src/components/common/ReportTable/index.tsx:262
 msgid "Once you start collecting data, you'll see it here."
 msgstr "Veri toplamaya başladığınızda, burada göreceksiniz."
 
@@ -13135,7 +13150,7 @@ msgstr "Ekip erişimini yalnızca yöneticiler yönetebilir."
 msgid "Only available as an add-on"
 msgstr "Yalnızca ek ürün olarak sunulur"
 
-#: src/components/routes/oauth/Connect/index.tsx:107
+#: src/components/routes/oauth/Connect/index.tsx:109
 msgid "Only continue if you just started connecting from an app on this computer, such as Claude Code or Cursor."
 msgstr "Yalnızca bu bilgisayardaki bir uygulamadan (Claude Code veya Cursor gibi) bağlantıyı yeni başlattıysanız devam edin."
 
@@ -13780,7 +13795,7 @@ msgstr "Başka bir Hi.Events hesabının sahibi olduğu için güvenlik ayarlar�
 msgid "Padding"
 msgstr "İç Boşluk"
 
-#: src/components/common/OrganizerReportTable/index.tsx:367
+#: src/components/common/OrganizerReportTable/index.tsx:361
 msgid "Page"
 msgstr "Sayfa"
 
@@ -14569,7 +14584,7 @@ msgstr "Baştan başlamak için lütfen etkinlik sayfasına dönün."
 msgid "Please select a date and time"
 msgstr "Lütfen bir tarih ve saat seçin"
 
-#: src/components/common/OrganizerReportTable/index.tsx:280
+#: src/components/common/OrganizerReportTable/index.tsx:274
 msgid "Please select a date range"
 msgstr "Lütfen bir tarih aralığı seçin"
 
@@ -15201,7 +15216,7 @@ msgstr "Yeniden etkinleştir"
 msgid "Reactivate this date? It will be reopened for future sales."
 msgstr "Bu tarih yeniden etkinleştirilsin mi? Gelecekteki satışlara yeniden açılacak."
 
-#: src/components/routes/oauth/Connect/index.tsx:121
+#: src/components/routes/oauth/Connect/index.tsx:123
 #: src/components/routes/settings/ApiKeys/ApiKeyRow.tsx:52
 #: src/components/routes/settings/ApiKeys/ConnectedApps.tsx:73
 #: src/components/routes/settings/ApiKeys/CreateApiKeyModal.tsx:250
@@ -15213,7 +15228,7 @@ msgstr "Okuma ve yazma"
 msgid "Read more"
 msgstr "Devamını oku"
 
-#: src/components/routes/oauth/Connect/index.tsx:127
+#: src/components/routes/oauth/Connect/index.tsx:129
 msgid "Read only"
 msgstr "Salt okunur"
 
@@ -15289,10 +15304,6 @@ msgstr "Son etkinlikler"
 msgid "Recent Attendees"
 msgstr "Son katılımcılar"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:106
-msgid "Recent check-ins"
-msgstr "Son check-in'ler"
-
 #: src/components/routes/organizer/OrganizerDashboard/index.tsx:316
 msgid "Recent orders"
 msgstr "Son siparişler"
@@ -15300,6 +15311,10 @@ msgstr "Son siparişler"
 #: src/components/common/OccurrenceAttendeesAndOrders/index.tsx:64
 msgid "Recent Orders"
 msgstr "Son Siparişler"
+
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:144
+msgid "Recent scans"
+msgstr "Son taramalar"
 
 #: src/components/routes/admin/Dashboard/index.tsx:388
 msgid "Recent signups"
@@ -16018,11 +16033,11 @@ msgstr "Etkinliğe Dön"
 msgid "Return to Event Page"
 msgstr "Etkinlik Sayfasına Dön"
 
-#: src/components/routes/oauth/Connect/index.tsx:77
+#: src/components/routes/oauth/Connect/index.tsx:79
 msgid "Returning you to {leavingTo}…"
 msgstr "{leavingTo} adresine geri dönülüyor…"
 
-#: src/components/routes/oauth/Connect/index.tsx:92
+#: src/components/routes/oauth/Connect/index.tsx:94
 msgid "Returns you to"
 msgstr "Sizi şuraya geri gönderir"
 
@@ -16522,19 +16537,27 @@ msgstr "Özel ayar kaydedildiğinde, bu organizatör şu anda sistem varsayılan
 msgid "Scan"
 msgstr "Tara"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:58
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:97
 msgid "Scan a ticket to check in an attendee"
 msgstr "Bir katılımcının check-in'ini yapmak için bilet okutun"
+
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:96
+msgid "Scan a ticket to check out an attendee"
+msgstr "Bir katılımcının çıkışını yapmak için bileti tarayın"
+
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:50
+msgid "Scan action"
+msgstr "Tarama işlemi"
 
 #: src/components/routes/event/CheckInLists/index.tsx:36
 msgid "Scan tickets at the door with a phone, tablet, or USB scanner."
 msgstr "Kapıda telefon, tablet veya USB okuyucu ile bilet okutun."
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:109
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:147
 msgid "Scanned tickets will appear here"
 msgstr "Okutulan biletler burada görünür"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:71
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:109
 msgid "Scanner mode"
 msgstr "Tarayıcı modu"
 
@@ -17097,8 +17120,8 @@ msgstr "Bilet Seç"
 msgid "Select tickets"
 msgstr "Biletleri seç"
 
-#: src/components/common/OrganizerReportTable/index.tsx:328
-#: src/components/common/ReportTable/index.tsx:294
+#: src/components/common/OrganizerReportTable/index.tsx:322
+#: src/components/common/ReportTable/index.tsx:288
 msgid "Select time period"
 msgstr "Zaman aralığı seç"
 
@@ -17717,7 +17740,7 @@ msgstr "Bu soruyu göster"
 msgid "Show tickets"
 msgstr "Biletleri göster"
 
-#: src/components/common/OrganizerReportTable/index.tsx:366
+#: src/components/common/OrganizerReportTable/index.tsx:360
 msgid "Showing {0} of {totalRows} records"
 msgstr "{totalRows} kayıttan {0} tanesi gösteriliyor"
 
@@ -18224,8 +18247,8 @@ msgstr "Bir şeyler ters gitti. Lütfen daha sonra tekrar deneyin."
 #: src/components/routes/auth/Login/index.tsx:132
 #: src/components/routes/auth/Register/index.tsx:81
 #: src/components/routes/my-tickets/index.tsx:162
-#: src/components/routes/oauth/Connect/index.tsx:63
-#: src/components/routes/oauth/Connect/index.tsx:70
+#: src/components/routes/oauth/Connect/index.tsx:65
+#: src/components/routes/oauth/Connect/index.tsx:72
 #: src/components/routes/product-widget/SelectProducts/index.tsx:383
 #: src/components/routes/settings/Account/DeleteAccountSection.tsx:79
 #: src/components/routes/settings/ApiKeys/ConnectedApps.tsx:30
@@ -19050,7 +19073,7 @@ msgstr "Eklemek için bir koltuğa dokunun veya önce adetleri belirleyin"
 msgid "Tap dates like a calendar."
 msgstr "Tarihlere takvimdeki gibi dokunun."
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:59
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:94
 msgid "Tap this screen to resume scanning"
 msgstr "Taramayı sürdürmek için ekrana dokunun"
 
@@ -19841,11 +19864,11 @@ msgstr "Bu check-in listesi iptal edilmiş bir oturuma bağlı olduğu için art
 msgid "This code will be used to track sales. Only letters, numbers, hyphens, and underscores allowed."
 msgstr "Bu kod satışları izlemek için kullanılacaktır. Yalnızca harfler, sayılar, tireler ve alt çizgiler kullanılabilir."
 
-#: src/components/routes/oauth/Connect/index.tsx:24
+#: src/components/routes/oauth/Connect/index.tsx:26
 msgid "This connection link doesn't work"
 msgstr "Bu bağlantı linki çalışmıyor"
 
-#: src/components/routes/oauth/Connect/index.tsx:24
+#: src/components/routes/oauth/Connect/index.tsx:26
 msgid "This connection request has expired"
 msgstr "Bu bağlantı isteğinin süresi doldu"
 
@@ -20192,7 +20215,7 @@ msgstr "Bu alan tekerlekli sandalye kullanıcıları ve erişim ihtiyacı olan k
 msgid "This ticket is no longer valid"
 msgstr "Bu bilet artık geçerli değil"
 
-#: src/hooks/useCheckInController.tsx:276
+#: src/hooks/useCheckInController.tsx:298
 msgid "This ticket was just scanned. Please wait before scanning again."
 msgstr "Bu bilet az önce tarandı. Tekrar taramadan önce lütfen bekleyin."
 
@@ -20736,8 +20759,8 @@ msgstr "Farklı bir arama terimi veya filtre deneyin"
 msgid "Try adjusting your filters to see more dates."
 msgstr "Daha fazla tarih görmek için filtrelerinizi ayarlayın."
 
-#: src/components/common/OrganizerReportTable/index.tsx:273
-#: src/components/common/ReportTable/index.tsx:254
+#: src/components/common/OrganizerReportTable/index.tsx:267
+#: src/components/common/ReportTable/index.tsx:248
 #: src/components/routes/product-widget/SelectProducts/index.tsx:1121
 #: src/components/routes/settings/ApiKeys/ConnectedApps.tsx:54
 #: src/components/routes/settings/ApiKeys/index.tsx:189
@@ -20828,11 +20851,11 @@ msgstr "Önce {providerName} ile girişi açın ve bir alan adı doğrulayın."
 msgid "Turn on two-factor authentication for your own profile first."
 msgstr "Önce kendi profiliniz için iki adımlı doğrulamayı açın."
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:94
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:132
 msgid "Turn sound off"
 msgstr "Sesi kapat"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:94
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:132
 msgid "Turn sound on"
 msgstr "Sesi aç"
 
@@ -20952,12 +20975,12 @@ msgstr "Okuyucu değiştirilemedi"
 msgid "Unable to check in"
 msgstr "Giriş yapılamadı"
 
-#: src/hooks/useCheckInController.tsx:217
+#: src/hooks/useCheckInController.tsx:229
 msgid "Unable to check in attendee"
 msgstr "Katılımcı girişi yapılamadı"
 
-#: src/hooks/useCheckInController.tsx:243
-#: src/hooks/useCheckInController.tsx:245
+#: src/hooks/useCheckInController.tsx:260
+#: src/hooks/useCheckInController.tsx:262
 msgid "Unable to check out attendee"
 msgstr "Katılımcı check-out'u yapılamadı"
 
@@ -20982,7 +21005,7 @@ msgstr "Widget silinemedi"
 msgid "Unable to duplicate product. Please check the your details"
 msgstr "Ürün çoğaltılamıyor. Lütfen bilgilerinizi kontrol edin"
 
-#: src/hooks/useCheckInController.tsx:291
+#: src/hooks/useCheckInController.tsx:314
 msgid "Unable to fetch attendee"
 msgstr "Katılımcı getirilemedi"
 
@@ -21036,7 +21059,7 @@ msgstr "Satış başlatılamadı. Lütfen tekrar deneyin."
 msgid "Unable to switch date"
 msgstr "Tarih değiştirilemedi"
 
-#: src/hooks/useCheckInController.tsx:163
+#: src/hooks/useCheckInController.tsx:175
 msgid "Unable to undo check-in"
 msgstr "Check-in geri alınamıyor"
 
@@ -21070,7 +21093,7 @@ msgstr "Token configuration altında ID token'a isteğe bağlı email ve xms_edo
 
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:299
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:300
-#: src/hooks/useCheckInController.tsx:201
+#: src/hooks/useCheckInController.tsx:213
 msgid "Undo"
 msgstr "Geri al"
 
@@ -21395,15 +21418,15 @@ msgstr "Kullanım sayaçları sıfırdan başlar"
 msgid "Usage Limit"
 msgstr "Kullanım Sınırı"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:80
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:118
 msgid "USB"
 msgstr "USB"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:53
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:89
 msgid "USB scanner listening"
 msgstr "USB tarayıcı dinliyor"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:53
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:89
 msgid "USB scanner paused"
 msgstr "USB tarayıcı duraklatıldı"
 
@@ -21688,7 +21711,7 @@ msgstr "Doğrulama e-postası gönderildi. Gelen kutunuzu kontrol edin."
 #: src/components/routes/admin/Accounts/AccountDetail/index.tsx:216
 #: src/components/routes/admin/Attribution/index.tsx:198
 #: src/components/routes/admin/Dashboard/index.tsx:396
-#: src/components/routes/oauth/Connect/index.tsx:97
+#: src/components/routes/oauth/Connect/index.tsx:99
 #: src/ee/sso/components/SingleSignOn/DomainList.tsx:17
 msgid "Verified"
 msgstr "Doğrulandı"
@@ -21848,7 +21871,7 @@ msgstr "Etkinlik sayfasını görüntüle"
 msgid "View Event Page"
 msgstr "Etkinlik sayfasını görüntüle"
 
-#: src/components/routes/oauth/Connect/index.tsx:128
+#: src/components/routes/oauth/Connect/index.tsx:130
 msgid "View events, tickets and sales, without changing anything."
 msgstr "Hiçbir şeyi değiştirmeden etkinlikleri, biletleri ve satışları görüntüleme."
 
@@ -21990,7 +22013,7 @@ msgstr "Bekliyor"
 msgid "Waiting for payment"
 msgstr "Ödeme bekleniyor"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:64
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:102
 msgid "Waiting for scan…"
 msgstr "Tarama bekleniyor…"
 
@@ -22673,9 +22696,9 @@ msgstr "X (Twitter)"
 msgid "year"
 msgstr "yıl"
 
-#: src/components/common/OrganizerReportTable/index.tsx:59
+#: src/components/common/OrganizerReportTable/index.tsx:60
 #: src/components/common/PeriodSelector/index.tsx:38
-#: src/components/common/ReportTable/index.tsx:54
+#: src/components/common/ReportTable/index.tsx:55
 msgid "Year to date"
 msgstr "Yıl başından beri"
 
@@ -22746,8 +22769,8 @@ msgstr "<0>{0}</0> ({1}) rolünü üstleniyorsunuz"
 msgid "You are issuing a partial refund. The customer will be refunded {0} {1}."
 msgstr "Kısmi iade yapıyorsunuz. Müşteriye {0} {1} iade edilecek."
 
-#: src/hooks/useCheckInController.tsx:212
-#: src/hooks/useCheckInController.tsx:238
+#: src/hooks/useCheckInController.tsx:224
+#: src/hooks/useCheckInController.tsx:255
 msgid "You are offline"
 msgstr "Çevrimdışısınız"
 
@@ -22791,7 +22814,7 @@ msgstr "Hesap ayarlarınızda ek hizmet ücretleri ve vergileri yapılandırabil
 msgid "You can create a promo code which targets this product on the"
 msgstr "Bu ürünü hedefleyen bir promosyon kodu oluşturabilirsiniz"
 
-#: src/components/routes/oauth/Connect/index.tsx:167
+#: src/components/routes/oauth/Connect/index.tsx:169
 msgid "You can disconnect it at any time from Settings → API keys."
 msgstr "Bağlantısını istediğiniz zaman Ayarlar → API anahtarları bölümünden kesebilirsiniz."
 
@@ -22823,8 +22846,8 @@ msgstr "Hesabınızdaki son aktif organizatörü arşivleyemezsiniz."
 msgid "You cannot change the product type as there are attendees associated with this product."
 msgstr "Bu ürünle ilişkili katılımcılar olduğu için ürün türünü değiştiremezsiniz."
 
-#: src/hooks/useCheckInController.tsx:261
-#: src/hooks/useCheckInController.tsx:330
+#: src/hooks/useCheckInController.tsx:283
+#: src/hooks/useCheckInController.tsx:373
 msgid "You cannot check in attendees with unpaid orders. This setting can be changed in the event settings."
 msgstr "Ödenmemiş siparişleri olan katılımcıları check-in yaptıramazsınız. Bu ayar etkinlik ayarlarından değiştirilebilir."
 
@@ -23371,7 +23394,7 @@ msgstr "Kurtarma kodlarınız ve güvenilen cihazlarınız kaldırılacak."
 msgid "Your refund is processing."
 msgstr "İadeniz işleniyor."
 
-#: src/hooks/useCheckInController.tsx:78
+#: src/hooks/useCheckInController.tsx:83
 msgid "Your saved date filter is no longer available — showing all dates."
 msgstr "Kaydedilmiş tarih filtreniz artık kullanılamıyor — tüm tarihler gösteriliyor."
 

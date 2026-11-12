@@ -1,4 +1,4 @@
-export type RecentScanStatus = "success" | "duplicate" | "error";
+export type RecentScanStatus = "success" | "duplicate" | "checked_out" | "not_checked_in" | "error";
 
 export interface RecentScan {
     id: string;

@@ -52,6 +52,42 @@ test.describe('public check-in app', () => {
     await expect(checkIn.progressChip()).toHaveText('0/2');
   });
 
+  test('a staff member scans a checked-in attendee in check-out mode to check them out', async ({ page, api, publicApi, account }) => {
+    const { order, list } = await seedCheckInList(api, publicApi, account.organizerId);
+    const attendee = order.attendees[0];
+
+    const checkIn = new CheckInPage(page);
+    await checkIn.goto(list.short_id);
+    await checkIn.openSearchTab();
+    await checkIn.search(order.buyerLastName);
+    await checkIn.checkInButton(attendee.publicId).click();
+    await expect(checkIn.progressChip()).toHaveText('1/2');
+
+    await checkIn.openScanTab();
+    await checkIn.switchToCheckOut();
+    await expect(page.getByText('Check-out mode')).toBeVisible();
+
+    await checkIn.scanWithUsbScanner(attendee.publicId);
+
+    await expect(checkIn.recentScan(attendee.publicId)).toContainText('Checked out');
+    await expect(checkIn.progressChip()).toHaveText('0/2');
+  });
+
+  test('scanning an attendee who is not checked in while in check-out mode is rejected', async ({ page, api, publicApi, account }) => {
+    const { order, list } = await seedCheckInList(api, publicApi, account.organizerId);
+    const attendee = order.attendees[0];
+
+    const checkIn = new CheckInPage(page);
+    await checkIn.goto(list.short_id);
+    await checkIn.openScanTab();
+    await checkIn.switchToCheckOut();
+
+    await checkIn.scanWithUsbScanner(attendee.publicId);
+
+    await expect(checkIn.recentScan(attendee.publicId)).toContainText('Not checked in');
+    await expect(checkIn.progressChip()).toHaveText('0/2');
+  });
+
   test('the stats tab reflects attendance totals and check-ins', async ({ page, api, publicApi, account }) => {
     const { order, list } = await seedCheckInList(api, publicApi, account.organizerId);
     const attendee = order.attendees[0];

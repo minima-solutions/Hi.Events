@@ -35,7 +35,7 @@ msgstr "(비어 있음)"
 msgid "(none)"
 msgstr "(없음)"
 
-#: src/components/common/ReportTable/index.tsx:336
+#: src/components/common/ReportTable/index.tsx:332
 msgid "{0}"
 msgstr "{0}"
 
@@ -52,23 +52,27 @@ msgstr "{0} (기본값)"
 msgid "{0} {1}"
 msgstr "{0} {1}"
 
-#: src/hooks/useCheckInController.tsx:311
+#: src/hooks/useCheckInController.tsx:354
 msgid "{0} {1} is already checked in"
 msgstr "{0} {1}은(는) 이미 체크인되었습니다"
 
-#: src/hooks/useCheckInController.tsx:310
+#: src/hooks/useCheckInController.tsx:353
 msgid "{0} {1} is already checked in · {seatLabel}"
 msgstr "{0} {1}은(는) 이미 체크인되었습니다 · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:195
+#: src/hooks/useCheckInController.tsx:337
+msgid "{0} {1} is not checked in"
+msgstr "{0} {1}님은 체크인하지 않았습니다"
+
+#: src/hooks/useCheckInController.tsx:207
 msgid "{0} <0>checked in</0>"
 msgstr "{0} <0>체크인됨</0>"
 
-#: src/hooks/useCheckInController.tsx:194
+#: src/hooks/useCheckInController.tsx:206
 msgid "{0} <0>checked in</0> · {seatLabel}"
 msgstr "{0} <0>체크인됨</0> · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:230
+#: src/hooks/useCheckInController.tsx:241
 msgid "{0} <0>checked out</0> successfully"
 msgstr "{0}이(가) <0>체크아웃</0>되었습니다"
 
@@ -276,7 +280,7 @@ msgstr "티켓 {0}장"
 msgid "{0} to {1}"
 msgstr "{0}~{1}"
 
-#: src/components/routes/oauth/Connect/index.tsx:87
+#: src/components/routes/oauth/Connect/index.tsx:89
 msgid "{0} wants to use your Hi.Events account {1}. It will act as you, with the access you choose below."
 msgstr "{0}에서 회원님의 Hi.Events 계정 {1}을(를) 사용하려고 합니다. 아래에서 선택한 권한으로 회원님을 대신해 작동합니다."
 
@@ -370,15 +374,15 @@ msgstr "{days}일"
 msgid "{days} days, {hours} hours, {minutes} minutes, and {seconds} seconds"
 msgstr "{days}일 {hours}시간 {minutes}분 {seconds}초"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:29
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:32
 msgid "{diffHr}h ago"
 msgstr "{diffHr}시간 전"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:27
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:30
 msgid "{diffMin}m ago"
 msgstr "{diffMin}분 전"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:25
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:28
 msgid "{diffSec}s ago"
 msgstr "{diffSec}초 전"
 
@@ -1065,7 +1069,7 @@ msgstr "Stripe로 신용카드 결제를 받습니다"
 #: src/components/common/TeamAccessFields/index.tsx:207
 #: src/components/common/TeamAccessPanel/index.tsx:137
 #: src/components/forms/ProductForm/index.tsx:605
-#: src/components/routes/oauth/Connect/index.tsx:115
+#: src/components/routes/oauth/Connect/index.tsx:117
 #: src/components/routes/settings/ApiKeys/CreateApiKeyModal.tsx:237
 #: src/components/routes/settings/Team/index.tsx:218
 #: src/components/routes/settings/Team/MemberRow.tsx:141
@@ -1883,7 +1887,7 @@ msgstr "모든 카테고리"
 msgid "All changes saved"
 msgstr "모든 변경 사항이 저장됨"
 
-#: src/components/common/OrganizerReportTable/index.tsx:302
+#: src/components/common/OrganizerReportTable/index.tsx:296
 msgid "All Currencies"
 msgstr "모든 통화"
 
@@ -1949,7 +1953,7 @@ msgstr "일치하는 모든 날짜"
 msgid "All occurrences"
 msgstr "모든 회차"
 
-#: src/components/common/ReportTable/index.tsx:287
+#: src/components/common/ReportTable/index.tsx:281
 msgid "All Occurrences"
 msgstr "모든 회차"
 
@@ -2065,7 +2069,7 @@ msgstr "거의 다 되었습니다! 결제 처리를 기다리고 있습니다. 
 msgid "Already have an account? <0>{0}</0>"
 msgstr "이미 계정이 있으신가요? <0>{0}</0>"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:141
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:181
 msgid "Already in"
 msgstr "이미 포함됨"
 
@@ -2161,7 +2165,7 @@ msgstr "받은 금액"
 msgid "An account with this email already exists. Sign in instead."
 msgstr "이 이메일로 등록된 계정이 이미 있습니다. 대신 로그인해 주세요."
 
-#: src/components/routes/oauth/Connect/index.tsx:16
+#: src/components/routes/oauth/Connect/index.tsx:18
 msgid "an app on this computer"
 msgstr "이 컴퓨터의 앱"
 
@@ -2855,7 +2859,7 @@ msgstr "참석자 이름 및 이메일"
 msgid "Attendee names appear on the printout. Handle it accordingly."
 msgstr "인쇄물에 참석자 이름이 표시됩니다. 취급에 유의하세요."
 
-#: src/hooks/useCheckInController.tsx:299
+#: src/hooks/useCheckInController.tsx:322
 msgid "Attendee not found"
 msgstr "참가자를 찾을 수 없습니다"
 
@@ -3563,7 +3567,7 @@ msgid "Call-to-Action Button"
 msgstr "행동 유도 버튼"
 
 #: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:153
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:90
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:128
 msgid "Camera"
 msgstr "카메라"
 
@@ -3660,7 +3664,7 @@ msgstr "인증 앱이나 복구 코드를 사용할 수 없나요?"
 #: src/components/routes/event/OccurrencesTab/OccurrenceMenu.tsx:67
 #: src/components/routes/event/OccurrencesTab/RecurrenceScheduleDrawer/index.tsx:1173
 #: src/components/routes/event/Settings/Sections/DangerZoneSettings/index.tsx:64
-#: src/components/routes/oauth/Connect/index.tsx:164
+#: src/components/routes/oauth/Connect/index.tsx:166
 #: src/components/routes/organizer/Settings/Sections/DangerZoneSettings/index.tsx:69
 #: src/components/routes/product-widget/OrderSummaryAndProducts/EditAttendeeModal/index.tsx:85
 #: src/components/routes/product-widget/OrderSummaryAndProducts/EditOrderModal/index.tsx:85
@@ -4035,6 +4039,7 @@ msgid "Check back soon for new dates."
 msgstr "곧 새로운 일정이 추가될 예정입니다."
 
 #: src/components/layouts/CheckIn/AttendeeDetailSheet.tsx:307
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:60
 #: src/components/layouts/CheckIn/tabs/SearchTab.tsx:82
 msgid "Check in"
 msgstr "체크인"
@@ -4060,6 +4065,7 @@ msgid "Check key"
 msgstr "키 확인"
 
 #: src/components/layouts/CheckIn/AttendeeDetailSheet.tsx:307
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:71
 #: src/components/layouts/CheckIn/tabs/SearchTab.tsx:81
 msgid "Check out"
 msgstr "체크아웃"
@@ -4073,7 +4079,7 @@ msgstr "이 이벤트를 확인해 보세요: {0}"
 msgid "Check out this event!"
 msgstr "이 이벤트를 확인해 보세요!"
 
-#: src/components/common/ReportTable/index.tsx:251
+#: src/components/common/ReportTable/index.tsx:245
 #: src/components/routes/settings/TaxesAndFees/index.tsx:85
 #: src/ee/box-office/components/layouts/BoxOffice/index.tsx:84
 msgid "Check your connection and try again."
@@ -4114,7 +4120,7 @@ msgstr "체크인 생성됨"
 msgid "Check-in Deleted"
 msgstr "체크인 삭제됨"
 
-#: src/hooks/useCheckInController.tsx:158
+#: src/hooks/useCheckInController.tsx:170
 msgid "Check-in for {0} was undone"
 msgstr "{0}의 체크인이 취소되었습니다"
 
@@ -4172,7 +4178,7 @@ msgstr "체크인 목록"
 msgid "Check-In Lists"
 msgstr "체크인 목록"
 
-#: src/components/layouts/CheckIn/index.tsx:260
+#: src/components/layouts/CheckIn/index.tsx:262
 msgid "Check-in navigation"
 msgstr "체크인 탐색"
 
@@ -4209,6 +4215,10 @@ msgstr "체크인 URL이 클립보드에 복사되었습니다"
 msgid "Check-Ins"
 msgstr "체크인"
 
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:79
+msgid "Check-out mode"
+msgstr "체크아웃 모드"
+
 #: src/components/forms/QuestionForm/questionTypes.ts:26
 msgid "Checkboxes"
 msgstr "체크박스"
@@ -4234,6 +4244,10 @@ msgstr "체크인됨"
 #: src/ee/box-office/components/layouts/BoxOffice/SaleComplete.tsx:41
 msgid "Checked in ({checkedInCount}/{attendeeCount})"
 msgstr "체크인됨 ({checkedInCount}/{attendeeCount})"
+
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:184
+msgid "Checked out"
+msgstr "체크아웃됨"
 
 #: src/components/routes/event/Lineup/ImportLineupModal.tsx:376
 #: src/components/routes/event/Lineup/ImportLineupModal.tsx:565
@@ -4955,8 +4969,8 @@ msgstr "축하합니다! 이제 이벤트가 공개적으로 표시됩니다."
 msgid "Connect"
 msgstr "연결"
 
-#: src/components/routes/oauth/Connect/index.tsx:86
-#: src/components/routes/oauth/Connect/index.tsx:151
+#: src/components/routes/oauth/Connect/index.tsx:88
+#: src/components/routes/oauth/Connect/index.tsx:153
 #: src/components/routes/settings/Security/SignInMethods.tsx:246
 msgid "Connect {0}"
 msgstr "{0} 연결"
@@ -5480,8 +5494,8 @@ msgstr "{fileName}을(를) 업로드할 수 없습니다"
 msgid "Couldn't load the API reference."
 msgstr "API 레퍼런스를 불러오지 못했습니다."
 
-#: src/components/common/OrganizerReportTable/index.tsx:271
-#: src/components/common/ReportTable/index.tsx:249
+#: src/components/common/OrganizerReportTable/index.tsx:265
+#: src/components/common/ReportTable/index.tsx:243
 msgid "Couldn't load this report"
 msgstr "이 보고서를 불러오지 못했습니다"
 
@@ -5637,7 +5651,7 @@ msgstr "사용자에게 메시지를 표시할 공지를 생성하세요."
 msgid "Create and change events, orders, attendees and more."
 msgstr "이벤트, 주문, 참가자 등을 만들고 변경합니다."
 
-#: src/components/routes/oauth/Connect/index.tsx:122
+#: src/components/routes/oauth/Connect/index.tsx:124
 msgid "Create and change events, tickets, questions and settings."
 msgstr "이벤트, 티켓, 질문 및 설정 생성과 변경."
 
@@ -5872,7 +5886,7 @@ msgstr "CTA"
 msgid "CTA label is required"
 msgstr "CTA 레이블을 입력해 주세요"
 
-#: src/components/common/OrganizerReportTable/index.tsx:317
+#: src/components/common/OrganizerReportTable/index.tsx:311
 #: src/components/forms/OrganizerForm/index.tsx:51
 #: src/components/modals/CreateEventModal/index.tsx:437
 #: src/components/modals/CreateEventModal/index.tsx:438
@@ -5945,8 +5959,8 @@ msgstr "이 이벤트의 맞춤 주문 및 티켓 이메일"
 msgid "Custom questions"
 msgstr "맞춤 질문"
 
-#: src/components/common/OrganizerReportTable/index.tsx:61
-#: src/components/common/ReportTable/index.tsx:56
+#: src/components/common/OrganizerReportTable/index.tsx:62
+#: src/components/common/ReportTable/index.tsx:57
 #: src/components/routes/admin/Attribution/index.tsx:82
 msgid "Custom Range"
 msgstr "사용자 지정 범위"
@@ -8275,7 +8289,7 @@ msgstr "내보내기"
 msgid "Export answers"
 msgstr "답변 내보내기"
 
-#: src/components/common/OrganizerReportTable/index.tsx:358
+#: src/components/common/OrganizerReportTable/index.tsx:352
 msgid "Export CSV"
 msgstr "CSV 내보내기"
 
@@ -8291,7 +8305,7 @@ msgstr "구매 내역 내보내기"
 msgid "Export started. Preparing file..."
 msgstr "내보내기가 시작되었습니다. 파일을 준비하는 중..."
 
-#: src/components/common/OrganizerReportTable/index.tsx:204
+#: src/components/common/OrganizerReportTable/index.tsx:198
 msgid "Export successful"
 msgstr "내보내기 성공"
 
@@ -8320,7 +8334,7 @@ msgstr "행마다 추가할 좌석 수"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:144
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:190
 #: src/components/modals/MessageRecipientsModal/index.tsx:18
 #: src/components/routes/admin/Messages/index.tsx:127
 msgid "Failed"
@@ -8491,7 +8505,7 @@ msgstr "주문 내보내기에 실패했습니다"
 msgid "Failed to export purchases. Please try again."
 msgstr "구매 내역을 내보내지 못했습니다. 다시 시도해 주세요."
 
-#: src/components/common/OrganizerReportTable/index.tsx:206
+#: src/components/common/OrganizerReportTable/index.tsx:200
 msgid "Failed to export report. Please try again."
 msgstr "보고서 내보내기에 실패했습니다. 다시 시도해 주세요."
 
@@ -9325,7 +9339,7 @@ msgstr "뒤로 가기"
 msgid "Go back to profile"
 msgstr "프로필로 돌아가기"
 
-#: src/components/routes/oauth/Connect/index.tsx:25
+#: src/components/routes/oauth/Connect/index.tsx:27
 msgid "Go back to the app you were connecting and start again."
 msgstr "연결하던 앱으로 돌아가 다시 시작하세요."
 
@@ -9550,7 +9564,7 @@ msgstr "Hi.Events Cloud"
 msgid "Hi.Events Fee"
 msgstr "Hi.Events 수수료"
 
-#: src/components/routes/oauth/Connect/index.tsx:108
+#: src/components/routes/oauth/Connect/index.tsx:110
 msgid "Hi.Events hasn't verified this app. Only continue if you started connecting it yourself and you trust it."
 msgstr "Hi.Events에서 확인하지 않은 앱입니다. 직접 연결을 시작했고 신뢰할 수 있는 경우에만 계속하세요."
 
@@ -10418,7 +10432,7 @@ msgstr "6월"
 msgid "Just looking for your tickets?"
 msgstr "티켓만 찾고 계신가요?"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:24
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:27
 msgid "just now"
 msgstr "방금 전"
 
@@ -10533,55 +10547,55 @@ msgstr "언어 및 크기"
 msgid "Last"
 msgstr "마지막"
 
-#: src/components/common/OrganizerReportTable/index.tsx:60
-#: src/components/common/ReportTable/index.tsx:55
+#: src/components/common/OrganizerReportTable/index.tsx:61
+#: src/components/common/ReportTable/index.tsx:56
 msgid "Last 12 months"
 msgstr "최근 12개월"
 
-#: src/components/common/OrganizerReportTable/index.tsx:55
-#: src/components/common/ReportTable/index.tsx:50
+#: src/components/common/OrganizerReportTable/index.tsx:56
+#: src/components/common/ReportTable/index.tsx:51
 msgid "Last 14 days"
 msgstr "최근 14일"
 
-#: src/components/common/OrganizerReportTable/index.tsx:52
-#: src/components/common/ReportTable/index.tsx:47
+#: src/components/common/OrganizerReportTable/index.tsx:53
+#: src/components/common/ReportTable/index.tsx:48
 #: src/components/routes/admin/Attribution/index.tsx:77
 #: src/components/routes/admin/Dashboard/index.tsx:31
 #: src/components/routes/admin/EmailDelivery/index.tsx:14
 msgid "Last 24 hours"
 msgstr "최근 24시간"
 
-#: src/components/common/OrganizerReportTable/index.tsx:56
+#: src/components/common/OrganizerReportTable/index.tsx:57
 #: src/components/common/PeriodSelector/index.tsx:34
-#: src/components/common/ReportTable/index.tsx:51
+#: src/components/common/ReportTable/index.tsx:52
 #: src/components/routes/admin/Attribution/index.tsx:79
 #: src/components/routes/admin/Dashboard/index.tsx:33
 #: src/components/routes/admin/EmailDelivery/index.tsx:16
 msgid "Last 30 days"
 msgstr "최근 30일"
 
-#: src/components/common/OrganizerReportTable/index.tsx:53
-#: src/components/common/ReportTable/index.tsx:48
+#: src/components/common/OrganizerReportTable/index.tsx:54
+#: src/components/common/ReportTable/index.tsx:49
 msgid "Last 48 hours"
 msgstr "최근 48시간"
 
-#: src/components/common/OrganizerReportTable/index.tsx:58
-#: src/components/common/ReportTable/index.tsx:53
+#: src/components/common/OrganizerReportTable/index.tsx:59
+#: src/components/common/ReportTable/index.tsx:54
 msgid "Last 6 months"
 msgstr "최근 6개월"
 
-#: src/components/common/OrganizerReportTable/index.tsx:54
+#: src/components/common/OrganizerReportTable/index.tsx:55
 #: src/components/common/PeriodSelector/index.tsx:32
-#: src/components/common/ReportTable/index.tsx:49
+#: src/components/common/ReportTable/index.tsx:50
 #: src/components/routes/admin/Attribution/index.tsx:78
 #: src/components/routes/admin/Dashboard/index.tsx:32
 #: src/components/routes/admin/EmailDelivery/index.tsx:15
 msgid "Last 7 days"
 msgstr "최근 7일"
 
-#: src/components/common/OrganizerReportTable/index.tsx:57
+#: src/components/common/OrganizerReportTable/index.tsx:58
 #: src/components/common/PeriodSelector/index.tsx:36
-#: src/components/common/ReportTable/index.tsx:52
+#: src/components/common/ReportTable/index.tsx:53
 #: src/components/routes/admin/Attribution/index.tsx:80
 msgid "Last 90 days"
 msgstr "최근 90일"
@@ -10999,8 +11013,8 @@ msgstr "웹훅 로그 불러오는 중..."
 msgid "Loading Webhooks"
 msgstr "웹훅 불러오는 중"
 
-#: src/components/common/OrganizerReportTable/index.tsx:265
-#: src/components/common/ReportTable/index.tsx:219
+#: src/components/common/OrganizerReportTable/index.tsx:259
+#: src/components/common/ReportTable/index.tsx:213
 #: src/components/routes/event/Settings/Sections/DangerZoneSettings/index.tsx:89
 #: src/components/routes/organizer/Settings/Sections/DangerZoneSettings/index.tsx:94
 msgid "Loading..."
@@ -12080,15 +12094,15 @@ msgstr "연결된 앱이 없습니다"
 msgid "No connections available"
 msgstr "사용 가능한 연결이 없습니다"
 
-#: src/components/common/ReportTable/index.tsx:227
+#: src/components/common/ReportTable/index.tsx:221
 msgid "No data available"
 msgstr "이용 가능한 데이터가 없습니다"
 
-#: src/components/common/OrganizerReportTable/index.tsx:283
+#: src/components/common/OrganizerReportTable/index.tsx:277
 msgid "No data found for the selected filters. Try adjusting the date range or currency."
 msgstr "선택한 필터에 대한 데이터가 없습니다. 날짜 범위나 통화를 조정해 보세요."
 
-#: src/components/common/ReportTable/index.tsx:223
+#: src/components/common/ReportTable/index.tsx:217
 msgid "No data to show. Please select a date range"
 msgstr "표시할 데이터가 없습니다. 날짜 범위를 선택해 주세요"
 
@@ -12617,6 +12631,7 @@ msgid "Not available: you have view-only access."
 msgstr "사용할 수 없음: 보기 전용 권한이 있습니다."
 
 #: src/components/layouts/CheckIn/AttendeeDetailSheet.tsx:122
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:187
 #: src/components/modals/ManageAttendeeModal/index.tsx:156
 msgid "Not checked in"
 msgstr "체크인 안 됨"
@@ -12774,7 +12789,7 @@ msgstr "아직 인쇄할 항목이 없습니다"
 msgid "Nothing to sell here yet. Add products to this box office."
 msgstr "아직 판매할 항목이 없습니다. 이 매표소에 상품을 추가하세요."
 
-#: src/components/common/ReportTable/index.tsx:263
+#: src/components/common/ReportTable/index.tsx:257
 msgid "Nothing to show yet"
 msgstr "아직 표시할 내용이 없습니다"
 
@@ -12859,7 +12874,7 @@ msgstr "가운데를 기준으로 홀짝 배열"
 msgid "Odd numbers only"
 msgstr "홀수만"
 
-#: src/components/common/OrganizerReportTable/index.tsx:367
+#: src/components/common/OrganizerReportTable/index.tsx:361
 msgid "of"
 msgstr "/"
 
@@ -13022,7 +13037,7 @@ msgstr "주문당 한 번"
 msgid "Once you create an event, you'll see it here."
 msgstr "이벤트를 생성하면 여기에 표시됩니다."
 
-#: src/components/common/ReportTable/index.tsx:268
+#: src/components/common/ReportTable/index.tsx:262
 msgid "Once you start collecting data, you'll see it here."
 msgstr "데이터 수집을 시작하면 여기에 표시됩니다."
 
@@ -13135,7 +13150,7 @@ msgstr "관리자만 팀 접근 권한을 관리할 수 있습니다."
 msgid "Only available as an add-on"
 msgstr "추가 상품으로만 이용 가능"
 
-#: src/components/routes/oauth/Connect/index.tsx:107
+#: src/components/routes/oauth/Connect/index.tsx:109
 msgid "Only continue if you just started connecting from an app on this computer, such as Claude Code or Cursor."
 msgstr "이 컴퓨터의 앱(예: Claude Code 또는 Cursor)에서 방금 연결을 시작한 경우에만 계속하세요."
 
@@ -13780,7 +13795,7 @@ msgstr "다른 Hi.Events 계정을 소유하고 있으므로 보안 설정에서
 msgid "Padding"
 msgstr "여백"
 
-#: src/components/common/OrganizerReportTable/index.tsx:367
+#: src/components/common/OrganizerReportTable/index.tsx:361
 msgid "Page"
 msgstr "페이지"
 
@@ -14569,7 +14584,7 @@ msgstr "처음부터 다시 시작하려면 이벤트 페이지로 돌아가세�
 msgid "Please select a date and time"
 msgstr "날짜와 시간을 선택해 주세요"
 
-#: src/components/common/OrganizerReportTable/index.tsx:280
+#: src/components/common/OrganizerReportTable/index.tsx:274
 msgid "Please select a date range"
 msgstr "날짜 범위를 선택해 주세요"
 
@@ -15201,7 +15216,7 @@ msgstr "다시 활성화"
 msgid "Reactivate this date? It will be reopened for future sales."
 msgstr "이 날짜를 재활성화하시겠습니까? 향후 판매를 위해 다시 열립니다."
 
-#: src/components/routes/oauth/Connect/index.tsx:121
+#: src/components/routes/oauth/Connect/index.tsx:123
 #: src/components/routes/settings/ApiKeys/ApiKeyRow.tsx:52
 #: src/components/routes/settings/ApiKeys/ConnectedApps.tsx:73
 #: src/components/routes/settings/ApiKeys/CreateApiKeyModal.tsx:250
@@ -15213,7 +15228,7 @@ msgstr "읽기 및 쓰기"
 msgid "Read more"
 msgstr "더 보기"
 
-#: src/components/routes/oauth/Connect/index.tsx:127
+#: src/components/routes/oauth/Connect/index.tsx:129
 msgid "Read only"
 msgstr "읽기 전용"
 
@@ -15289,10 +15304,6 @@ msgstr "최근 활동"
 msgid "Recent Attendees"
 msgstr "최근 참가자"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:106
-msgid "Recent check-ins"
-msgstr "최근 체크인"
-
 #: src/components/routes/organizer/OrganizerDashboard/index.tsx:316
 msgid "Recent orders"
 msgstr "최근 주문"
@@ -15300,6 +15311,10 @@ msgstr "최근 주문"
 #: src/components/common/OccurrenceAttendeesAndOrders/index.tsx:64
 msgid "Recent Orders"
 msgstr "최근 주문"
+
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:144
+msgid "Recent scans"
+msgstr "최근 스캔"
 
 #: src/components/routes/admin/Dashboard/index.tsx:388
 msgid "Recent signups"
@@ -16018,11 +16033,11 @@ msgstr "이벤트로 돌아가기"
 msgid "Return to Event Page"
 msgstr "이벤트 페이지로 돌아가기"
 
-#: src/components/routes/oauth/Connect/index.tsx:77
+#: src/components/routes/oauth/Connect/index.tsx:79
 msgid "Returning you to {leavingTo}…"
 msgstr "{leavingTo}(으)로 돌아가는 중…"
 
-#: src/components/routes/oauth/Connect/index.tsx:92
+#: src/components/routes/oauth/Connect/index.tsx:94
 msgid "Returns you to"
 msgstr "돌아갈 곳"
 
@@ -16522,19 +16537,27 @@ msgstr "이 주최자가 현재 시스템 기본값을 사용 중인 경우, 재
 msgid "Scan"
 msgstr "스캔"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:58
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:97
 msgid "Scan a ticket to check in an attendee"
 msgstr "티켓을 스캔하여 참가자를 체크인하세요"
+
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:96
+msgid "Scan a ticket to check out an attendee"
+msgstr "티켓을 스캔하여 참석자를 체크아웃하세요"
+
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:50
+msgid "Scan action"
+msgstr "스캔 작업"
 
 #: src/components/routes/event/CheckInLists/index.tsx:36
 msgid "Scan tickets at the door with a phone, tablet, or USB scanner."
 msgstr "현장에서 휴대폰, 태블릿 또는 USB 스캐너로 티켓을 스캔하세요."
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:109
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:147
 msgid "Scanned tickets will appear here"
 msgstr "스캔한 티켓이 여기에 표시됩니다"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:71
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:109
 msgid "Scanner mode"
 msgstr "스캐너 모드"
 
@@ -17097,8 +17120,8 @@ msgstr "티켓 선택"
 msgid "Select tickets"
 msgstr "티켓 선택"
 
-#: src/components/common/OrganizerReportTable/index.tsx:328
-#: src/components/common/ReportTable/index.tsx:294
+#: src/components/common/OrganizerReportTable/index.tsx:322
+#: src/components/common/ReportTable/index.tsx:288
 msgid "Select time period"
 msgstr "기간 선택"
 
@@ -17717,7 +17740,7 @@ msgstr "이 질문 표시"
 msgid "Show tickets"
 msgstr "티켓 표시"
 
-#: src/components/common/OrganizerReportTable/index.tsx:366
+#: src/components/common/OrganizerReportTable/index.tsx:360
 msgid "Showing {0} of {totalRows} records"
 msgstr "{totalRows}개 중 {0}개 표시 중"
 
@@ -18224,8 +18247,8 @@ msgstr "문제가 발생했습니다. 나중에 다시 시도해 주세요."
 #: src/components/routes/auth/Login/index.tsx:132
 #: src/components/routes/auth/Register/index.tsx:81
 #: src/components/routes/my-tickets/index.tsx:162
-#: src/components/routes/oauth/Connect/index.tsx:63
-#: src/components/routes/oauth/Connect/index.tsx:70
+#: src/components/routes/oauth/Connect/index.tsx:65
+#: src/components/routes/oauth/Connect/index.tsx:72
 #: src/components/routes/product-widget/SelectProducts/index.tsx:383
 #: src/components/routes/settings/Account/DeleteAccountSection.tsx:79
 #: src/components/routes/settings/ApiKeys/ConnectedApps.tsx:30
@@ -19050,7 +19073,7 @@ msgstr "좌석을 탭하여 추가하거나 먼저 수량을 설정하세요"
 msgid "Tap dates like a calendar."
 msgstr "달력처럼 날짜를 탭하세요."
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:59
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:94
 msgid "Tap this screen to resume scanning"
 msgstr "스캔을 재개하려면 화면을 탭하세요"
 
@@ -19841,11 +19864,11 @@ msgstr "이 체크인 목록은 취소된 세션에 한정되어 있으므로 �
 msgid "This code will be used to track sales. Only letters, numbers, hyphens, and underscores allowed."
 msgstr "이 코드는 판매 추적에 사용됩니다. 문자, 숫자, 하이픈, 밑줄만 사용할 수 있습니다."
 
-#: src/components/routes/oauth/Connect/index.tsx:24
+#: src/components/routes/oauth/Connect/index.tsx:26
 msgid "This connection link doesn't work"
 msgstr "이 연결 링크는 작동하지 않습니다"
 
-#: src/components/routes/oauth/Connect/index.tsx:24
+#: src/components/routes/oauth/Connect/index.tsx:26
 msgid "This connection request has expired"
 msgstr "이 연결 요청이 만료되었습니다"
 
@@ -20192,7 +20215,7 @@ msgstr "이 공간은 휠체어 이용자와 접근성이 필요한 손님을 �
 msgid "This ticket is no longer valid"
 msgstr "이 티켓은 더 이상 유효하지 않습니다"
 
-#: src/hooks/useCheckInController.tsx:276
+#: src/hooks/useCheckInController.tsx:298
 msgid "This ticket was just scanned. Please wait before scanning again."
 msgstr "이 티켓은 방금 스캔되었습니다. 다시 스캔하기 전에 잠시 기다려 주세요."
 
@@ -20736,8 +20759,8 @@ msgstr "다른 검색어나 필터를 시도해 보세요"
 msgid "Try adjusting your filters to see more dates."
 msgstr "필터를 조정하여 더 많은 날짜를 확인하세요."
 
-#: src/components/common/OrganizerReportTable/index.tsx:273
-#: src/components/common/ReportTable/index.tsx:254
+#: src/components/common/OrganizerReportTable/index.tsx:267
+#: src/components/common/ReportTable/index.tsx:248
 #: src/components/routes/product-widget/SelectProducts/index.tsx:1121
 #: src/components/routes/settings/ApiKeys/ConnectedApps.tsx:54
 #: src/components/routes/settings/ApiKeys/index.tsx:189
@@ -20828,11 +20851,11 @@ msgstr "먼저 {providerName} 로그인을 켜고 도메인을 인증하세요."
 msgid "Turn on two-factor authentication for your own profile first."
 msgstr "먼저 내 프로필에서 2단계 인증을 켜세요."
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:94
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:132
 msgid "Turn sound off"
 msgstr "소리 끄기"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:94
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:132
 msgid "Turn sound on"
 msgstr "소리 켜기"
 
@@ -20952,12 +20975,12 @@ msgstr "리더기를 변경할 수 없습니다"
 msgid "Unable to check in"
 msgstr "체크인할 수 없습니다"
 
-#: src/hooks/useCheckInController.tsx:217
+#: src/hooks/useCheckInController.tsx:229
 msgid "Unable to check in attendee"
 msgstr "참가자를 체크인할 수 없습니다"
 
-#: src/hooks/useCheckInController.tsx:243
-#: src/hooks/useCheckInController.tsx:245
+#: src/hooks/useCheckInController.tsx:260
+#: src/hooks/useCheckInController.tsx:262
 msgid "Unable to check out attendee"
 msgstr "참가자를 체크아웃할 수 없습니다"
 
@@ -20982,7 +21005,7 @@ msgstr "위젯을 삭제할 수 없습니다"
 msgid "Unable to duplicate product. Please check the your details"
 msgstr "상품을 복제할 수 없습니다. 입력 정보를 확인해 주세요"
 
-#: src/hooks/useCheckInController.tsx:291
+#: src/hooks/useCheckInController.tsx:314
 msgid "Unable to fetch attendee"
 msgstr "참가자 정보를 가져올 수 없습니다"
 
@@ -21036,7 +21059,7 @@ msgstr "판매를 시작할 수 없습니다. 다시 시도해 주세요."
 msgid "Unable to switch date"
 msgstr "날짜를 전환할 수 없습니다"
 
-#: src/hooks/useCheckInController.tsx:163
+#: src/hooks/useCheckInController.tsx:175
 msgid "Unable to undo check-in"
 msgstr "체크인을 취소할 수 없습니다"
 
@@ -21070,7 +21093,7 @@ msgstr "\"Token configuration\"에서 선택적 클레임 email과 xms_edov를 I
 
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:299
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:300
-#: src/hooks/useCheckInController.tsx:201
+#: src/hooks/useCheckInController.tsx:213
 msgid "Undo"
 msgstr "실행 취소"
 
@@ -21395,15 +21418,15 @@ msgstr "사용 횟수는 0부터 시작합니다"
 msgid "Usage Limit"
 msgstr "사용 한도"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:80
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:118
 msgid "USB"
 msgstr "USB"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:53
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:89
 msgid "USB scanner listening"
 msgstr "USB 스캐너 대기 중"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:53
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:89
 msgid "USB scanner paused"
 msgstr "USB 스캐너 일시 중지됨"
 
@@ -21688,7 +21711,7 @@ msgstr "인증 이메일을 보냈습니다. 받은 편지함을 확인하세요
 #: src/components/routes/admin/Accounts/AccountDetail/index.tsx:216
 #: src/components/routes/admin/Attribution/index.tsx:198
 #: src/components/routes/admin/Dashboard/index.tsx:396
-#: src/components/routes/oauth/Connect/index.tsx:97
+#: src/components/routes/oauth/Connect/index.tsx:99
 #: src/ee/sso/components/SingleSignOn/DomainList.tsx:17
 msgid "Verified"
 msgstr "인증됨"
@@ -21848,7 +21871,7 @@ msgstr "이벤트 페이지 보기"
 msgid "View Event Page"
 msgstr "이벤트 페이지 보기"
 
-#: src/components/routes/oauth/Connect/index.tsx:128
+#: src/components/routes/oauth/Connect/index.tsx:130
 msgid "View events, tickets and sales, without changing anything."
 msgstr "아무것도 변경하지 않고 이벤트, 티켓, 판매를 봅니다."
 
@@ -21990,7 +22013,7 @@ msgstr "대기 중"
 msgid "Waiting for payment"
 msgstr "결제 대기 중"
 
-#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:64
+#: src/components/layouts/CheckIn/tabs/ScanTab.tsx:102
 msgid "Waiting for scan…"
 msgstr "스캔 대기 중…"
 
@@ -22673,9 +22696,9 @@ msgstr "X (Twitter)"
 msgid "year"
 msgstr "년"
 
-#: src/components/common/OrganizerReportTable/index.tsx:59
+#: src/components/common/OrganizerReportTable/index.tsx:60
 #: src/components/common/PeriodSelector/index.tsx:38
-#: src/components/common/ReportTable/index.tsx:54
+#: src/components/common/ReportTable/index.tsx:55
 msgid "Year to date"
 msgstr "연초 이후"
 
@@ -22746,8 +22769,8 @@ msgstr "<0>{0}</0>({1})님으로 대리 로그인 중입니다"
 msgid "You are issuing a partial refund. The customer will be refunded {0} {1}."
 msgstr "부분 환불을 진행하고 있습니다. 고객에게 {0} {1}이(가) 환불됩니다."
 
-#: src/hooks/useCheckInController.tsx:212
-#: src/hooks/useCheckInController.tsx:238
+#: src/hooks/useCheckInController.tsx:224
+#: src/hooks/useCheckInController.tsx:255
 msgid "You are offline"
 msgstr "오프라인 상태입니다"
 
@@ -22791,7 +22814,7 @@ msgstr "계정 설정에서 추가 서비스 수수료와 세금을 설정할 �
 msgid "You can create a promo code which targets this product on the"
 msgstr "다음에서 이 상품을 대상으로 하는 프로모션 코드를 생성할 수 있습니다"
 
-#: src/components/routes/oauth/Connect/index.tsx:167
+#: src/components/routes/oauth/Connect/index.tsx:169
 msgid "You can disconnect it at any time from Settings → API keys."
 msgstr "언제든지 설정 → API 키에서 연결을 해제할 수 있습니다."
 
@@ -22823,8 +22846,8 @@ msgstr "계정의 마지막 활성 주최자는 보관할 수 없습니다."
 msgid "You cannot change the product type as there are attendees associated with this product."
 msgstr "이 상품에 연결된 참가자가 있어 상품 유형을 변경할 수 없습니다."
 
-#: src/hooks/useCheckInController.tsx:261
-#: src/hooks/useCheckInController.tsx:330
+#: src/hooks/useCheckInController.tsx:283
+#: src/hooks/useCheckInController.tsx:373
 msgid "You cannot check in attendees with unpaid orders. This setting can be changed in the event settings."
 msgstr "미결제 주문의 참가자는 체크인할 수 없습니다. 이 설정은 이벤트 설정에서 변경할 수 있습니다."
 
@@ -23371,7 +23394,7 @@ msgstr "복구 코드와 신뢰하는 기기가 제거됩니다."
 msgid "Your refund is processing."
 msgstr "환불이 처리 중입니다."
 
-#: src/hooks/useCheckInController.tsx:78
+#: src/hooks/useCheckInController.tsx:83
 msgid "Your saved date filter is no longer available — showing all dates."
 msgstr "저장된 날짜 필터를 더 이상 사용할 수 없어 모든 날짜를 표시합니다."
 
