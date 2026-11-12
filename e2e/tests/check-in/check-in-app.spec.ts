@@ -122,6 +122,27 @@ test.describe('public check-in app', () => {
 
     await expect(checkIn.recentScan(attendee.publicId).first()).toContainText('Checked out');
     await expect(checkIn.progressChip()).toHaveText('0/2');
+
+    await checkIn.scanWithUsbScanner(attendee.publicId);
+
+    await expect(checkIn.recentScan(attendee.publicId).first()).toContainText('Not checked in');
+    await expect(page.getByText(/is already checked out/)).toBeVisible();
+  });
+
+  test('scanning the same ticket again right after check-in warns that it is already checked in', async ({ page, api, publicApi, account }) => {
+    const { order, list } = await seedCheckInList(api, publicApi, account.organizerId);
+    const attendee = order.attendees[0];
+
+    const checkIn = new CheckInPage(page);
+    await checkIn.goto(list.short_id);
+    await checkIn.openScanTab();
+
+    await checkIn.scanWithUsbScanner(attendee.publicId);
+    await checkIn.scanWithUsbScanner(attendee.publicId);
+
+    await expect(checkIn.recentScan(attendee.publicId).first()).toContainText('Already in');
+    await expect(page.getByText(/is already checked in/)).toBeVisible();
+    await expect(checkIn.progressChip()).toHaveText('1/2');
   });
 
   test('the stats tab reflects attendance totals and check-ins', async ({ page, api, publicApi, account }) => {

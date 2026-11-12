@@ -5,7 +5,7 @@ import {Anchor, Button, Menu} from "@mantine/core";
 import {IconBulb, IconBulbOff, IconCameraRotate} from "@tabler/icons-react";
 import classes from "./InlineCameraScanner.module.scss";
 
-const RESCAN_AFTER_ABSENT_MS = 1500;
+const RESCAN_AFTER_ABSENT_MS = 800;
 
 interface Props {
     onAttendeeScanned: (attendeePublicId: string) => void;

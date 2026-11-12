@@ -52,27 +52,31 @@ msgstr "{0} (oletus)"
 msgid "{0} {1}"
 msgstr "{0} {1}"
 
-#: src/hooks/useCheckInController.tsx:354
+#: src/hooks/useCheckInController.tsx:347
 msgid "{0} {1} is already checked in"
 msgstr "{0} {1} on jo kirjautunut sisään"
 
-#: src/hooks/useCheckInController.tsx:353
+#: src/hooks/useCheckInController.tsx:346
 msgid "{0} {1} is already checked in · {seatLabel}"
 msgstr "{0} {1} on jo kirjautunut sisään · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:337
+#: src/hooks/useCheckInController.tsx:331
+msgid "{0} {1} is already checked out"
+msgstr "{0} {1} on jo kirjattu ulos"
+
+#: src/hooks/useCheckInController.tsx:332
 msgid "{0} {1} is not checked in"
 msgstr "{0} {1} ei ole kirjautunut sisään"
 
-#: src/hooks/useCheckInController.tsx:207
+#: src/hooks/useCheckInController.tsx:220
 msgid "{0} <0>checked in</0>"
 msgstr "{0} <0>kirjautunut sisään</0>"
 
-#: src/hooks/useCheckInController.tsx:206
+#: src/hooks/useCheckInController.tsx:219
 msgid "{0} <0>checked in</0> · {seatLabel}"
 msgstr "{0} <0>kirjautunut sisään</0> · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:241
+#: src/hooks/useCheckInController.tsx:255
 msgid "{0} <0>checked out</0> successfully"
 msgstr "{0} <0>kirjautunut ulos</0> onnistuneesti"
 
@@ -2859,7 +2863,7 @@ msgstr "Osallistujien nimi ja sähköposti"
 msgid "Attendee names appear on the printout. Handle it accordingly."
 msgstr "Tulosteessa näkyvät osallistujien nimet. Käsittele sitä sen mukaisesti."
 
-#: src/hooks/useCheckInController.tsx:322
+#: src/hooks/useCheckInController.tsx:321
 msgid "Attendee not found"
 msgstr "Osallistujaa ei löydy"
 
@@ -3566,12 +3570,12 @@ msgstr "Kalenteri"
 msgid "Call-to-Action Button"
 msgstr "Toimintopainike"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:153
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:157
 #: src/components/layouts/CheckIn/tabs/ScanTab.tsx:128
 msgid "Camera"
 msgstr "Kamera"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:110
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:114
 msgid "Camera permission was denied. <0>Request permission</0> again, or grant this page camera access in your browser settings."
 msgstr "Kameran käyttöoikeus evättiin. <0>Pyydä lupa</0> uudelleen tai myönnä tälle sivulle kameran käyttöoikeus selaimesi asetuksista."
 
@@ -4120,7 +4124,7 @@ msgstr "Sisäänkirjaus luotu"
 msgid "Check-in Deleted"
 msgstr "Sisäänkirjaus poistettu"
 
-#: src/hooks/useCheckInController.tsx:170
+#: src/hooks/useCheckInController.tsx:184
 msgid "Check-in for {0} was undone"
 msgstr "Sisäänkirjaus {0}:lta peruttiin"
 
@@ -9003,11 +9007,11 @@ msgstr "Merkityt tapahtumat"
 msgid "Flagged Events"
 msgstr "Merkityt tapahtumat"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:140
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:144
 msgid "Flash off"
 msgstr "Salama pois"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:140
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:144
 msgid "Flash on"
 msgstr "Salama päällä"
 
@@ -17050,7 +17054,7 @@ msgstr "Valitse vähintään yksi käyttäjä"
 msgid "Select attendee group"
 msgstr "Valitse osallistujaryhmä"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:157
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:161
 msgid "Select camera"
 msgstr "Valitse kamera"
 
@@ -20215,10 +20219,6 @@ msgstr "Tämä paikka on varattu pyörätuolin käyttäjille ja esteettömyyttä
 msgid "This ticket is no longer valid"
 msgstr "Tämä lippu ei ole enää voimassa"
 
-#: src/hooks/useCheckInController.tsx:298
-msgid "This ticket was just scanned. Please wait before scanning again."
-msgstr "Tämä lippu skannattiin juuri. Odota ennen uutta skannausta."
-
 #: src/components/routes/event/OccurrencesTab/PriceOverrideForm/index.tsx:328
 msgid "This tier's quantity is shared across all dates"
 msgstr "Tämän hintatason määrä on jaettu kaikkien päivämäärien kesken"
@@ -20975,12 +20975,13 @@ msgstr "Lukijan vaihtaminen epäonnistui"
 msgid "Unable to check in"
 msgstr "Sisäänkirjaus epäonnistui"
 
-#: src/hooks/useCheckInController.tsx:229
+#: src/hooks/useCheckInController.tsx:241
+#: src/hooks/useCheckInController.tsx:243
 msgid "Unable to check in attendee"
 msgstr "Osallistujan sisäänkirjautuminen ei onnistu"
 
-#: src/hooks/useCheckInController.tsx:260
-#: src/hooks/useCheckInController.tsx:262
+#: src/hooks/useCheckInController.tsx:273
+#: src/hooks/useCheckInController.tsx:275
 msgid "Unable to check out attendee"
 msgstr "Osallistujan uloskirjaus ei onnistu"
 
@@ -21059,7 +21060,7 @@ msgstr "Myyntiä ei voitu aloittaa. Yritä uudelleen."
 msgid "Unable to switch date"
 msgstr "Päivämäärän vaihtaminen epäonnistui"
 
-#: src/hooks/useCheckInController.tsx:175
+#: src/hooks/useCheckInController.tsx:188
 msgid "Unable to undo check-in"
 msgstr "Sisäänkirjautumisen kumoaminen ei onnistu"
 
@@ -21093,7 +21094,7 @@ msgstr "Lisää kohdassa Token configuration valinnaiset väitteet email ja xms_
 
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:299
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:300
-#: src/hooks/useCheckInController.tsx:213
+#: src/hooks/useCheckInController.tsx:226
 msgid "Undo"
 msgstr "Kumoa"
 
@@ -22769,8 +22770,8 @@ msgstr "Esiinnyt käyttäjänä <0>{0}</0> ({1})"
 msgid "You are issuing a partial refund. The customer will be refunded {0} {1}."
 msgstr "Olet tekemässä osittaista hyvitystä. Asiakkaalle hyvitetään {0} {1}."
 
-#: src/hooks/useCheckInController.tsx:224
-#: src/hooks/useCheckInController.tsx:255
+#: src/hooks/useCheckInController.tsx:236
+#: src/hooks/useCheckInController.tsx:268
 msgid "You are offline"
 msgstr "Olet offline-tilassa"
 
@@ -22846,8 +22847,8 @@ msgstr "Et voi arkistoida tilisi viimeistä aktiivista järjestäjää."
 msgid "You cannot change the product type as there are attendees associated with this product."
 msgstr "Et voi vaihtaa tuotetyyppiä, koska tähän tuotteeseen liittyy osallistujia."
 
-#: src/hooks/useCheckInController.tsx:283
-#: src/hooks/useCheckInController.tsx:373
+#: src/hooks/useCheckInController.tsx:295
+#: src/hooks/useCheckInController.tsx:363
 msgid "You cannot check in attendees with unpaid orders. This setting can be changed in the event settings."
 msgstr "Et voi kirjata sisään osallistujia, joiden tilaus on maksamatta. Voit muuttaa tätä asetusta tapahtuman asetuksissa."
 
@@ -23394,7 +23395,7 @@ msgstr "Palautuskoodisi ja luotetut laitteesi poistetaan."
 msgid "Your refund is processing."
 msgstr "Hyvitystäsi käsitellään."
 
-#: src/hooks/useCheckInController.tsx:83
+#: src/hooks/useCheckInController.tsx:97
 msgid "Your saved date filter is no longer available — showing all dates."
 msgstr "Tallennettu päivämääräsuodattimesi ei ole enää käytettävissä — näytetään kaikki päivämäärät."
 

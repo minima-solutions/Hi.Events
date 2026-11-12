@@ -52,27 +52,31 @@ msgstr "{0} (по умолчанию)"
 msgid "{0} {1}"
 msgstr ""
 
-#: src/hooks/useCheckInController.tsx:354
+#: src/hooks/useCheckInController.tsx:347
 msgid "{0} {1} is already checked in"
 msgstr "{0} {1} уже зарегистрирован"
 
-#: src/hooks/useCheckInController.tsx:353
+#: src/hooks/useCheckInController.tsx:346
 msgid "{0} {1} is already checked in · {seatLabel}"
 msgstr "{0} {1} уже зарегистрирован(а) · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:337
+#: src/hooks/useCheckInController.tsx:331
+msgid "{0} {1} is already checked out"
+msgstr "{0} {1} уже вышел"
+
+#: src/hooks/useCheckInController.tsx:332
 msgid "{0} {1} is not checked in"
 msgstr "{0} {1} не зарегистрирован"
 
-#: src/hooks/useCheckInController.tsx:207
+#: src/hooks/useCheckInController.tsx:220
 msgid "{0} <0>checked in</0>"
 msgstr ""
 
-#: src/hooks/useCheckInController.tsx:206
+#: src/hooks/useCheckInController.tsx:219
 msgid "{0} <0>checked in</0> · {seatLabel}"
 msgstr "{0} <0>зарегистрирован(а)</0> · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:241
+#: src/hooks/useCheckInController.tsx:255
 msgid "{0} <0>checked out</0> successfully"
 msgstr ""
 
@@ -2859,7 +2863,7 @@ msgstr "Имя и email участников"
 msgid "Attendee names appear on the printout. Handle it accordingly."
 msgstr "На распечатке указаны имена участников. Обращайтесь с ней соответственно."
 
-#: src/hooks/useCheckInController.tsx:322
+#: src/hooks/useCheckInController.tsx:321
 msgid "Attendee not found"
 msgstr ""
 
@@ -3566,12 +3570,12 @@ msgstr ""
 msgid "Call-to-Action Button"
 msgstr ""
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:153
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:157
 #: src/components/layouts/CheckIn/tabs/ScanTab.tsx:128
 msgid "Camera"
 msgstr ""
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:110
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:114
 msgid "Camera permission was denied. <0>Request permission</0> again, or grant this page camera access in your browser settings."
 msgstr ""
 
@@ -4120,7 +4124,7 @@ msgstr ""
 msgid "Check-in Deleted"
 msgstr ""
 
-#: src/hooks/useCheckInController.tsx:170
+#: src/hooks/useCheckInController.tsx:184
 msgid "Check-in for {0} was undone"
 msgstr ""
 
@@ -9001,11 +9005,11 @@ msgstr ""
 msgid "Flagged Events"
 msgstr "Помеченные события"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:140
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:144
 msgid "Flash off"
 msgstr ""
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:140
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:144
 msgid "Flash on"
 msgstr ""
 
@@ -17048,7 +17052,7 @@ msgstr ""
 msgid "Select attendee group"
 msgstr ""
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:157
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:161
 msgid "Select camera"
 msgstr ""
 
@@ -20213,10 +20217,6 @@ msgstr "Это место предназначено для людей на ин
 msgid "This ticket is no longer valid"
 msgstr ""
 
-#: src/hooks/useCheckInController.tsx:298
-msgid "This ticket was just scanned. Please wait before scanning again."
-msgstr "Этот билет только что был отсканирован. Пожалуйста, подождите перед повторным сканированием."
-
 #: src/components/routes/event/OccurrencesTab/PriceOverrideForm/index.tsx:328
 msgid "This tier's quantity is shared across all dates"
 msgstr ""
@@ -20973,12 +20973,13 @@ msgstr "Не удалось сменить ридер"
 msgid "Unable to check in"
 msgstr "Не удалось отметить вход"
 
-#: src/hooks/useCheckInController.tsx:229
+#: src/hooks/useCheckInController.tsx:241
+#: src/hooks/useCheckInController.tsx:243
 msgid "Unable to check in attendee"
 msgstr ""
 
-#: src/hooks/useCheckInController.tsx:260
-#: src/hooks/useCheckInController.tsx:262
+#: src/hooks/useCheckInController.tsx:273
+#: src/hooks/useCheckInController.tsx:275
 msgid "Unable to check out attendee"
 msgstr ""
 
@@ -21057,7 +21058,7 @@ msgstr "Не удалось начать продажу. Повторите по
 msgid "Unable to switch date"
 msgstr "Не удалось переключить дату"
 
-#: src/hooks/useCheckInController.tsx:175
+#: src/hooks/useCheckInController.tsx:188
 msgid "Unable to undo check-in"
 msgstr ""
 
@@ -21091,7 +21092,7 @@ msgstr "В разделе Token configuration добавьте необязат�
 
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:299
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:300
-#: src/hooks/useCheckInController.tsx:213
+#: src/hooks/useCheckInController.tsx:226
 msgid "Undo"
 msgstr ""
 
@@ -22767,8 +22768,8 @@ msgstr ""
 msgid "You are issuing a partial refund. The customer will be refunded {0} {1}."
 msgstr "Вы оформляете частичный возврат. Клиенту будет возвращено {0} {1}."
 
-#: src/hooks/useCheckInController.tsx:224
-#: src/hooks/useCheckInController.tsx:255
+#: src/hooks/useCheckInController.tsx:236
+#: src/hooks/useCheckInController.tsx:268
 msgid "You are offline"
 msgstr ""
 
@@ -22844,8 +22845,8 @@ msgstr ""
 msgid "You cannot change the product type as there are attendees associated with this product."
 msgstr ""
 
-#: src/hooks/useCheckInController.tsx:283
-#: src/hooks/useCheckInController.tsx:373
+#: src/hooks/useCheckInController.tsx:295
+#: src/hooks/useCheckInController.tsx:363
 msgid "You cannot check in attendees with unpaid orders. This setting can be changed in the event settings."
 msgstr ""
 
@@ -23392,7 +23393,7 @@ msgstr "Ваши резервные коды и доверенные устро�
 msgid "Your refund is processing."
 msgstr ""
 
-#: src/hooks/useCheckInController.tsx:83
+#: src/hooks/useCheckInController.tsx:97
 msgid "Your saved date filter is no longer available — showing all dates."
 msgstr ""
 

@@ -52,27 +52,31 @@ msgstr "{0}（デフォルト）"
 msgid "{0} {1}"
 msgstr "{0} {1}"
 
-#: src/hooks/useCheckInController.tsx:354
+#: src/hooks/useCheckInController.tsx:347
 msgid "{0} {1} is already checked in"
 msgstr "{0} {1}はすでにチェックイン済みです"
 
-#: src/hooks/useCheckInController.tsx:353
+#: src/hooks/useCheckInController.tsx:346
 msgid "{0} {1} is already checked in · {seatLabel}"
 msgstr "{0} {1}はすでにチェックイン済みです · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:337
+#: src/hooks/useCheckInController.tsx:331
+msgid "{0} {1} is already checked out"
+msgstr "{0} {1} はすでにチェックアウト済みです"
+
+#: src/hooks/useCheckInController.tsx:332
 msgid "{0} {1} is not checked in"
 msgstr "{0} {1} はチェックインしていません"
 
-#: src/hooks/useCheckInController.tsx:207
+#: src/hooks/useCheckInController.tsx:220
 msgid "{0} <0>checked in</0>"
 msgstr "{0} <0>チェックイン済み</0>"
 
-#: src/hooks/useCheckInController.tsx:206
+#: src/hooks/useCheckInController.tsx:219
 msgid "{0} <0>checked in</0> · {seatLabel}"
 msgstr "{0} <0>チェックイン済み</0> · {seatLabel}"
 
-#: src/hooks/useCheckInController.tsx:241
+#: src/hooks/useCheckInController.tsx:255
 msgid "{0} <0>checked out</0> successfully"
 msgstr "{0}の<0>チェックアウト</0>が完了しました"
 
@@ -2859,7 +2863,7 @@ msgstr "参加者の名前とメールアドレス"
 msgid "Attendee names appear on the printout. Handle it accordingly."
 msgstr "参加者名が印刷物に表示されます。取り扱いにご注意ください。"
 
-#: src/hooks/useCheckInController.tsx:322
+#: src/hooks/useCheckInController.tsx:321
 msgid "Attendee not found"
 msgstr "参加者が見つかりません"
 
@@ -3566,12 +3570,12 @@ msgstr "カレンダー"
 msgid "Call-to-Action Button"
 msgstr "行動喚起ボタン"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:153
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:157
 #: src/components/layouts/CheckIn/tabs/ScanTab.tsx:128
 msgid "Camera"
 msgstr "カメラ"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:110
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:114
 msgid "Camera permission was denied. <0>Request permission</0> again, or grant this page camera access in your browser settings."
 msgstr "カメラの許可が拒否されました。もう一度<0>許可をリクエスト</0>するか、ブラウザの設定でこのページにカメラへのアクセスを許可してください。"
 
@@ -4120,7 +4124,7 @@ msgstr "チェックインを作成しました"
 msgid "Check-in Deleted"
 msgstr "チェックインを削除しました"
 
-#: src/hooks/useCheckInController.tsx:170
+#: src/hooks/useCheckInController.tsx:184
 msgid "Check-in for {0} was undone"
 msgstr "{0}のチェックインを取り消しました"
 
@@ -9003,11 +9007,11 @@ msgstr "フラグ付きのイベント"
 msgid "Flagged Events"
 msgstr "フラグ付きイベント"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:140
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:144
 msgid "Flash off"
 msgstr "フラッシュオフ"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:140
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:144
 msgid "Flash on"
 msgstr "フラッシュオン"
 
@@ -17050,7 +17054,7 @@ msgstr "ユーザーを1人以上選択してください"
 msgid "Select attendee group"
 msgstr "参加者グループを選択"
 
-#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:157
+#: src/components/layouts/CheckIn/tabs/InlineCameraScanner.tsx:161
 msgid "Select camera"
 msgstr "カメラを選択"
 
@@ -20215,10 +20219,6 @@ msgstr "このスペースは、車椅子利用者や配慮が必要なゲスト
 msgid "This ticket is no longer valid"
 msgstr "このチケットは無効になりました"
 
-#: src/hooks/useCheckInController.tsx:298
-msgid "This ticket was just scanned. Please wait before scanning again."
-msgstr "このチケットはたった今スキャンされました。再度スキャンする前に、しばらくお待ちください。"
-
 #: src/components/routes/event/OccurrencesTab/PriceOverrideForm/index.tsx:328
 msgid "This tier's quantity is shared across all dates"
 msgstr "このティアの数量は、すべての日付で共有されます"
@@ -20975,12 +20975,13 @@ msgstr "リーダーを変更できません"
 msgid "Unable to check in"
 msgstr "チェックインできません"
 
-#: src/hooks/useCheckInController.tsx:229
+#: src/hooks/useCheckInController.tsx:241
+#: src/hooks/useCheckInController.tsx:243
 msgid "Unable to check in attendee"
 msgstr "参加者をチェックインできません"
 
-#: src/hooks/useCheckInController.tsx:260
-#: src/hooks/useCheckInController.tsx:262
+#: src/hooks/useCheckInController.tsx:273
+#: src/hooks/useCheckInController.tsx:275
 msgid "Unable to check out attendee"
 msgstr "参加者をチェックアウトできません"
 
@@ -21059,7 +21060,7 @@ msgstr "販売を開始できません。もう一度お試しください。"
 msgid "Unable to switch date"
 msgstr "日付を切り替えられません"
 
-#: src/hooks/useCheckInController.tsx:175
+#: src/hooks/useCheckInController.tsx:188
 msgid "Unable to undo check-in"
 msgstr "チェックインを取り消せません"
 
@@ -21093,7 +21094,7 @@ msgstr "「Token configuration」で、オプションのクレームemailとxms
 
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:299
 #: src/ee/seating/components/SeatMapDesigner/index.tsx:300
-#: src/hooks/useCheckInController.tsx:213
+#: src/hooks/useCheckInController.tsx:226
 msgid "Undo"
 msgstr "元に戻す"
 
@@ -22769,8 +22770,8 @@ msgstr "<0>{0}</0>（{1}）になりすましています"
 msgid "You are issuing a partial refund. The customer will be refunded {0} {1}."
 msgstr "一部返金を行います。お客様には{0} {1}が返金されます。"
 
-#: src/hooks/useCheckInController.tsx:224
-#: src/hooks/useCheckInController.tsx:255
+#: src/hooks/useCheckInController.tsx:236
+#: src/hooks/useCheckInController.tsx:268
 msgid "You are offline"
 msgstr "オフラインです"
 
@@ -22846,8 +22847,8 @@ msgstr "アカウント内の最後のアクティブな主催者はアーカイ
 msgid "You cannot change the product type as there are attendees associated with this product."
 msgstr "この商品に関連付けられた参加者がいるため、商品タイプは変更できません。"
 
-#: src/hooks/useCheckInController.tsx:283
-#: src/hooks/useCheckInController.tsx:373
+#: src/hooks/useCheckInController.tsx:295
+#: src/hooks/useCheckInController.tsx:363
 msgid "You cannot check in attendees with unpaid orders. This setting can be changed in the event settings."
 msgstr "未払いの注文の参加者はチェックインできません。この設定は、イベント設定で変更できます。"
 
@@ -23394,7 +23395,7 @@ msgstr "リカバリーコードと信頼済みデバイスは削除されます
 msgid "Your refund is processing."
 msgstr "返金を処理中です。"
 
-#: src/hooks/useCheckInController.tsx:83
+#: src/hooks/useCheckInController.tsx:97
 msgid "Your saved date filter is no longer available — showing all dates."
 msgstr "保存していた日付フィルターは利用できなくなったため、すべての日付を表示しています。"
 
